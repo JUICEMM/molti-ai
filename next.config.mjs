@@ -7,6 +7,18 @@ await import("./src/env.mjs");
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.clerk.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+      },
+    ],
+  },
 
   /**
    * If you are using `appDir` then you must comment the below `i18n` config out.

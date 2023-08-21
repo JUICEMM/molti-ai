@@ -17,6 +17,14 @@ const config = {
         protocol: 'https',
         hostname: 'github.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'img1.wsimg.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img1.wsimg.com',
+      },
     ],
   },
 

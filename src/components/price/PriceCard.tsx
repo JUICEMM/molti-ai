@@ -14,7 +14,7 @@ type PriceCardProps = {
 }
 const PriceCard = ({title,price}:PriceCardProps) => {
   return (
-    <Card className="w-auto h-[550px] p-5 rounded-3xl md:w-[300px]">
+    <Card className="w-auto h-[550px] p-5 rounded-3xl border border-teal-500 md:w-[300px]">
       <CardHeader className="flex flex-col gap-5">
         <CardTitle>{title}</CardTitle>
         <CardDescription>Deploy your new project in one-click.</CardDescription>

@@ -28,7 +28,7 @@ const components: { title: string; href: string; description: string }[] = [
     },
     {
       title: "KOL",
-      href: "/kol",
+      href: "http://122.116.22.186:5000/dash/kol",
       description:
         "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
     },
@@ -36,9 +36,16 @@ const components: { title: string; href: string; description: string }[] = [
 
 const NavbarMenu = () => {
   return (
-    <div className="flex-1 p-4">
+    <div className="flex-1 p-4 hidden md:block">
     <NavigationMenu>
         <NavigationMenuList>
+        <NavigationMenuItem>
+            <Link href="/" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                首頁
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger>資料分析</NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -56,7 +63,7 @@ const NavbarMenu = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/price" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 方案
               </NavigationMenuLink>

@@ -13,8 +13,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className="min-h-screen bg-white pt-[86px]">
-        
+      <main className="min-h-screen bg-white pt-[72px] font-Serif">
+        <div className="main">
+          <div className="gradient" />
+        </div>
+        <div className="app text-5xl text-black py-10">
+          <div className="font-bold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-600 ">Molti分析</div>
+          <div className="font-bold ">國內外大型電商網站數據分析</div>
+        </div>
       </main>
     </>
   );

@@ -14,32 +14,30 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const components: { title: string; href: string; description: string }[] = [
-    {
-      title: "關鍵字",
-      href: "/keyword",
-      description:
-        "透過關鍵字數據進行關聯分析，列舉出關聯度最高的百大關鍵字",
-    },
-    {
-      title: "商品分類",
-      href: "/category",
-      description:
-        "For sighted users to preview content available behind a link.",
-    },
-    {
-      title: "KOL",
-      href: "http://122.116.22.186:5000/dash/kol",
-      description:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-    },
-  ];
+  {
+    title: "關鍵字",
+    href: "/keyword",
+    description: "透過關鍵字數據進行關聯分析，列舉出關聯度最高的百大關鍵字",
+  },
+  {
+    title: "趨勢圖表",
+    href: "/dashboard",
+    description: "透過趨勢圖表進行關聯度分析",
+  },
+  {
+    title: "KOL",
+    href: "http://122.116.22.186:5000/dash/kol",
+    description:
+      "利用關鍵詞查詢高度相關的KOL，幫助企業家查詢有利的代言合作夥伴",
+  },
+];
 
 const NavbarMenu = () => {
   return (
-    <div className="flex-1 p-4 hidden md:block">
-    <NavigationMenu>
+    <div className="hidden flex-1 p-4 md:block">
+      <NavigationMenu>
         <NavigationMenuList>
-        <NavigationMenuItem>
+          <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 首頁
@@ -56,7 +54,7 @@ const NavbarMenu = () => {
                     title={component.title}
                     href={component.href}
                   >
-                    {component.description}
+                    <span className="text-xs">{component.description}</span>
                   </ListItem>
                 ))}
               </ul>
@@ -72,10 +70,10 @@ const NavbarMenu = () => {
         </NavigationMenuList>
       </NavigationMenu>
     </div>
-  )
-}
+  );
+};
 
-export default NavbarMenu
+export default NavbarMenu;
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,

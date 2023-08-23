@@ -7,7 +7,7 @@ import NavbarUserAvator from "./NavbarUserAvator";
 const Navbar = () => {
   return (
     <>
-      <nav className="fixed z-50 flex w-full border-b border-gray-300 bg-white backdrop-blur">
+      <nav className="fixed z-[999] flex w-full border-b border-gray-300 bg-white backdrop-blur">
         <div className="mx-auto flex w-[90%]">
           <NavbarHeader />
           <NavbarMenu />

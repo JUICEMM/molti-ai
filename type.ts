@@ -14,3 +14,8 @@ export type DataAnalysis = {
     ppc: string
     productAveragePrice: string
   }
+
+
+export type CountryWebsites = {
+    [key: string]: string[];
+  };

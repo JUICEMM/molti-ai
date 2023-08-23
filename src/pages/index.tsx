@@ -17,14 +17,14 @@ export default function Home() {
         { store: "蝦皮", status: true },
         { store: "露天", status: true },
         { store: "Momo", status: false },
-        { store: "樂天", status: false },
+        { store: "Rakutan", status: false },
         { store: "Amazon", status: false },
       ],
     },
     {
       imageUrl: japan,
       title: "Japan",
-      description: [ { store: "Amazon", status: true }, { store: "樂天", status: false },],
+      description: [ { store: "Amazon", status: true }, { store: "Rakutan", status: false },],
     },
     {
       imageUrl: us,
@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </div>
         {/*feature section*/}
-        <div className="h-auto md:h-screen bg-white bg-gradient-to-b py-10">
+        <div className="h-auto xl:h-screen flex items-center bg-white bg-gradient-to-b py-10">
           <div className="mx-auto w-[90%]">
             <div className="flex flex-col items-center justify-center gap-4 px-4 py-6 md:py-2 text-6xl font-bold text-black">
               <div className="text-center text-4xl md:text-5xl">Molti助您擴展企業規模</div>
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
         </div>
         {/*Country section*/}
-        <div className="h-auto md:h-screen bg-gradient-to-b from-teal-500 to-teal-600">
+        <div className="h-auto bg-gradient-to-b from-teal-500 to-teal-600">
           <div className="flex items-center justify-center">
             <div>
               <div className="app py-10 text-5xl text-black">

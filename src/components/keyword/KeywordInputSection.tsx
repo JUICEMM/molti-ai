@@ -78,9 +78,7 @@ const KeywordInputSection = () => {
       <Card className="w-[90%]">
         <CardHeader>
           <CardTitle>關聯字搜索</CardTitle>
-          <CardDescription>
-            選擇相關變數取得關聯字
-          </CardDescription>
+          <CardDescription>選擇相關變數取得關聯字</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -108,7 +106,7 @@ const KeywordInputSection = () => {
                               "hover:border-teal-500 focus:ring-teal-500"
                             )}
                           >
-                            <SelectValue placeholder="請選擇國家..."/>
+                            <SelectValue placeholder="請選擇國家..." />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent position="popper">
@@ -229,9 +227,7 @@ const KeywordInputSection = () => {
               </div>
               <div className="flex justify-end py-5">
                 <div className="flex items-center gap-5">
-                  <Button
-                    className="bg-teal-400 text-white hover:bg-teal-500"
-                  >
+                  <Button className="bg-teal-400 text-white hover:bg-teal-500">
                     查詢
                   </Button>
                 </div>

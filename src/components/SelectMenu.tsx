@@ -8,41 +8,36 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import React from "react";
-import { FormControl } from "@/components/ui/form";
-
 
 type SelectMenuProps = {
   placeholder: string;
   data: Array<string>;
   className?: string;
   setState?: (State: string) => void;
-  field: any;
+  field:any
 };
 
 const SelectMenu = React.forwardRef(
-  ({ placeholder, data, className, setState, field }: SelectMenuProps, ref) => {
+  ({ placeholder, data, className, setState,field }: SelectMenuProps,ref) => {
     return (
       <Select
         onValueChange={(e) => {
           if (setState) {
-            setState(e);
+            setState(e)
             field.onChange(e);
           }
           null;
         }}
-        defaultValue={field?.value}
       >
-   
-          <SelectTrigger
-            id="framework"
-            className={twMerge(
-              "hover:border-teal-500 focus:ring-teal-500",
-              className
-            )}
-          >
-            <SelectValue placeholder={`${placeholder}`} />
-          </SelectTrigger>
-
+        <SelectTrigger
+          id="framework"
+          className={twMerge(
+            "hover:border-teal-500 focus:ring-teal-500",
+            className
+          )}
+        >
+          <SelectValue placeholder={`${placeholder}`} />
+        </SelectTrigger>
         <SelectContent position="popper">
           {data.map((item) => (
             <SelectItem key={item} value={item.toLowerCase()}>

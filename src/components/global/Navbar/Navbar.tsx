@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import NavbarHeader from "./NavbarHeader";
 import NavbarMenu from "./NavbarMenu";
 import NavbarMenu_mobile from "./NavbarMenu_mobile";

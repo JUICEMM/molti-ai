@@ -1,6 +1,6 @@
 import { columns } from "@/components/analysisTable/Columns";
 import { DataTable } from "@/components/analysisTable/DataTable";
-import SelectMenu from "@/components/SelectMenu";
+import SelectMenu from "@/components/global/SelectMenu/SelectMenu";
 import { Button } from "@/components/ui/button";
 
 import DownloadIcon from "@/styles/icon/DownloadIcon";

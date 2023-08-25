@@ -6,12 +6,33 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
-import { CountryWebsites } from "type";
-import SelectMenu from "../SelectMenu";
 import { Button } from "../ui/button";
+
+import { useMemo, useState } from "react";
+import { CountryWebsites } from "type";
+import { twMerge } from "tailwind-merge";
+
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 const country_data = ["台灣", "美國", "日本", "英國"];
 const ecommerce_data: CountryWebsites[] = [
@@ -19,58 +40,205 @@ const ecommerce_data: CountryWebsites[] = [
   { 日本: ["Amazon", "Yahoo! JAPAN", "Rakutan"] },
   { 美國: ["Amazon"] },
 ];
-const category_data = ["家具", "電子", "飲食", "美妝", "其他"];
+const category_data = ["家具", "電子", "飲食", "美妝", "保健食品"];
 const time_data = ["過去7天", "過去14天", "過去30天", "過去5個月"];
+
+const formSchema = z.object({
+  country: z.string().nonempty({ message: "國家不能為空值" }),
+  store: z.string().nonempty({ message: "電商不能為空值" }),
+  category: z.string().nonempty({ message: "商品分類不能為空值" }),
+  time: z.string(),
+  keyword: z.string(),
+});
+
 const KeywordInputSection = () => {
-  const [country, setCountry] = useState("台灣");
+  const [country, setCountry] = useState("");
+  let currentCountryStores: string[] = useMemo(
+    () => ecommerce_data.find((item) => item[country])?.[country] || [],
+    [country]
+  );
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      country: "",
+      store: "",
+      category: "",
+      time: "",
+      keyword: "",
+    },
+  });
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
   return (
     <div className="flex items-center justify-center bg-gradient-to-b from-teal-500 to-teal-600 p-5">
       <Card className="w-[90%]">
         <CardHeader>
-          <CardTitle>關鍵字搜索</CardTitle>
+          <CardTitle>關聯字搜索</CardTitle>
           <CardDescription>
-            Deploy your new project in one-click.
+            選擇相關變數取得關聯字
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
-            <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col items-center gap-2 sm:flex-row">
-                <SelectMenu
-                  placeholder="請選擇地區..."
-                  data={country_data}
-                  setCountry={setCountry}
-                />
-                <SelectMenu
-                  placeholder="請選擇電商..."
-                  data={
-                    ecommerce_data.find((item) => item[country])?.[country] ||
-                    []
-                  }
-                />
-                <SelectMenu
-                  placeholder="請選擇商品分類..."
-                  data={category_data}
-                />
-                <SelectMenu placeholder="請選擇時間段..." data={time_data} />
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+              <div className="w-full items-center gap-4">
+                <div className="flex flex-col gap-2 text-black">
+                  <FormField
+                    control={form.control}
+                    name="country"
+                    render={({ field }) => (
+                      <Select
+                        onValueChange={(e) => {
+                          if (setCountry) {
+                            setCountry(e);
+                            field.onChange(e);
+                          }
+                          null;
+                        }}
+                        // defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger
+                            id="framework"
+                            className={twMerge(
+                              "hover:border-teal-500 focus:ring-teal-500"
+                            )}
+                          >
+                            <SelectValue placeholder="請選擇國家..."/>
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent position="popper">
+                          {country_data.map((item) => (
+                            <SelectItem key={item} value={item.toLowerCase()}>
+                              {item}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                        <FormMessage className="py-2 pl-3" />
+                      </Select>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="store"
+                    render={({ field }) => (
+                      <Select
+                        onValueChange={field.onChange}
+                        // defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger
+                            id="framework"
+                            className={twMerge(
+                              "hover:border-teal-500 focus:ring-teal-500"
+                            )}
+                          >
+                            <SelectValue placeholder="請選擇電商..." />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent position="popper">
+                          {currentCountryStores.map((item) => (
+                            <SelectItem key={item} value={item.toLowerCase()}>
+                              {item}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                        <FormMessage className="py-2 pl-3" />
+                      </Select>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="category"
+                    render={({ field }) => (
+                      <Select
+                        onValueChange={field.onChange}
+                        // defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger
+                            id="framework"
+                            className={twMerge(
+                              "hover:border-teal-500 focus:ring-teal-500"
+                            )}
+                          >
+                            <SelectValue placeholder="請選擇商品分類..." />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent position="popper">
+                          {category_data.map((item) => (
+                            <SelectItem key={item} value={item.toLowerCase()}>
+                              {item}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                        <FormMessage className="py-2 pl-3" />
+                      </Select>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="time"
+                    render={({ field }) => (
+                      <Select
+                        onValueChange={field.onChange}
+                        // defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger
+                            id="framework"
+                            className={twMerge(
+                              "hover:border-teal-500 focus:ring-teal-500"
+                            )}
+                          >
+                            <SelectValue placeholder="請選擇時間段..." />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent position="popper">
+                          {time_data.map((item) => (
+                            <SelectItem key={item} value={item.toLowerCase()}>
+                              {item}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                        <FormMessage className="py-2 pl-3" />
+                      </Select>
+                    )}
+                  />
+                </div>
+                <div className="mt-4 flex flex-col space-y-1.5">
+                  <FormField
+                    control={form.control}
+                    name="keyword"
+                    render={({ field }) => (
+                      <>
+                        <Label htmlFor="name">關鍵字:</Label>
+                        <Input
+                          id="keyword"
+                          placeholder="請輸入關鍵字..."
+                          {...field}
+                        />
+                      </>
+                    )}
+                  />
+                </div>
               </div>
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name">關鍵字:</Label>
-                <Input id="name" placeholder="請輸入關鍵字..." />
+              <div className="flex justify-end py-5">
+                <div className="flex items-center gap-5">
+                  <Button
+                    className="bg-teal-400 text-white hover:bg-teal-500"
+                  >
+                    查詢
+                  </Button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </Form>
         </CardContent>
-        <CardFooter className="flex justify-end">
-          <div className="flex items-center gap-5">
-            <Button variant="outline" className="">
-              重置
-            </Button>
-            <Button className="bg-teal-400 text-white hover:bg-teal-500">
-              查詢
-            </Button>
-          </div>
-        </CardFooter>
       </Card>
     </div>
   );

@@ -13,9 +13,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+export const components: { title: string; href: string; description: string }[] = [
   {
-    title: "關鍵字",
+    title: "關聯字",
     href: "/keyword",
     description: "透過關鍵字數據進行關聯分析，列舉出關聯度最高的百大關鍵字",
   },

@@ -3,6 +3,7 @@ import Link from "next/link";
 import CloseIcon from "@mui/icons-material/Close";
 import { IconButton } from "@mui/material";
 import { useState } from "react";
+import { components } from "./NavbarMenu";
 
 const NavbarMenu_mobile = () => {
   const [isMobileNavbarMenuOpen, setIsMobileNavbarMenuOpen] =
@@ -32,24 +33,15 @@ const NavbarMenu_mobile = () => {
             >
               首頁
             </Link>
-            <Link
-              href={"/keyword"}
-              className="rounded-md px-8 py-2 text-center transition-colors duration-200 ease-in-out hover:bg-teal-300"
-            >
-              關鍵字查詢
-            </Link>
-            <Link
-              href={"/category"}
-              className="rounded-md px-8 py-2 text-center transition-colors duration-200 ease-in-out hover:bg-teal-300"
-            >
-              商品分類
-            </Link>
-            <Link
-              href={"/kol"}
-              className="rounded-md px-8 py-2 text-center transition-colors duration-200 ease-in-out hover:bg-teal-300"
-            >
-              KOL
-            </Link>
+            {components.map((component) => (
+              <Link
+                key={component.title}
+                href={component.href}
+                className="rounded-md px-8 py-2 text-center transition-colors duration-200 ease-in-out hover:bg-teal-300"
+              >
+                {component.title}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

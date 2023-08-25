@@ -21,7 +21,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const filter_data = ["平均日搜索量", "月增量搜索率", "PPC競價", "產品平均價格"];
 const sequence_data = ["降續", "升序"];
 
-export const data: DataAnalysis[] = Array.from({ length: 100 }).map(() => ({
+export const data: DataAnalysis[] = Array.from({ length: 10 }).map(() => ({
   id: "string",
   keyword: "string",
   category: "string",
@@ -61,7 +61,7 @@ const KeywordRenderSection = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-2">
             <Button
               variant={"outline"}
-              className="flex items-center gap-1 bg-teal-400 text-white hover:border-teal-500 hover:bg-white"
+              className="flex items-center gap-1 bg-teal-500 text-white hover:border-teal-400 hover:bg-white hover:text-teal-500"
             >
               <DownloadIcon />
               <span>匯出資料</span>

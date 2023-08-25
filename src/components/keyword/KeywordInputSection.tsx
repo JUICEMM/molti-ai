@@ -84,150 +84,162 @@ const KeywordInputSection = () => {
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <div className="w-full items-center gap-4">
-                <div className="flex flex-col gap-2 text-black">
+                <div className="flex flex-col md:flex-row gap-2 text-black">
                   <FormField
                     control={form.control}
                     name="country"
                     render={({ field }) => (
-                      <Select
-                        onValueChange={(e) => {
-                          if (setCountry) {
-                            setCountry(e);
-                            field.onChange(e);
-                          }
-                          null;
-                        }}
-                        // defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger
-                            id="framework"
-                            className={twMerge(
-                              "hover:border-teal-500 focus:ring-teal-500"
-                            )}
-                          >
-                            <SelectValue placeholder="請選擇國家..." />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent position="popper">
-                          {country_data.map((item) => (
-                            <SelectItem key={item} value={item.toLowerCase()}>
-                              {item}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                        <FormMessage className="py-2 pl-3" />
-                      </Select>
+                      <FormItem>
+                        <FormLabel className="text-teal-700">國家:</FormLabel>
+                        <Select
+                          onValueChange={(e) => {
+                            if (setCountry) {
+                              setCountry(e);
+                              field.onChange(e);
+                            }
+                            null;
+                          }}
+                          // defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger
+                              id="framework"
+                              className={twMerge(
+                                "hover:border-teal-500 focus:ring-teal-500"
+                              )}
+                            >
+                              <SelectValue placeholder="請選擇國家..." />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent position="popper">
+                            {country_data.map((item) => (
+                              <SelectItem key={item} value={item.toLowerCase()}>
+                                {item}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                          <FormMessage className="py-2 pl-3" />
+                        </Select>
+                      </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
                     name="store"
                     render={({ field }) => (
-                      <Select
-                        onValueChange={field.onChange}
-                        // defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger
-                            id="framework"
-                            className={twMerge(
-                              "hover:border-teal-500 focus:ring-teal-500"
-                            )}
-                          >
-                            <SelectValue placeholder="請選擇電商..." />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent position="popper">
-                          {currentCountryStores.map((item) => (
-                            <SelectItem key={item} value={item.toLowerCase()}>
-                              {item}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                        <FormMessage className="py-2 pl-3" />
-                      </Select>
+                      <FormItem>
+                        <FormLabel className="text-teal-700">電商:</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          // defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger
+                              id="framework"
+                              className={twMerge(
+                                "hover:border-teal-500 focus:ring-teal-500"
+                              )}
+                            >
+                              <SelectValue placeholder="請選擇電商..." />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent position="popper">
+                            {currentCountryStores.map((item) => (
+                              <SelectItem key={item} value={item.toLowerCase()}>
+                                {item}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                          <FormMessage className="py-2 pl-3" />
+                        </Select>
+                      </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
                     name="category"
                     render={({ field }) => (
-                      <Select
-                        onValueChange={field.onChange}
-                        // defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger
-                            id="framework"
-                            className={twMerge(
-                              "hover:border-teal-500 focus:ring-teal-500"
-                            )}
-                          >
-                            <SelectValue placeholder="請選擇商品分類..." />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent position="popper">
-                          {category_data.map((item) => (
-                            <SelectItem key={item} value={item.toLowerCase()}>
-                              {item}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                        <FormMessage className="py-2 pl-3" />
-                      </Select>
+                      <FormItem>
+                        <FormLabel className="text-teal-700">商品分類:</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          // defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger
+                              id="framework"
+                              className={twMerge(
+                                "hover:border-teal-500 focus:ring-teal-500"
+                              )}
+                            >
+                              <SelectValue placeholder="請選擇商品分類..." />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent position="popper">
+                            {category_data.map((item) => (
+                              <SelectItem key={item} value={item.toLowerCase()}>
+                                {item}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                          <FormMessage className="py-2 pl-3" />
+                        </Select>
+                      </FormItem>
                     )}
                   />
                   <FormField
                     control={form.control}
                     name="time"
                     render={({ field }) => (
-                      <Select
-                        onValueChange={field.onChange}
-                        // defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger
-                            id="framework"
-                            className={twMerge(
-                              "hover:border-teal-500 focus:ring-teal-500"
-                            )}
-                          >
-                            <SelectValue placeholder="請選擇時間段..." />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent position="popper">
-                          {time_data.map((item) => (
-                            <SelectItem key={item} value={item.toLowerCase()}>
-                              {item}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                        <FormMessage className="py-2 pl-3" />
-                      </Select>
+                      <FormItem>
+                        <FormLabel className="text-teal-700">時間段:</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          // defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger
+                              id="framework"
+                              className={twMerge(
+                                "hover:border-teal-500 focus:ring-teal-500"
+                              )}
+                            >
+                              <SelectValue placeholder="請選擇時間段..." />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent position="popper">
+                            {time_data.map((item) => (
+                              <SelectItem key={item} value={item.toLowerCase()}>
+                                {item}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                          <FormMessage className="py-2 pl-3" />
+                        </Select>
+                      </FormItem>
                     )}
                   />
                 </div>
-                <div className="mt-4 flex flex-col space-y-1.5">
+                <div className="mt-4 flex flex-col md:flex-row space-y-1.5">
                   <FormField
                     control={form.control}
                     name="keyword"
                     render={({ field }) => (
-                      <>
-                        <Label htmlFor="name">關鍵字:</Label>
+                      <div>
+                        <Label htmlFor="name" className="text-teal-800">關鍵字:</Label>
                         <Input
                           id="keyword"
                           placeholder="請輸入關鍵字..."
                           {...field}
                         />
-                      </>
+                      </div>
                     )}
                   />
                 </div>
               </div>
               <div className="flex justify-end py-5">
                 <div className="flex items-center gap-5">
-                  <Button className="bg-teal-400 text-white hover:bg-teal-500">
+                  <Button className="bg-teal-500 text-white hover:bg-teal-400">
                     查詢
                   </Button>
                 </div>

@@ -1,13 +1,13 @@
 import Navbar from "@/components/global/Navbar/Navbar";
 import PriceCard from "@/components/price/PriceCard";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 const index = () => {
   return (
     <div>
       <Navbar />
       <div className="absolute top-0 -z-[999] h-[600px] w-full rounded-b-full bg-gradient-to-b from-teal-600 via-teal-500 to-teal-400" />
-      <div className="min-h-screen gap-10 pt-[73px] text-black">
+      <div className="min-h-screen gap-10 pt-[73px] text-black font-serif">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -35,7 +35,7 @@ const index = () => {
           }}
           className="flex items-center justify-center py-10"
         >
-          <div className="flex flex-col gap-8 px-5 py-2 md:grid md:grid-cols-4">
+          <div className="flex flex-col gap-8 px-5 py-2 md:grid md:grid-cols-2 lg:grid-cols-4">
             <PriceCard title="免費版" price="0" />
             <PriceCard title="標準版" price="699" />
             <PriceCard title="進階版" price="999" />

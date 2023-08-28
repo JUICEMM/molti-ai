@@ -1,12 +1,17 @@
 import Head from "next/head";
-import Navbar from "@/components/global/Navbar/Navbar";
+import Navbar from "@/components/global/navbar/Navbar";
 import { Button } from "@/components/ui/button";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import CountryCard from "@/components/home/CountryCard";
 import japan from "../../public/japan.png";
 import taiwan from "../../public/taiwan.png";
 import us from "../../public/united-states.png";
+import FunctionCard from "@/components/home/FunctionCard";
 import FeatureCard from "@/components/home/FeatureCard";
+
+import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
+import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
+import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 
 export default function Home() {
   const countryData = [
@@ -24,16 +29,40 @@ export default function Home() {
     {
       imageUrl: japan,
       title: "Japan",
-      description: [ { store: "Amazon", status: true }, { store: "Rakutan", status: false },],
+      description: [
+        { store: "Amazon", status: true },
+        { store: "Rakutan", status: false },
+      ],
     },
     {
       imageUrl: us,
       title: "United States",
-      description: [ { store: "Amazon", status: true },],
+      description: [{ store: "Amazon", status: true }],
     },
   ];
 
   const featureData = [
+    {
+      icon: <QueryStatsOutlinedIcon sx={{ color: "#FF8C00",fontSize: "3.2rem" }}/>,
+      title: "精準分析",
+      description:
+        "可以精準尋找特定商品的關聯字詞，幫助企業家做出決策",
+    },
+    {
+      icon: <UpdateOutlinedIcon sx={{ color: "#4169E1",fontSize: "3.2rem" }}/>,
+      title: "每週更新",
+      description:
+        "每週更新數據，資料永遠在最前端，讓您在任何時候都能夠看到最新的資訊",
+    },
+    {
+      icon: <PsychologyOutlinedIcon sx={{ color: "green",fontSize: "3.2rem" }}/>,
+      title: "科學營運",
+      description:
+        "基於歷史銷售量、流量、價格數據等全方位數據，有依據精細化運營關鍵詞等",
+    },
+  ];
+
+  const functionData = [
     {
       imageUrl:
         "https://img1.wsimg.com/cdn/Image/All/FOS-Intl/1/All/e94917b6-8a41-414b-aa53-00e05467eed0/redacted-img-brand-lander-wm-free-trial.jpg",
@@ -50,6 +79,14 @@ export default function Home() {
         "利用關鍵詞查詢高度相關的KOL，幫助企業家查詢有利的代言合作夥伴",
       href: "/kol",
     },
+    {
+      imageUrl:
+        "https://img1.wsimg.com/cdn/Image/All/FOS-Intl/1/All/b5c7036b-7b96-40bc-a521-a2c838b6f618/redacted-img-brand-lander-professional-email.jpg",
+      title: "趨勢圖表",
+      description:
+        "產品關鍵字查詢可精確尋找特定商品的關聯字詞，提供各種趨勢圖，利用圖表分析該關聯字長時間的趨勢",
+      href: "/dashboard",
+    },
   ];
 
   return (
@@ -61,16 +98,16 @@ export default function Home() {
       </Head>
       <Navbar />
       <main className="min-h-screen font-Serif">
-        {/* <div className="main">
+        <div className="main">
           <div className="gradient" />
-        </div> */}
-        {/*Heading section*/}
+        </div>
+        {/*Heading section */}
         <div className="flex h-screen flex-col items-center justify-center gap-5 bg-gradient-to-b from-teal-700 to-teal-500">
           <div className="app py-10 text-5xl text-black">
-            <div className="text-center text-5xl md:text-8xl font-bold text-transparent bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text">
+            <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-5xl font-bold text-transparent md:text-8xl">
               Molti分析
             </div>
-            <div className="text-center text-2xl md:text-6xl font-bold text-white">
+            <div className="text-center text-2xl font-bold text-white md:text-6xl">
               國內外大型電商網站數據分析
             </div>
           </div>
@@ -88,15 +125,28 @@ export default function Home() {
           </div>
         </div>
         {/*feature section*/}
-        <div className="h-auto xl:h-screen flex items-center bg-white bg-gradient-to-b py-10">
-          <div className="mx-auto w-[90%]">
-            <div className="flex flex-col items-center justify-center gap-4 px-4 py-6 md:py-2 text-6xl font-bold text-black">
-              <div className="text-center text-4xl md:text-5xl">Molti助您擴展企業規模</div>
-              <p className="text-lg">精準分析產品趨勢及關鍵詞</p>
-            </div>
-            <div className="grid grid-cols-1 gap-3 md:gap-1 md:grid-cols-2">
+        <div className="py-16">
+          <div className="py-12 text-center">
+            <p className="font-serif text-5xl font-bold">三大核心優勢</p>
+          </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
               {featureData.map((item, index) => (
                 <FeatureCard key={index} {...item} />
+              ))}
+            </div>
+        </div>
+        {/*function section*/}
+        <div className="flex h-auto items-center bg-white bg-gradient-to-b py-10">
+          <div className="mx-auto w-[90%]">
+            <div className="flex flex-col items-center justify-center gap-4 px-4 py-6 text-6xl font-bold text-black md:py-2">
+              <div className="text-center text-4xl md:text-5xl">
+                Molti助您擴展企業規模
+              </div>
+              <p className="text-lg">精準分析產品趨勢及關鍵詞</p>
+            </div>
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-1">
+              {functionData.map((item, index) => (
+                <FunctionCard key={index} {...item} />
               ))}
             </div>
           </div>
@@ -106,13 +156,13 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <div>
               <div className="app py-10 text-5xl text-black">
-                <div className="text-center bg-gradient-to-r bg-clip-text text-6xl font-bold text-white">
+                <div className="bg-gradient-to-r bg-clip-text text-center text-6xl font-bold text-white">
                   支援3種不同國家
                 </div>
                 <div className="text-4xl font-bold text-emerald-100">
                   熱門大型電商網站
                 </div>
-                <div className="flex flex-col md:grid md:grid-cols-3 gap-5 p-2">
+                <div className="flex flex-col gap-5 p-2 md:grid md:grid-cols-3">
                   {countryData.map((item, index) => (
                     <CountryCard key={index} {...item} />
                   ))}
@@ -120,6 +170,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+        {/*Contact section*/}
+        <div>
+
         </div>
       </main>
     </>

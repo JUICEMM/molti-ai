@@ -1,4 +1,4 @@
-import Navbar from "@/components/global/Navbar/Navbar";
+import Navbar from "@/components/global/navbar/Navbar";
 import PriceCard from "@/components/price/PriceCard";
 import { motion } from "framer-motion";
 
@@ -25,6 +25,10 @@ const card_data: PriceCard[] = [
         feature_name: "可觀看趨勢圖表",
         feature_value: "無",
       },
+      {
+        feature_name: "KOL功能",
+        feature_value: "youtube",
+      },
     ],
   },
   {
@@ -42,6 +46,10 @@ const card_data: PriceCard[] = [
       {
         feature_name: "可觀看趨勢圖表",
         feature_value: "基礎圖表",
+      },
+      {
+        feature_name: "KOL功能",
+        feature_value: "無限制",
       },
     ],
   },
@@ -61,6 +69,10 @@ const card_data: PriceCard[] = [
         feature_name: "可觀看趨勢圖表",
         feature_value: "進階圖表",
       },
+      {
+        feature_name: "KOL功能",
+        feature_value: "無限制",
+      },
     ],
   },
   {
@@ -77,6 +89,10 @@ const card_data: PriceCard[] = [
       },
       {
         feature_name: "可觀看趨勢圖表",
+        feature_value: "無限制",
+      },
+      {
+        feature_name: "KOL功能",
         feature_value: "無限制",
       },
     ],

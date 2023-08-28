@@ -1,4 +1,4 @@
-import Navbar from "@/components/global/Navbar/Navbar";
+import Navbar from "@/components/global/navbar/Navbar";
 import KeywordInputSection from "@/components/keyword/KeywordInputSection";
 import KeywordRenderSection from "@/components/keyword/KeywordRenderSection";
 

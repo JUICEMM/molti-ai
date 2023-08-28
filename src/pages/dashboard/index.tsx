@@ -1,10 +1,16 @@
-import Navbar from "@/components/global/Navbar/Navbar";
+import DashboardInputSection from "@/components/dashboard/DashboardInputSection";
+import DashboardRenderSection from "@/components/dashboard/DashboardRenderSection";
+import Navbar from "@/components/global/navbar/Navbar";
+import KeywordInputSection from "@/components/keyword/KeywordInputSection";
 
 const index = () => {
   return (
     <>
       <Navbar />
-      <section className="pt-[70px]">Dashboard</section>
+      <section className="pt-[70px]">
+        <DashboardInputSection /> 
+        <DashboardRenderSection />
+      </section>
     </>
   );
 };

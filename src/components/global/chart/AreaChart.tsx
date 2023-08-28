@@ -1,51 +1,29 @@
-import { Button } from "@/components/ui/button";
-import { Grid, Col, Card, Text, Metric } from "@tremor/react";
+import { Card } from "@tremor/react";
 import { Title, AreaChart } from "@tremor/react";
+import type { AreaChartDataItem } from "chartType";
 
-const AreaChartComponent = () => {
-  const chartdata = [
-    {
-      date: "Jan 22",
-      SemiAnalysis: 2890,
-      "The Pragmatic Engineer": 2338,
-    },
-    {
-      date: "Feb 22",
-      SemiAnalysis: 2756,
-      "The Pragmatic Engineer": 2103,
-    },
-    {
-      date: "Mar 22",
-      SemiAnalysis: 3322,
-      "The Pragmatic Engineer": 2194,
-    },
-    {
-      date: "Apr 22",
-      SemiAnalysis: 3470,
-      "The Pragmatic Engineer": 2108,
-    },
-    {
-      date: "May 22",
-      SemiAnalysis: 3475,
-      "The Pragmatic Engineer": 1812,
-    },
-    {
-      date: "Jun 22",
-      SemiAnalysis: 3129,
-      "The Pragmatic Engineer": 1726,
-    },
-  ];
+type AreaChartComponentProps = {
+  data: AreaChartDataItem[];
+};
+
+const AreaChartComponent = ({ data }: AreaChartComponentProps) => {
   const dataFormatter = (number: number) => {
     return "$" + Intl.NumberFormat("us").format(number).toString();
   };
+  
+  const dataObject: AreaChartDataItem = data[0]!;
+
+  const time = data.pop()?.date!;
+  const keysArray = Object.keys(dataObject).filter((key) => key !== "date");
+
   return (
     <Card>
       <Title>Newsletter revenue over time (USD)</Title>
       <AreaChart
         className="mt-4 h-72"
-        data={chartdata}
-        index="date"
-        categories={["SemiAnalysis", "The Pragmatic Engineer"]}
+        data={data}
+        index={time}
+        categories={keysArray}
         colors={["indigo", "cyan"]}
         valueFormatter={dataFormatter}
       />

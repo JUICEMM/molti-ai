@@ -12,9 +12,11 @@ const AreaChartComponent = ({ data }: AreaChartComponentProps) => {
   };
   
   const dataObject: AreaChartDataItem = data[0]!;
-
-  const time = data.pop()?.date!;
   const keysArray = Object.keys(dataObject).filter((key) => key !== "date");
+
+  const time = Object.keys(data.pop()!)[0]!;
+  console.log(time);
+  console.log(data);
 
   return (
     <Card>

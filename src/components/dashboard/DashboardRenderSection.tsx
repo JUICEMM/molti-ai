@@ -1,4 +1,4 @@
-import { Grid, Col, Card, Text, Metric } from "@tremor/react";
+import { Grid, Col } from "@tremor/react";
 import AreaChartComponent from "../global/chart/AreaChart";
 import BarChartComponent from "../global/chart/BarChart";
 import DonutChartComponent from "../global/chart/DonutChart";

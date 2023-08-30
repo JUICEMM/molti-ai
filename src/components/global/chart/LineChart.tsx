@@ -1,5 +1,5 @@
 import { LineChart, Card, Title } from "@tremor/react";
-import { LineChartDataItem } from "chartType";
+import type { LineChartDataItem } from "chartType";
 
 type LineChartComponentProps = {
     data: LineChartDataItem[];

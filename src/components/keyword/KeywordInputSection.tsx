@@ -2,14 +2,12 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -27,8 +25,9 @@ import { Label } from "@/components/ui/label";
 import { Button } from "../ui/button";
 
 import { useMemo, useState } from "react";
-import { CountryWebsites } from "type";
 import { twMerge } from "tailwind-merge";
+
+import type { CountryWebsites } from "type";
 
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -53,8 +52,8 @@ const formSchema = z.object({
 
 const KeywordInputSection = () => {
   const [country, setCountry] = useState("");
-  let currentCountryStores: string[] = useMemo(
-    () => ecommerce_data.find((item) => item[country])?.[country] || [],
+  const currentCountryStores: string[] = useMemo(
+    () => ecommerce_data.find((item) => item[country])?.[country] ?? [],
     [country]
   );
 

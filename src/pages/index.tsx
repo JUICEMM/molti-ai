@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Navbar from "@/components/global/navbar/Navbar";
+import Navbar from "@/components/global/Navbars/Navbar";
 import { Button } from "@/components/ui/button";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import CountryCard from "@/components/home/CountryCard";

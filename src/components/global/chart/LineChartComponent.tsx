@@ -1,5 +1,5 @@
 import { LineChart, Card, Title } from "@tremor/react";
-import type { LineChartDataItem } from "chartType";
+import type { AreaChartDataItem, LineChartDataItem } from "chartType";
 
 type LineChartComponentProps = {
     data: LineChartDataItem[];
@@ -9,10 +9,10 @@ const LineChartComponent = ({data}: LineChartComponentProps) => {
 
   const dataFormatter = (number: number) =>
     `${Intl.NumberFormat("us").format(number).toString()}%`;
-  const dataObject: LineChartDataItem = data[0]!;
-
-  const time = data.pop()?.date!;
-  const keysArray = Object.keys(dataObject).filter((key) => key !== "date");
+    const dataObject: AreaChartDataItem = data[0]!
+    const keysArray = Object.keys(dataObject).filter((key) => key !== "date");
+  
+    const time = Object.keys(data[0]!)[0]!;
   return (
     <Card>
       <Title>Export/Import Growth Rates (1970 to 2021)</Title>

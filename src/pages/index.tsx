@@ -2,12 +2,12 @@ import Head from "next/head";
 import Navbar from "@/components/global/Navbars/Navbar";
 import { Button } from "@/components/ui/button";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import CountryCard from "@/components/home/CountryCard";
+import CountryCard from "@/components/page/home/CountryCard";
 import japan from "../../public/japan.png";
 import taiwan from "../../public/taiwan.png";
 import us from "../../public/united-states.png";
-import FunctionCard from "@/components/home/FunctionCard";
-import FeatureCard from "@/components/home/FeatureCard";
+import FunctionCard from "@/components/page/home/FunctionCard";
+import FeatureCard from "@/components/page/home/FeatureCard";
 
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";

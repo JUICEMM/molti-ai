@@ -1,6 +1,6 @@
 import Navbar from "@/components/global/Navbars/Navbar";
-import KeywordInputSection from "@/components/keyword/KeywordInputSection";
-import KeywordRenderSection from "@/components/keyword/KeywordRenderSection";
+import KeywordInputSection from "@/components/page/keyword/KeywordInputSection";
+import KeywordRenderSection from "@/components/page/keyword/KeywordRenderSection";
 
 const index = () => {
   return (

@@ -1,3 +1,6 @@
+import { generateColumns } from "@/lib/page/dashboard/chart/generateColumns";
+import { generateRow } from "@/lib/page/dashboard/chart/generateRow";
+import { generateValueFormatter } from "@/lib/page/dashboard/chart/generateValueFormatter";
 import { Card } from "@tremor/react";
 import { Title, AreaChart } from "@tremor/react";
 import type { AreaChartDataItem } from "chartType";
@@ -7,17 +10,10 @@ type AreaChartComponentProps = {
 };
 
 const AreaChartComponent = ({ data }: AreaChartComponentProps) => {
-  console.log(data);
 
-  const dataFormatter = (number: number) => {
-    return "$" + Intl.NumberFormat("us").format(number).toString();
-  };
-
-  const dataObject: AreaChartDataItem = data[0]!
-  const keysArray = Object.keys(dataObject).filter((key) => key !== "date");
-
-  const time = Object.keys(data[0]!)[0]!;
-
+  const column = generateColumns(data)
+  const row = generateRow(data)
+  const dataFormatter = generateValueFormatter()
 
   return (
     <Card>
@@ -25,8 +21,8 @@ const AreaChartComponent = ({ data }: AreaChartComponentProps) => {
       <AreaChart
         className="mt-4 h-72"
         data={data}
-        index={time}
-        categories={keysArray}
+        index={row}
+        categories={column}
         colors={["indigo", "cyan"]}
         valueFormatter={dataFormatter}
       />

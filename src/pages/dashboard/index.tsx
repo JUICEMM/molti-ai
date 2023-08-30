@@ -1,5 +1,5 @@
-import DashboardInputSection from "@/components/dashboard/DashboardInputSection";
-import DashboardRenderSection from "@/components/dashboard/DashboardRenderSection";
+import DashboardInputSection from "@/components/page/dashboard/DashboardInputSection";
+import DashboardRenderSection from "@/components/page/dashboard/DashboardRenderSection";
 import Navbar from "@/components/global/Navbars/Navbar";
 
 const index = () => {

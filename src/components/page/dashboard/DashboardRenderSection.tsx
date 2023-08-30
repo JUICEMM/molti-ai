@@ -1,10 +1,10 @@
 import { Grid, Col } from "@tremor/react";
 import type { AreaChartDataItem } from "chartType";
-import AreaChartComponent from "../global/chart/AreaChartComponent";
-import BarChartComponent from "../global/chart/BarChartComponent";
-import DonutChartComponent from "../global/chart/DonutChartComponent";
-import LineChartComponent from "../global/chart/LineChartComponent";
-import ScatterChartComponent from "../global/chart/ScatterChartComponent";
+import AreaChartComponent from "./chart/AreaChartComponent";
+import BarChartComponent from "./chart/BarChartComponent";
+import DonutChartComponent from "./chart/DonutChartComponent";
+import LineChartComponent from "./chart/LineChartComponent";
+import ScatterChartComponent from "./chart/ScatterChartComponent";
 
 
 const DashboardRenderSection = () => {

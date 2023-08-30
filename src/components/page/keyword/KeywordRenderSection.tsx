@@ -1,5 +1,5 @@
-import { columns } from "@/components/analysisTable/Columns";
-import { DataTable } from "@/components/analysisTable/DataTable";
+import { columns } from "@/components/page/keyword/analysisTable/Columns";
+import { DataTable } from "@/components/page/keyword/analysisTable/DataTable";
 import { Button } from "@/components/ui/button";
 
 import DownloadIcon from "@/styles/icon/DownloadIcon";
@@ -17,7 +17,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "../../ui/select";
 import { Form, FormControl, FormField } from "@/components/ui/form";
 
 const filter_data = ["平均日搜索量", "月增量搜索率", "PPC競價", "產品平均價格"];

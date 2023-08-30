@@ -22,12 +22,13 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 import { useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import type { CountryWebsites } from "type";
+
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -49,7 +50,7 @@ const formSchema = z.object({
   keyword: z.string(),
 });
 
-const DashboardInputSection = () => {
+const KeywordInputSection = () => {
   const [country, setCountry] = useState("");
   const currentCountryStores: string[] = useMemo(
     () => ecommerce_data.find((item) => item[country])?.[country] ?? [],
@@ -72,7 +73,7 @@ const DashboardInputSection = () => {
     console.log(values);
   }
   return (
-    <div className="flex items-center justify-center p-5">
+    <div className="flex items-center justify-center bg-gradient-to-b from-teal-500 to-teal-600 p-5">
       <Card className="w-[90%]">
         <CardHeader>
           <CardTitle>關聯字搜索</CardTitle>
@@ -250,4 +251,4 @@ const DashboardInputSection = () => {
   );
 };
 
-export default DashboardInputSection;
+export default KeywordInputSection;

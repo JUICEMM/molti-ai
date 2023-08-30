@@ -73,8 +73,8 @@ const KeywordInputSection = () => {
     console.log(values);
   }
   return (
-    <div className="flex items-center justify-center bg-gradient-to-b from-teal-500 to-teal-600 p-5">
-      <Card className="w-[90%]">
+    <div className="flex items-center justify-center p-5">
+      <Card className="w-[90%] border border-teal-500">
         <CardHeader>
           <CardTitle>關聯字搜索</CardTitle>
           <CardDescription>選擇相關變數取得關聯字</CardDescription>

@@ -34,8 +34,8 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="rounded-md border-b bg-white px-4 py-2">
-      <Table>
-        <TableHeader>
+      <Table className="rounded-md">
+        <TableHeader className="rounded-md">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
@@ -53,7 +53,7 @@ export function DataTable<TData, TValue>({
             </TableRow>
           ))}
         </TableHeader>
-        <TableBody>
+        <TableBody className="rounded-md">
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow

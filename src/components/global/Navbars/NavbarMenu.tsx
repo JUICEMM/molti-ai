@@ -20,11 +20,6 @@ export const components: { title: string; href: string; description: string }[] 
     description: "透過關鍵字數據進行關聯分析，列舉出關聯度最高的百大關鍵字",
   },
   {
-    title: "趨勢圖表",
-    href: "/dashboard",
-    description: "透過趨勢圖表進行關聯度分析",
-  },
-  {
     title: "KOL",
     href: "http://122.116.22.186:5000/dash/kol",
     description:

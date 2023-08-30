@@ -79,14 +79,6 @@ export default function Home() {
         "利用關鍵詞查詢高度相關的KOL，幫助企業家查詢有利的代言合作夥伴",
       href: "/kol",
     },
-    {
-      imageUrl:
-        "https://img1.wsimg.com/cdn/Image/All/FOS-Intl/1/All/b5c7036b-7b96-40bc-a521-a2c838b6f618/redacted-img-brand-lander-professional-email.jpg",
-      title: "趨勢圖表",
-      description:
-        "產品關鍵字查詢可精確尋找特定商品的關聯字詞，提供各種趨勢圖，利用圖表分析該關聯字長時間的趨勢",
-      href: "/dashboard",
-    },
   ];
 
   return (

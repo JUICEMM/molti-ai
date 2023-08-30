@@ -17,7 +17,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../ui/select";
+} from "@/components/ui/select";
 import { Form, FormControl, FormField } from "@/components/ui/form";
 
 const filter_data = ["平均日搜索量", "月增量搜索率", "PPC競價", "產品平均價格"];
@@ -38,7 +38,12 @@ const formSchema = z.object({
   sequence: z.string(),
 });
 
-const KeywordRenderSection = () => {
+type KeywordRenderSectionProps = {
+  setIsDashboardOpen: (isDashboardOpen: boolean) => void;
+}
+
+const KeywordRenderSection = ({setIsDashboardOpen}: KeywordRenderSectionProps) => {
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,13 +57,13 @@ const KeywordRenderSection = () => {
     console.log(values);
   }
   return (
-    <div className="bg-gradient-to-b from-teal-600 to-teal-500 p-4">
-      <div className="mx-auto w-[90%] rounded-md bg-white">
+    <div className="p-4">
+      <div className="mx-auto w-[90%] rounded-md border border-teal-500 bg-white">
         {/*DataTable Header*/}
-        <div className="flex flex-col md:flex-row md:items-center justify-between p-4">
-          <div className="flex items-center gap-1 text-sm">
-            <p>搜索資料數量:</p>
-            <span>12437</span>
+        <div className="flex flex-col md:flex-row md:items-center justify-between rounded-t-md bg-teal-400 p-4">
+          <div className="flex items-center gap-1 text-sm rounded-md">
+            <p className="font-bold text-white">搜索資料數量:</p>
+            <span className="text-red-700">12437</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-center gap-2">
             <Button
@@ -144,7 +149,9 @@ const KeywordRenderSection = () => {
           </div>
         </div>
         {/*DataTable*/}
-        <DataTable columns={columns} data={data} />
+        <div className="h-[500px] overflow-scroll rounded-md">
+          <DataTable columns={columns} data={data} />
+        </div>
       </div>
     </div>
   );

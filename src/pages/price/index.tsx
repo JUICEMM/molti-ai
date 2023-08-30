@@ -1,4 +1,4 @@
-import Navbar from "@/components/global/navbar/Navbar";
+import Navbar from "@/components/global/Navbar/Navbar";
 import PriceCard from "@/components/price/PriceCard";
 import { motion } from "framer-motion";
 

@@ -70,11 +70,14 @@ libs資料夾主要是放各種function<br>
 裡面存放關於taiwind css的相關function，除非有要新加taiwind css相關套件，不然一般來說不會動到
 
 ### pages
+pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個頁面，詳細資料可以去[Nextjs-page-router](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts)
+<img src="./public/README/pages.png" alt="Alt Text" width="200">
 
-- `ui`(裡面可以不用動，是那來存放shadcn/ui的components)<br>
-<img src="./public/README/components-ui.png" alt="Alt Text" width="200">
+- `api`與trpc連接的api，大部分情況下幾乎不會碰到
 
-後續如果要新增shadcn/ui的components，他會自動載入到這個資料夾，相關資訊請看[shadcn/ui](https://ui.shadcn.com/)
+- `sign-in` && `sign-up`這兩個是clerk提供的內建router頁面，有登入跟註冊
+
+
 
 
 

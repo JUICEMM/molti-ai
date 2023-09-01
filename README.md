@@ -8,31 +8,16 @@
 
 首先我們來看檔案結構，白話點就是讓你如何在哪個資料夾找到你要的檔案
 
-如果熟悉Nextjs，一定對下面的檔案結構不陌生
-<img src="./public/README/folder_structure.png" alt="Alt Text" width="150">
+如果熟悉Nextjs，一定對下面的檔案結構不陌生<br>
+<img src="./public/README/folder_structure.png" alt="Alt Text" width="200">
 
-我們依序來看src裏面的資料夾檔案
-<img src="./public/README/src.png" alt="Alt Text" width="150">
+我們依序來看src裏面的資料夾檔案<br>
+<img src="./public/README/src.png" alt="Alt Text" width="200">
 
 首先最上面的component檔案夾裡有三個資料夾
-- `global`(裡面會是像是Navbar之類的components)
+- `global`(裡面會是像是Navbar之類的components)<br>
 ![src檔案結構](./public/README/components-global.png)
-- `page`(裡面放的是各個page的components)
+- `page`(裡面放的是各個page的components)<br>
 ![src檔案結構](./public/README/components-page.png)
-- `ui`(裡面可以不用動，是那來存放shadcn/ui的components)
+- `ui`(裡面可以不用動，是那來存放shadcn/ui的components)<br>
 ![src檔案結構](./public/README/components-ui.png)
-
-
-
-
-
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)

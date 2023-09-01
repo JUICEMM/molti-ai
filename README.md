@@ -37,23 +37,23 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 首先最上面的components檔案夾裡有三個資料夾<br>
 <img src="./public/README/components.png" alt="Alt Text" width="200">
 
-- `global`(裡面會是像是Navbar之類的components)<br>
+- `global`(存放會出現在各個route的components)<br>
 <img src="./public/README/components-global.png" alt="Alt Text" width="200">
 
-這裡面存放會在global出現的components，像是Navbar會在很多route中出現，故可以將他存放到globsl資料夾裡
+這裡面存放會在global出現的components，像是Navbar會在很多route中出現，故可以將他存放到global資料夾裡
 
 - `page`(裡面放的是各個page的components)<br>
 <img src="./public/README/components-page.png" alt="Alt Text" width="200">
 
-裡面存放的是各個page的components，換句話說是將一頁所有code做切割，將各個部分做成components方便管理，可以將各頁切割或重複使用的components分別依照他在哪一頁存放到page的各個資料夾裡
+裡面存放的是各個page的components，換句話說是將一頁所有code做切割，將各個部分做成components方便管理，可以將各頁切割或重複使用的components分別依照他在哪一個router存放到page的各個資料夾裡
 
-ex:home主頁有個component，那就把它放在components/home/*裡
+ex:我將home主頁的code分成4個components，那就把它們放在components/home/*裡面(＊裡面的資料夾結構就沒有限制了，如果覺得編排的不好可以自己調整方便自己後續找到)
 
 
-- `ui`(裡面可以不用動，是那來存放shadcn/ui的components)<br>
+- `ui`(裡面可以不用動，這是拿來存放shadcn/ui的components)<br>
 <img src="./public/README/components-ui.png" alt="Alt Text" width="200">
 
-後續如果要新增shadcn/ui的components，他會自動載入到這個資料夾，相關資訊請看[shadcn/ui](https://ui.shadcn.com/)
+後續如果要新增shadcn/ui的components，他會自動載入到這個資料夾，我已經載的就不用重新載了，相關資訊請看[shadcn/ui](https://ui.shadcn.com/)
 
 ### libs
 libs資料夾主要是放各種function<br>
@@ -61,21 +61,21 @@ libs資料夾主要是放各種function<br>
 
 - `page`<br>
 
-跟components資料夾裡的page一樣，裡面有各頁的檔案夾，各頁的檔案夾裡存放該頁的相關function
+跟components資料夾裡的page一樣，裡面有各router的檔案夾，各router的檔案夾裡存放該頁的相關function
 
-在我們的例子中，page底下有route為keyword的頁面資料夾，只要是該頁相關的function都可以放在裡面，另外裡面的其他資料夾要怎麼分類都可以自己去調整，這不是死規範
+在我們的例子中，page底下有route為keyword的頁面資料夾，只要是該頁相關的function都可以放在裡面，另外裡面的其他資料夾要怎麼分類都可以自己去調整
 
 - `style`(裡面放的是各個page的components)<br>
 
 裡面存放關於taiwind css的相關function，除非有要新加taiwind css相關套件，不然一般來說不會動到
 
 ### pages
-pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個頁面，詳細資料可以去[Nextjs-page-router](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts)
+pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個頁面，詳細資料可以去[Nextjs-page-router](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts)<br>
 <img src="./public/README/pages.png" alt="Alt Text" width="200">
 
-- `api`與trpc連接的api，大部分情況下幾乎不會碰到
+- `api`檔案夾是與trpc連接的api，大部分情況下幾乎不會碰到
 
-- `sign-in` && `sign-up`這兩個是clerk提供的內建router頁面，有登入跟註冊
+- `sign-in` && `sign-up`這兩個是clerk提供的內建router頁面，有登入跟註冊，除非後續有想要客制登入畫面，不然幾乎不會再動到
 
 
 

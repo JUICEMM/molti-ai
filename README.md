@@ -8,11 +8,11 @@
 
 首先我們來看檔案結構，白話點就是讓你如何在哪個資料夾找到你要的檔案
 
-![檔案結構](./public/README/folder_structure.png)
-如果熟悉Nextjs，一定對上面的檔案結構不陌生
+如果熟悉Nextjs，一定對下面的檔案結構不陌生
+<img src="./public/README/folder_structure.png" alt="Alt Text" width="150">
 
 我們依序來看src裏面的資料夾檔案
-![src檔案結構](./public/README/src.png.png)
+<img src="./public/README/src.png" alt="Alt Text" width="150">
 
 首先最上面的component檔案夾裡有三個資料夾
 - `global`(裡面會是像是Navbar之類的components)

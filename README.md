@@ -2,20 +2,20 @@
 
 這個網站是用[T3 Stack](https://create.t3.gg/)為基底的Project，用Nextjs(Page Router)當作前後端、[Tailwind CSS](https://tailwindcss.com)用來美化、[Prisma](https://prisma.io)來簡化數據管理、[tRPC](https://trpc.io)來建立呼叫數據的router，詳細的docs可以去看他們的官網資訊
 
-## 使用的第三方library
+## 使用的第三方套件
 
-<h1>登入系統</h1>
+1.登入系統
 
 - [clerk](https://dashboard.clerk.com/)
 
 clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶是molti life(google)<br>
 <img src="./public/README/molti_life_account.png" alt="Alt Text" width="200">
 
-後續如果不知道如何使用可以去看- [clerk-nextjs-docs](https://clerk.com/docs/quickstarts/nextjs)
+後續如果不知道如何使用可以去看[clerk-nextjs-docs](https://clerk.com/docs/quickstarts/nextjs)
 
 
 
-<h1>畫面呈現</h1>
+2.畫面呈現
 
 - [shadcn/ui](https://ui.shadcn.com/)
 
@@ -44,6 +44,8 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 
 ### components
 首先最上面的components檔案夾裡有三個資料夾
+<img src="./public/README/components.png" alt="Alt Text" width="200">
+
 - `global`(裡面會是像是Navbar之類的components)<br>
 <img src="./public/README/components-global.png" alt="Alt Text" width="200">
 
@@ -52,7 +54,9 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 - `page`(裡面放的是各個page的components)<br>
 <img src="./public/README/components-page.png" alt="Alt Text" width="200">
 
-裡面存放的是各個page的components，換句話說是將一頁所有code做切割，將各個部分做成components方便管理，可以將各頁切割或重複使用的components存放到page資料夾裡
+裡面存放的是各個page的components，換句話說是將一頁所有code做切割，將各個部分做成components方便管理，可以將各頁切割或重複使用的components分別依照他在哪一頁存放到page的各個資料夾裡
+
+ex:home主頁有個component，那就把它放在components/home/*裡
 
 
 - `ui`(裡面可以不用動，是那來存放shadcn/ui的components)<br>

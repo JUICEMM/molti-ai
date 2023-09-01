@@ -14,22 +14,13 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 後續如果不知道如何使用可以去看[clerk-nextjs-docs](https://clerk.com/docs/quickstarts/nextjs)
 
 
-
 2.畫面呈現
 
-- [shadcn/ui](https://ui.shadcn.com/)
+- [shadcn/ui](https://ui.shadcn.com/)這是一個很好用的ui套件
 
-這是一個很好用的ui套件
+- [material-ui](https://mui.com/material-ui/material-icons/?theme=Outlined&query=scien)我部分的icon會使用material-ui
 
-- [material-ui](https://mui.com/material-ui/material-icons/?theme=Outlined&query=scien)
-
-我部分的icon會使用material-ui
-
-- [tremor](https://www.tremor.so/)
-
-目前的圖表都是用tremor上面的現成套件
-
-
+- [tremor](https://www.tremor.so/)目前的圖表都是用tremor上面的現成套件
 
 
 ## 檔案結構
@@ -43,7 +34,7 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 <img src="./public/README/src.png" alt="Alt Text" width="200">
 
 ### components
-首先最上面的components檔案夾裡有三個資料夾
+首先最上面的components檔案夾裡有三個資料夾<br>
 <img src="./public/README/components.png" alt="Alt Text" width="200">
 
 - `global`(裡面會是像是Navbar之類的components)<br>
@@ -63,5 +54,27 @@ ex:home主頁有個component，那就把它放在components/home/*裡
 <img src="./public/README/components-ui.png" alt="Alt Text" width="200">
 
 後續如果要新增shadcn/ui的components，他會自動載入到這個資料夾，相關資訊請看[shadcn/ui](https://ui.shadcn.com/)
+
+### libs
+libs資料夾主要是放各種function<br>
+<img src="./public/README/lib.png" alt="Alt Text" width="200">
+
+- `page`<br>
+
+跟components資料夾裡的page一樣，裡面有各頁的檔案夾，各頁的檔案夾裡存放該頁的相關function
+
+在我們的例子中，page底下有route為keyword的頁面資料夾，只要是該頁相關的function都可以放在裡面，另外裡面的其他資料夾要怎麼分類都可以自己去調整，這不是死規範
+
+- `style`(裡面放的是各個page的components)<br>
+
+裡面存放關於taiwind css的相關function，除非有要新加taiwind css相關套件，不然一般來說不會動到
+
+### pages
+
+- `ui`(裡面可以不用動，是那來存放shadcn/ui的components)<br>
+<img src="./public/README/components-ui.png" alt="Alt Text" width="200">
+
+後續如果要新增shadcn/ui的components，他會自動載入到這個資料夾，相關資訊請看[shadcn/ui](https://ui.shadcn.com/)
+
 
 

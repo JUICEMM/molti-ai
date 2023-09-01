@@ -1,5 +1,5 @@
-import { columns } from "@/components/page/keyword/analysisTable/Columns";
-import { DataTable } from "@/components/page/keyword/analysisTable/DataTable";
+import { columns } from "@/components/page/keyword/keywordSection/analysisTable/Columns";
+import { DataTable } from "@/components/page/keyword/keywordSection/analysisTable/DataTable";
 import { Button } from "@/components/ui/button";
 
 import DownloadIcon from "@/styles/icon/DownloadIcon";

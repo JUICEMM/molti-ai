@@ -1,7 +1,7 @@
 import Navbar from "@/components/global/Navbars/Navbar";
-import DashboardRenderSection from "@/components/page/keyword/dashboard/DashboardRenderSection";
-import KeywordInputSection from "@/components/page/keyword/KeywordInputSection";
-import KeywordRenderSection from "@/components/page/keyword/KeywordRenderSection";
+import DashboardRenderSection from "@/components/page/keyword/dashboardSection/DashboardRenderSection";
+import KeywordInputSection from "@/components/page/keyword/keywordSection/KeywordInputSection";
+import KeywordRenderSection from "@/components/page/keyword/keywordSection/KeywordRenderSection";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 

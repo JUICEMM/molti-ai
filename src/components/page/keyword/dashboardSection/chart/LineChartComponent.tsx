@@ -1,6 +1,6 @@
-import { generateCategories } from "@/lib/page/keyword/dashboard/chart/generateCategories";
-import { generateRow } from "@/lib/page/keyword/dashboard/chart/generateRow";
-import { generateValueFormatter } from "@/lib/page/keyword/dashboard/chart/generateValueFormatter";
+import { generateCategories } from "@/lib/page/keyword/dashboardSection/chart/generateCategories";
+import { generateRow } from "@/lib/page/keyword/dashboardSection/chart/generateRow";
+import { generateValueFormatter } from "@/lib/page/keyword/dashboardSection/chart/generateValueFormatter";
 import { LineChart, Card, Title } from "@tremor/react";
 import type { LineChartDataItem } from "chartType";
 import {

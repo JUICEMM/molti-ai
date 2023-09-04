@@ -1,6 +1,6 @@
 
 type FeatureCardProps = {
-    icon: JSX.Element;
+  icon: JSX.Element;
   title: string;
   description: string;
 };

@@ -22,25 +22,34 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "../../../ui/button";
-
+import { Button } from "@/components/ui/button";
 import { useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
-
-import type { CountryWebsites } from "type";
-
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { CountryEcommerceWebsitesDataTypes } from "types/dataType";
 
-const country_data = ["台灣", "美國", "日本", "英國"];
-const ecommerce_data: CountryWebsites[] = [
+{/*Select content*/}
+const country_data: Array<string> = ["台灣", "美國", "日本", "英國"];
+const ecommerce_data: Array<CountryEcommerceWebsitesDataTypes> = [
   { 台灣: ["蝦皮", "MOMO", "露天拍賣", "Rakutan"] },
   { 日本: ["Amazon", "Yahoo! JAPAN", "Rakutan"] },
   { 美國: ["Amazon"] },
 ];
-const category_data = ["家具", "電子", "飲食", "美妝", "保健食品"];
-const time_data = ["過去7天", "過去14天", "過去30天", "過去5個月"];
+const category_data: Array<string> = [
+  "家具",
+  "電子",
+  "飲食",
+  "美妝",
+  "保健食品",
+];
+const time_data: Array<string> = [
+  "過去7天",
+  "過去14天",
+  "過去30天",
+  "過去5個月",
+];
 
 const formSchema = z.object({
   country: z.string().nonempty({ message: "國家不能為空值" }),
@@ -83,7 +92,7 @@ const KeywordInputSection = () => {
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <div className="w-full items-center gap-4">
-                <div className="flex flex-col md:flex-row gap-2 text-black">
+                <div className="flex flex-col gap-2 text-black md:flex-row">
                   <FormField
                     control={form.control}
                     name="country"
@@ -159,7 +168,9 @@ const KeywordInputSection = () => {
                     name="category"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-teal-700">商品分類:</FormLabel>
+                        <FormLabel className="text-teal-700">
+                          商品分類:
+                        </FormLabel>
                         <Select
                           onValueChange={field.onChange}
                           // defaultValue={field.value}
@@ -219,13 +230,15 @@ const KeywordInputSection = () => {
                     )}
                   />
                 </div>
-                <div className="mt-4 flex flex-col md:flex-row space-y-1.5">
+                <div className="mt-4 flex flex-col space-y-1.5 md:flex-row">
                   <FormField
                     control={form.control}
                     name="keyword"
                     render={({ field }) => (
                       <div>
-                        <Label htmlFor="name" className="text-teal-800">關鍵字:</Label>
+                        <Label htmlFor="name" className="text-teal-800">
+                          關鍵字:
+                        </Label>
                         <Input
                           id="keyword"
                           placeholder="請輸入關鍵字..."

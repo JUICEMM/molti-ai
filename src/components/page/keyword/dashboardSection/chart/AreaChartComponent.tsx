@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { AreaChartDataItem } from "chartType";
+import type { AreaChartDataItem } from "types/chartType";
 import { cn } from "@/lib/style/utils";
 
 type AreaChartComponentProps = {

@@ -1,14 +1,10 @@
 import Navbar from "@/components/global/Navbars/Navbar";
 import PriceCard from "@/components/page/price/PriceCard";
 import { motion } from "framer-motion";
+import type { PriceCardDataTypes } from "types/dataType";
 
-type PriceCard = {
-  title: string;
-  price: string;
-  features: { [key: string]: string }[];
-};
 
-const card_data: PriceCard[] = [
+const price_card_data: PriceCardDataTypes[] = [
   {
     title: "免費版",
     price: "0",
@@ -133,7 +129,7 @@ const index = () => {
           className="flex items-center justify-center py-10"
         >
           <div className="flex flex-col gap-8 px-5 py-2 md:grid md:grid-cols-2 lg:grid-cols-4">
-            {card_data.map((card, index) => (
+            {price_card_data.map((card, index) => (
               <PriceCard key={index} {...card} />
             ))}
           </div>

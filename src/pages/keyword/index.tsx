@@ -1,8 +1,7 @@
 import Navbar from "@/components/global/Navbars/Navbar";
-import DashboardRenderSection from "@/components/page/keyword/dashboardSection/DashboardRenderSection";
-import KeywordInputSection from "@/components/page/keyword/keywordSection/KeywordInputSection";
-import KeywordRenderSection from "@/components/page/keyword/keywordSection/KeywordRenderSection";
-import { Button } from "@/components/ui/button";
+import DashboardSection from "@/components/page/keyword/dashboardSection/DashboardSection";
+import KeywordSection from "@/components/page/keyword/keywordSection/KeywordSection";
+
 import { useState } from "react";
 
 const index = () => {
@@ -11,28 +10,11 @@ const index = () => {
     <>
       <Navbar />
       <main className="min-h-screen pt-[70px]">
-        <KeywordInputSection />
-        <KeywordRenderSection setIsDashboardOpen={setIsDashboardOpen} />
-        <div
-          className={
-            isDashboardOpen === true ? "hidden" : "flex justify-center py-4"
-          }
-        >
-          <Button
-            className="h-[60px] w-[200px]"
-            variant={"default"}
-            onClick={() => {
-              setIsDashboardOpen(true);
-            }}
-          >
-            觀看圖表
-          </Button>
-        </div>
-        {isDashboardOpen === true ? (
-          <div id="dashboard">
-            <DashboardRenderSection isDashboardOpen={isDashboardOpen} />
-          </div>
-        ) : null}
+        <KeywordSection />
+        <DashboardSection
+          isDashboardOpen={isDashboardOpen}
+          setIsDashboardOpen={setIsDashboardOpen}
+        />
       </main>
     </>
   );

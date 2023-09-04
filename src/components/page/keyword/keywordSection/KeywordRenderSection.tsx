@@ -1,16 +1,6 @@
 import { columns } from "@/components/page/keyword/keywordSection/analysisTable/Columns";
 import { DataTable } from "@/components/page/keyword/keywordSection/analysisTable/DataTable";
 import { Button } from "@/components/ui/button";
-
-import DownloadIcon from "@/styles/icon/DownloadIcon";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-
-import { twMerge } from "tailwind-merge";
-
-import type { DataAnalysis } from "type";
-
 import {
   Select,
   SelectContent,
@@ -19,31 +9,41 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Form, FormControl, FormField } from "@/components/ui/form";
+import DownloadIcon from "@/styles/icon/DownloadIcon";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { twMerge } from "tailwind-merge";
+import type { DataAnalysisColumnsTypes } from "types/dataType";
 
-const filter_data = ["平均日搜索量", "月增量搜索率", "PPC競價", "產品平均價格"];
-const sequence_data = ["降續", "升序"];
+{/*Select content*/}
+const filter_data: Array<string> = [
+  "平均日搜索量",
+  "月增量搜索率",
+  "PPC競價",
+  "產品平均價格",
+];
+const sequence_data: Array<string> = ["降續", "升序"];
 
-export const data: DataAnalysis[] = Array.from({ length: 10 }).map(() => ({
-  id: "string",
-  keyword: "string",
-  category: "string",
-  searchAveragePerDay: "string",
-  searchAveragePerMonthGrowthRate: "string",
-  ppc: "string",
-  productAveragePrice: "string",
-}));
+{/*Fake data*/}
+export const data: DataAnalysisColumnsTypes[] = Array.from({ length: 10 }).map(
+  () => ({
+    id: "string",
+    keyword: "string",
+    category: "string",
+    searchAveragePerDay: "string",
+    searchAveragePerMonthGrowthRate: "string",
+    ppc: "string",
+    productAveragePrice: "string",
+  })
+);
 
 const formSchema = z.object({
   filter: z.string(),
   sequence: z.string(),
 });
 
-type KeywordRenderSectionProps = {
-  setIsDashboardOpen: (isDashboardOpen: boolean) => void;
-}
-
-const KeywordRenderSection = ({setIsDashboardOpen}: KeywordRenderSectionProps) => {
-
+const KeywordRenderSection = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -60,12 +60,12 @@ const KeywordRenderSection = ({setIsDashboardOpen}: KeywordRenderSectionProps) =
     <div className="p-4">
       <div className="mx-auto w-[90%] rounded-md border border-teal-500 bg-white">
         {/*DataTable Header*/}
-        <div className="flex flex-col md:flex-row md:items-center justify-between rounded-t-md bg-teal-400 p-4">
-          <div className="flex items-center gap-1 text-sm rounded-md">
+        <div className="flex flex-col justify-between rounded-t-md bg-teal-400 p-4 md:flex-row md:items-center">
+          <div className="flex items-center gap-1 rounded-md text-sm">
             <p className="font-bold text-white">搜索資料數量:</p>
             <span className="text-red-700">12437</span>
           </div>
-          <div className="flex flex-col md:flex-row md:items-center gap-2">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center">
             <Button
               variant={"outline"}
               className="flex items-center gap-1 bg-teal-500 text-white hover:border-teal-400 hover:bg-white hover:text-teal-500"
@@ -76,7 +76,7 @@ const KeywordRenderSection = ({setIsDashboardOpen}: KeywordRenderSectionProps) =
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="flex flex-col border-t py-2 md:flex-row md:border-y-0 gap-2"
+                className="flex flex-col gap-2 border-t py-2 md:flex-row md:border-y-0"
               >
                 <FormField
                   control={form.control}
@@ -140,7 +140,7 @@ const KeywordRenderSection = ({setIsDashboardOpen}: KeywordRenderSectionProps) =
                 />
                 <Button
                   variant={"outline"}
-                  className="flex items-center gap-1 w-[150px] border-teal-500 text-teal-600 hover:bg-white hover:text-teal-500"
+                  className="flex w-[150px] items-center gap-1 border-teal-500 text-teal-600 hover:bg-white hover:text-teal-500"
                 >
                   <span>確定</span>
                 </Button>

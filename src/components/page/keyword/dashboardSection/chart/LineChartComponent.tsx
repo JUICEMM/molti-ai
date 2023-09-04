@@ -2,7 +2,7 @@ import { generateCategories } from "@/lib/page/keyword/dashboardSection/chart/ge
 import { generateRow } from "@/lib/page/keyword/dashboardSection/chart/generateRow";
 import { generateValueFormatter } from "@/lib/page/keyword/dashboardSection/chart/generateValueFormatter";
 import { LineChart, Card, Title } from "@tremor/react";
-import type { LineChartDataItem } from "chartType";
+import type { LineChartDataItem } from "types/chartType";
 import {
   Select,
   SelectContent,

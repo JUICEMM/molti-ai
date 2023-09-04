@@ -1,16 +1,12 @@
 import { Grid, Col } from "@tremor/react";
-import type { AreaChartDataItem } from "chartType";
+import type { AreaChartDataItem } from "types/chartType";
 import AreaChartComponent from "./chart/AreaChartComponent";
 import BarChartComponent from "./chart/BarChartComponent";
 import DonutChartComponent from "./chart/DonutChartComponent";
 import LineChartComponent from "./chart/LineChartComponent";
 import ScatterChartComponent from "./chart/ScatterChartComponent";
 
-type DashboardRenderSectionProps = {
-  isDashboardOpen: boolean
-}
-
-const DashboardRenderSection = ({isDashboardOpen}: DashboardRenderSectionProps) => {
+const DashboardRenderSection = () => {
   
   const chartdata_solo: Array<AreaChartDataItem> = [
     {

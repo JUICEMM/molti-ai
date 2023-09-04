@@ -1,4 +1,4 @@
-import type { AreaChartDataItem } from "chartType";
+import type { AreaChartDataItem } from "types/chartType";
 
 export function generateCategories(data: Array<AreaChartDataItem>) {
   const dataObject: AreaChartDataItem = data[0]!;

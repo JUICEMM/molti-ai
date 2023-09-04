@@ -1,11 +1,5 @@
-//DataTable
-export type Payment = {
-  id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
-};
-export type DataAnalysis = {
+//*DataTable
+export type DataAnalysisColumnsTypes = {
   id: string;
   keyword: string;
   category: string;
@@ -17,14 +11,12 @@ export type DataAnalysis = {
 
 //*Data
 //Type of country e-commerce website data in KeywordInputSection
-export type CountryWebsites = {
-  [key: string]: string[];
+export type CountryEcommerceWebsitesDataTypes = {
+  [key: string]: Array<string>;
 };
-
-//*Component
 //Type of PriceCard component
-export type PriceCard = {
+export type PriceCardDataTypes = {
   title: string;
   price: string;
-  features: { [key: string]: string }[];
+  features: Array<{ [key: string]: string }>;
 };

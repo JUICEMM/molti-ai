@@ -32,45 +32,6 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 
 再來我們來看檔案結構，白話點就是讓你如何在哪個資料夾找到你要的檔案
 
-T3 stack基本架構
-
-.
-├─ public
-│  └─ favicon.ico
-├─ prisma
-│  └─ schema.prisma
-├─ src
-│  ├─ env.mjs
-│  ├─ pages
-│  │  ├─ _app.tsx
-│  │  ├─ api
-│  │  │  └─ trpc
-│  │  │     └─ [trpc].ts
-│  │  └─ index.tsx
-│  ├─ server
-│  │  ├─ db.ts
-│  │  └─ api
-│  │     ├─ routers
-│  │     │  └─ example.ts
-│  │     ├─ trpc.ts
-│  │     └─ root.ts
-│  ├─ styles
-│  │  └─ globals.css
-│  └─ utils
-│     └─ api.ts
-├─ .env
-├─ .env.example
-├─ .eslintrc.cjs
-├─ .gitignore
-├─ next-env.d.ts
-├─ next.config.mjs
-├─ package.json
-├─ postcss.config.cjs
-├─ prettier.config.mjs
-├─ README.md
-├─ tailwind.config.ts
-└─ tsconfig.json
-
 
 如果熟悉Nextjs，一定對下面的檔案結構不陌生<br>
 <img src="./public/README/folder_structure.png" alt="Alt Text" width="200">
@@ -126,7 +87,7 @@ pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個route�
 ### server
 trpc router，未來如果需要使用可以參考[theo的示範](https://www.youtube.com/watch?v=YkOSUVzOAA4&t=8652s&ab_channel=Theo-t3%E2%80%A4gg)
 
-### Styles
+### styles
 css檔與icon
 
 ### utils 
@@ -134,6 +95,8 @@ css檔與icon
 
 ### types
 由於我們使用Typescript，故需要用到大量的types，這個資料夾可以存放各種types
+<img src="./public/README/types.png" alt="Alt Text" width="200">
+<img src="./public/README/types_content.png" alt="Alt Text" width="200">
 
 
 

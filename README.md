@@ -1,6 +1,6 @@
 # Molti電商分析網站
 
-這個網站是用[T3 Stack](https://create.t3.gg/)為基底的Project，用Nextjs(Page Router)當作前後端、[Tailwind CSS](https://tailwindcss.com)用來美化、[Prisma](https://prisma.io)來簡化數據管理、[tRPC](https://trpc.io)來建立呼叫數據的router，詳細的docs可以去看他們的官網資訊
+這個網站是用[T3 Stack](https://create.t3.gg/)為基底的Application，用Nextjs(Page Router)當作前後端(後端及資料庫尚未實現，如果很熟悉Nodejs可自己將頁面資料遷移)、[Tailwind CSS](https://tailwindcss.com)用來美化、[Prisma](https://prisma.io)來簡化數據管理、[tRPC](https://trpc.io)來建立呼叫數據的router，詳細的docs可以去看他們的官網資訊
 
 ## 使用的第三方套件
 
@@ -21,7 +21,11 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 - [material-ui](https://mui.com/material-ui/material-icons/?theme=Outlined&query=scien) 我部分的icon會使用material-ui
 
 - [tremor](https://www.tremor.so/) 目前的圖表都是用tremor上面的現成套件
+- 如果未來[tremor](https://www.tremor.so/)圖表量不夠我的需求，可使用[Rechart](https://recharts.org/en-US)
 
+3.Form管理(將form資料傳給後端及資料庫)
+
+我們使用shadcn/ui裡的[Form](https://ui.shadcn.com/docs/components/form)Component，它使用[react-hook-form](https://www.react-hook-form.com/)配zod(type safe)，可以按找他給的範例去客製管理
 
 ## 檔案結構
 
@@ -70,7 +74,7 @@ libs資料夾主要是放各種function<br>
 裡面存放關於css的相關function，除非有要新加css相關套件，不然一般來說不會動到
 
 ### pages
-pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個頁面，詳細資料可以去[Nextjs-page-router](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts)<br>
+pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個route，詳細資料可以去[Nextjs-page-router](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts)<br>
 <img src="./public/README/pages.png" alt="Alt Text" width="200">
 
 - `api` 檔案夾是與trpc連接的api，大部分情況下幾乎不會碰到

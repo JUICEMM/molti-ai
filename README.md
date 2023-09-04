@@ -85,7 +85,7 @@ pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個route�
 - `其他` 各route的名稱
 
 ### server
-trpc router，未來如果需要使用可以參考[theo的示範](https://www.youtube.com/watch?v=YkOSUVzOAA4&t=8652s&ab_channel=Theo-t3%E2%80%A4gg)
+trpc router，未來如果需要使用可以參考[theo的示範](https://www.youtube.com/watch?v=YkOSUVzOAA4&t=4800s&ab_channel=Theo-t3%E2%80%A4gg)
 
 ### styles
 css檔與icon
@@ -94,8 +94,8 @@ css檔與icon
 不用動
 
 ### types
-由於我們使用Typescript，故需要用到大量的types，這個資料夾可以存放各種types
-<img src="./public/README/types.png" alt="Alt Text" width="200">
+由於我們使用Typescript，故需要用到大量的types，這個資料夾可以存放各種types<br>
+<img src="./public/README/types.png" alt="Alt Text" width="200"><br>
 <img src="./public/README/types_content.png" alt="Alt Text" width="200">
 
 

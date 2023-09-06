@@ -1,14 +1,14 @@
 import Head from "next/head";
-import Navbar from "@/components/global/Navbars/Navbar";
-import { Button } from "@/components/ui/button";
+import { useRouter } from "next/router";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import CountryCard from "@/components/page/home/CountryCard";
 import japan from "../../public/japan.png";
 import taiwan from "../../public/taiwan.png";
 import us from "../../public/united-states.png";
+import Navbar from "@/components/global/Navbars/Navbar";
+import { Button } from "@/components/ui/button";
 import FunctionCard from "@/components/page/home/FunctionCard";
 import FeatureCard from "@/components/page/home/FeatureCard";
-
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
 import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
@@ -81,6 +81,8 @@ export default function Home() {
     },
   ];
 
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -105,7 +107,7 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center gap-5">
             <div>
-              <Button variant={"default"} className="text-md">
+              <Button variant={"default"} className="text-md" onClick={()=>router.push("/keyword")}>
                 Start Your Free Trial
               </Button>
             </div>

@@ -10,13 +10,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cn } from "@/lib/style/utils";
+import { cn } from "@/lib/utils";
 
 type LineChartComponentProps = {
   data: LineChartDataItem[];
 };
 
 const LineChartComponent = ({ data }: LineChartComponentProps) => {
+
+  const time_data: Array<string> = [
+    "過去7天",
+    "過去14天",
+    "過去30天",
+    "過去5個月",
+  ];
 
   const categories = generateCategories(data);
   const row = generateRow(data);
@@ -36,7 +43,7 @@ const LineChartComponent = ({ data }: LineChartComponentProps) => {
             </SelectTrigger>
 
             <SelectContent position="popper">
-              {["123","456","789"].map((item) => (
+              {['1','2'].map((item) => (
                 <SelectItem key={item} value={item.toLowerCase()}>
                   {item}
                 </SelectItem>
@@ -54,7 +61,7 @@ const LineChartComponent = ({ data }: LineChartComponentProps) => {
             </SelectTrigger>
 
             <SelectContent position="popper">
-              {["123","456","789"].map((item) => (
+              {time_data.map((item) => (
                 <SelectItem key={item} value={item.toLowerCase()}>
                   {item}
                 </SelectItem>

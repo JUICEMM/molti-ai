@@ -71,9 +71,9 @@ libs資料夾主要是放各種function<br>
 
 在我們的例子中，page底下有route為keyword的頁面資料夾，只要是該頁相關的function都可以放在裡面，另外裡面的其他資料夾要怎麼分類都可以自己去調整
 
-- `style` (裡面放的是各個page的components)<br>
+- `utils`<br>
 
-裡面存放關於css的相關function，除非有要新加css相關套件，不然一般來說不會動到
+裡面存放關於taiwind的相關function，沒特殊需求請不要動因為要配合shadcn/ui
 
 ### pages
 pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個route，詳細資料可以去[Nextjs-page-router](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts)<br>

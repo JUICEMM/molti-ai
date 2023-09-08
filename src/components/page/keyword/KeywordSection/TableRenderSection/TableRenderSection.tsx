@@ -1,11 +1,9 @@
-import { columns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/Columns";
-import { DataTable } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/DataTable";
+import { columns } from "@/components/page/keyword/KeywordSection/TableRenderSection/dataTable/Columns";
+import { DataTable } from "@/components/page/keyword/KeywordSection/TableRenderSection/dataTable/DataTable";
 import type { DataAnalysisColumnsTypes } from "types/dataType";
-import DataTableHeader from "./TableHeader";
+import TableRenderHeader from "./TableRenderHeader";
 
-{
-  /*Fake data(之後可以呼叫真資料後請將此刪掉)*/
-}
+{/*Fake data(之後可以呼叫真資料後請將此刪掉)*/}
 export const data: DataAnalysisColumnsTypes[] = [
   {
     id: "1",
@@ -103,7 +101,7 @@ const TableRenderSection = () => {
   return (
     <div className="p-8">
       <div className="rounded-md border border-teal-500 bg-white">
-        <DataTableHeader />
+        <TableRenderHeader />
         {/*我們使用Shadcn/ui的Table，詳細資訊請看:https://ui.shadcn.com/docs/components/data-table*/}
         <DataTable columns={columns} data={data} />
       </div>

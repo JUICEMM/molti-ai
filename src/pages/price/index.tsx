@@ -95,7 +95,7 @@ const price_card_data: PriceCardDataTypes[] = [
   },
 ];
 
-const index = () => {
+const PricePage = () => {
   return (
     <div>
       <Navbar />
@@ -139,4 +139,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default PricePage;

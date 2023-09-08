@@ -1,12 +1,12 @@
 //*DataTable
 export type DataAnalysisColumnsTypes = {
   id: string;
-  keyword: string;
-  category: string;
-  searchAveragePerDay: string;
-  searchAveragePerMonthGrowthRate: string;
-  ppc: string;
-  productAveragePrice: string;
+  關聯字: string;
+  商品分類: string;
+  平均日搜索量: number;
+  平均月搜索增長率: number;
+  ppc競價: number;
+  產品平均價格: number;
 };
 
 //*Data

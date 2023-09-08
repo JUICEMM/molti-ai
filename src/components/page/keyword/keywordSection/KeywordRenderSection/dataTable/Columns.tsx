@@ -25,21 +25,21 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "keyword",
+    accessorKey: "關聯字",
     header: "關鍵字",
     cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("keyword")}</div>
+      <div className="lowercase">{row.getValue("關聯字")}</div>
     ),
   },
   {
-    accessorKey: "category",
-    header: "分類",
+    accessorKey: "商品分類",
+    header: "商品分類",
     cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("category")}</div>
+      <div className="lowercase">{row.getValue("商品分類")}</div>
     ),
   },
   {
-    accessorKey: "searchAveragePerDay",
+    accessorKey: "平均日搜索量",
     header: ({ column }) => {
       return (
         <Button
@@ -52,13 +52,13 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
       )
     },
     cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("searchAveragePerDay")}</div>
+      <div className="lowercase">{row.getValue("平均日搜索量")}</div>
     ),
     enableSorting: true,
     enableHiding: true,
   },
   {
-    accessorKey: "searchAveragePerMonthGrowthRate",
+    accessorKey: "平均月搜索增長率",
     header: ({ column }) => {
       return (
         <Button
@@ -72,14 +72,14 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
     },
     cell: ({ row }) => (
       <div className="lowercase">
-        {row.getValue("searchAveragePerMonthGrowthRate")}
+        {row.getValue("平均月搜索增長率")}
       </div>
     ),
     enableSorting: true,
     enableHiding: true,
   },
   {
-    accessorKey: "ppc",
+    accessorKey: "ppc競價",
     header: ({ column }) => {
       return (
         <Button
@@ -91,12 +91,12 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
         </Button>
       )
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("ppc")}</div>,
+    cell: ({ row }) => <div className="lowercase">{row.getValue("ppc競價")}</div>,
     enableSorting: true,
     enableHiding: true,
   },
   {
-    accessorKey: "productAveragePrice",
+    accessorKey: "產品平均價格",
     header: ({ column }) => {
       return (
         <Button
@@ -109,7 +109,7 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
       )
     },
     cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("productAveragePrice")}</div>
+      <div className="lowercase">{row.getValue("產品平均價格")}</div>
     ),
     enableSorting: true,
     enableHiding: true,

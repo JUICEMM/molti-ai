@@ -1,5 +1,5 @@
-import KeywordInputSection from "./KeywordInputSection";
-import KeywordRenderSection from "./KeywordRenderSection";
+import KeywordInputSection from "./KeywordInputSection/KeywordInputSection";
+import KeywordRenderSection from "./KeywordRenderSection/KeywordRenderSection";
 
 const KeywordSection = () => {
   return (

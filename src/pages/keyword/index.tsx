@@ -5,17 +5,13 @@ import DataRowSelectionContextProvider from "@/context/keyword/DataRowSelectionC
 import { useState } from "react";
 
 const index = () => {
-  const [isDashboardOpen, setIsDashboardOpen] = useState<boolean>(false);
   return (
     <>
       <Navbar />
       <main className="min-h-screen pt-[70px]">
         <DataRowSelectionContextProvider>
           <KeywordSection />
-          <DashboardSection
-            isDashboardOpen={isDashboardOpen}
-            setIsDashboardOpen={setIsDashboardOpen}
-          />
+          <DashboardSection />
         </DataRowSelectionContextProvider>
       </main>
     </>

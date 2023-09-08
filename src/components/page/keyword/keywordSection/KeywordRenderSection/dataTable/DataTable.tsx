@@ -21,9 +21,18 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useDataRowSelectionContext } from "@/context/keyword/DataRowSelectionContext";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -56,6 +65,9 @@ export function DataTable<TData, TValue>({
     },
   });
 
+  {
+    /* console.log() 如果不需要可以刪除 */
+  }
   useEffect(() => {
     console.log("rowSelection", rowSelection);
     console.log("sorting", sorting);
@@ -64,16 +76,41 @@ export function DataTable<TData, TValue>({
   }, [rowSelection, sorting, columnFilters, columnVisibility]);
 
   return (
-    <div className="rounded-md border-b bg-white py-2">
-      <div className="p-2">
+    <div className="rounded-md border-b bg-white">
+      <div className="flex items-center justify-between p-2">
         <Input
-          placeholder="尋找關鍵字..."
-          value={(table.getColumn("keyword")?.getFilterValue() as string) ?? ""}
+          placeholder="尋找關聯字..."
+          value={(table.getColumn("關聯字")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("keyword")?.setFilterValue(event.target.value)
+            table.getColumn("關聯字")?.setFilterValue(event.target.value)
           }
           className="max-w-sm border border-teal-500 outline-none focus:ring-0"
         />
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" className="ml-auto border border-teal-500 text-gray-500">
+              顯示或隱藏欄位 <ChevronDown className="ml-2 h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {table
+              .getAllColumns()
+              .filter((column) => column.getCanHide())
+              .map((column) => {
+                return (
+                  <DropdownMenuCheckboxItem
+                    key={column.id}
+                    checked={column.getIsVisible()}
+                    onCheckedChange={(value) =>
+                      column.toggleVisibility(!!value)
+                    }
+                  >
+                    {column.id}
+                  </DropdownMenuCheckboxItem>
+                );
+              })}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
       <div className="h-[500px] overflow-scroll rounded-md">
         <Table className="rounded-md">

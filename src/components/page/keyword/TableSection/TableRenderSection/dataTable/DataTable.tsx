@@ -77,7 +77,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="rounded-md border-b bg-white">
-      <div className="flex items-center justify-between p-2">
+      <div className="flex items-center justify-between p-2 bg-teal-400">
         <Input
           placeholder="尋找關聯字..."
           value={(table.getColumn("關聯字")?.getFilterValue() as string) ?? ""}

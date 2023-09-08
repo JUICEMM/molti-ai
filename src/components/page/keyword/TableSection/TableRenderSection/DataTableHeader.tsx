@@ -4,7 +4,7 @@ import React from "react";
 
 const DataTableHeader = () => {
   return (
-    <div className="flex flex-col justify-between rounded-t-md bg-teal-400 p-4 md:flex-row md:items-center">
+    <div className="flex flex-col justify-between rounded-t-md bg-teal-400 px-4 py-2 md:flex-row md:items-center">
       <div className="flex items-center gap-1 rounded-md text-sm">
         <p className="font-bold text-white">搜索資料數量:</p>
         <span className="text-red-700">12437</span>

@@ -52,7 +52,7 @@ const formSchema = z.object({
   keyword: z.string(),
 });
 
-const KeywordInputForm = () => {
+const TableInputForm = () => {
   const [country, setCountry] = useState("");
 
   //當使用者選擇了某一國家，我們只會取得該國家的電商網站
@@ -241,4 +241,4 @@ const KeywordInputForm = () => {
   );
 };
 
-export default KeywordInputForm;
+export default TableInputForm;

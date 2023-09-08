@@ -1,6 +1,6 @@
 import Navbar from "@/components/global/Navbars/Navbar";
-import DashboardSection from "@/components/page/keyword/dashboardSection/DashboardSection";
-import KeywordSection from "@/components/page/keyword/keywordSection/KeywordSection";
+import DashboardSection from "@/components/page/keyword/DashboardSection/DashboardSection";
+import KeywordSection from "@/components/page/keyword/TableSection/TableSection";
 import DataRowSelectionContextProvider from "@/context/keyword/DataRowSelectionContext";
 import { useState } from "react";
 

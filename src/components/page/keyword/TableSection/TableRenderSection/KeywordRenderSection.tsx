@@ -1,5 +1,5 @@
-import { columns } from "@/components/page/keyword/keywordSection/KeywordRenderSection/dataTable/Columns";
-import { DataTable } from "@/components/page/keyword/keywordSection/KeywordRenderSection/dataTable/DataTable";
+import { columns } from "@/components/page/keyword/TableSection/TableRenderSection/dataTable/Columns";
+import { DataTable } from "@/components/page/keyword/TableSection/TableRenderSection/dataTable/DataTable";
 import type { DataAnalysisColumnsTypes } from "types/dataType";
 import DataTableHeader from "./DataTableHeader";
 
@@ -99,7 +99,7 @@ export const data: DataAnalysisColumnsTypes[] = [
   },
 ];
 
-const KeywordRenderSection = () => {
+const TableRenderSection = () => {
   return (
     <div className="p-8">
       <div className="rounded-md border border-teal-500 bg-white">
@@ -111,4 +111,4 @@ const KeywordRenderSection = () => {
   );
 };
 
-export default KeywordRenderSection;
+export default TableRenderSection;

@@ -5,9 +5,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import KeywordInputForm from "./KeywordInputForm";
+import KeywordInputForm from "./TableInputForm";
 
-const KeywordInputSection = () => {
+const TableInputSection = () => {
   return (
     <div className="p-8">
       <div className="flex items-center justify-center">
@@ -25,4 +25,4 @@ const KeywordInputSection = () => {
   );
 };
 
-export default KeywordInputSection;
+export default TableInputSection;

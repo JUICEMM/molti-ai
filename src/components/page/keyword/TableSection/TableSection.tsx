@@ -1,11 +1,11 @@
-import KeywordInputSection from "./TableInputSection/TableInputSection";
-import KeywordRenderSection from "./TableRenderSection/TableRenderSection";
+import TableInputSection from "./TableInputSection/TableInputSection";
+import TableRenderSection from "./TableRenderSection/TableRenderSection";
 
 const TableSection = () => {
   return (
     <>
-      <KeywordInputSection />
-      <KeywordRenderSection />
+      <TableInputSection />
+      <TableRenderSection />
     </>
   );
 };

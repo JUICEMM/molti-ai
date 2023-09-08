@@ -36,6 +36,8 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 如果熟悉Nextjs，一定對下面的檔案結構不陌生<br>
 <img src="./public/README/folder_structure.png" alt="Alt Text" width="200">
 
+## src
+
 我們先依序來看src裏面的資料夾檔案<br>
 <img src="./public/README/src.png" alt="Alt Text" width="200">
 
@@ -60,6 +62,14 @@ ex:我將home主頁的code分成4個components，那就把它們放在components
 <img src="./public/README/components-ui.png" alt="Alt Text" width="200">
 
 後續如果要新增shadcn/ui的components，他會自動載入到這個資料夾，我已經載的就不用重新載了，相關資訊請看[shadcn/ui](https://ui.shadcn.com/)
+
+### context
+<img src="./public/README/context.png" alt="Alt Text" width="200"><br>
+這裡存放React context api，裡面的folder structure可以按照Application的route進行排版
+
+ex:在 keyword route 裡有一個 prop drolling 的 state，為了方便維護與處理我們將此state放在名為 DataRowSelectionContext api 裡，並且將需要用到的component當children包在裡面
+<img src="./public/README/data_context.png" alt="Alt Text" width="200">
+
 
 ### libs
 libs資料夾主要是放各種function<br>
@@ -93,10 +103,17 @@ css檔與icon
 ### utils 
 不用動
 
-### types
+## types
 由於我們使用Typescript，故需要用到大量的types，這個資料夾可以存放各種types<br>
 <img src="./public/README/types.png" alt="Alt Text" width="200"><br>
 <img src="./public/README/types_content.png" alt="Alt Text" width="200">
+
+## prisma
+此為prisma檔案，詳細資訊請看：https://www.prisma.io/
+如果依然不知道如何使用，可以參考：https://www.youtube.com/watch?v=RebA5J-rlwg&ab_channel=WebDevSimplified
+
+### public
+存放圖片，README檔案夾僅存放README的相關圖片
 
 
 

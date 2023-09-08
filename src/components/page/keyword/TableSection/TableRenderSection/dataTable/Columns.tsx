@@ -45,6 +45,7 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="w-auto"
         >
           平均日搜索量
           <ArrowUpDown className="ml-2 h-4 w-4" />

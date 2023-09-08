@@ -28,14 +28,14 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
     accessorKey: "關聯字",
     header: "關鍵字",
     cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("關聯字")}</div>
+      <div className="w-max">{row.getValue("關聯字")}</div>
     ),
   },
   {
     accessorKey: "商品分類",
     header: "商品分類",
     cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("商品分類")}</div>
+      <div className="w-max">{row.getValue("商品分類")}</div>
     ),
   },
   {
@@ -45,7 +45,7 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="w-auto"
+          className="w-max"
         >
           平均日搜索量
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -65,6 +65,7 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="w-max"
         >
           平均月搜索量增長率
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -86,6 +87,7 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="w-max"
         >
           PPC競價
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -103,6 +105,7 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="w-max"
         >
           產品平均價格
           <ArrowUpDown className="ml-2 h-4 w-4" />

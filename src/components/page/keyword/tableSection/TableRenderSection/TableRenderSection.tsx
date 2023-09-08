@@ -99,7 +99,7 @@ export const data: DataAnalysisColumnsTypes[] = [
 
 const TableRenderSection = () => {
   return (
-    <div className="p-8">
+    <div className="p-1 md:p-8">
       <div className="rounded-md border border-teal-500 bg-white">
         <TableRenderHeader />
         {/*我們使用Shadcn/ui的Table，詳細資訊請看:https://ui.shadcn.com/docs/components/data-table*/}

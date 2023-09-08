@@ -77,13 +77,13 @@ const DashboardRenderSection = () => {
         <Col numColSpan={2} numColSpanLg={1}>
           <AreaChartComponent data={chartdata_comparation} />
         </Col>
-        <Col>
+        <Col numColSpan={2} numColSpanLg={1}>
           <BarChartComponent />
         </Col>
-        <Col>
+        <Col numColSpan={2} numColSpanLg={1}>
           <DonutChartComponent />
         </Col>
-        <Col>
+        <Col numColSpan={2} numColSpanLg={1}>
           <ScatterChartComponent />
         </Col>
       </Grid>

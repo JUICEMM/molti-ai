@@ -13,6 +13,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -22,6 +28,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { CountryEcommerceWebsitesDataTypes } from "types/dataType";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 //各個Select component的選項
 const country_data: Array<string> = ["台灣", "美國", "日本", "英國"];
@@ -89,7 +96,21 @@ const TableInputForm = () => {
               name="country"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-teal-700">國家:</FormLabel>
+                  <FormLabel className="flex items-center text-teal-700">
+                    國家:
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <HelpOutlineIcon
+                            sx={{ color: "orange", fontSize: "18px" }}
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>請選擇國家以便查詢電商網站</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </FormLabel>
                   <Select
                     onValueChange={(e) => {
                       if (setCountry) {
@@ -126,7 +147,21 @@ const TableInputForm = () => {
               name="store"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-teal-700">電商:</FormLabel>
+                  <FormLabel className="flex items-center text-teal-700">
+                    電商:
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <HelpOutlineIcon
+                            sx={{ color: "orange", fontSize: "18px" }}
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>選擇電商之前，請先選擇國家</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </FormLabel>
                   <Select onValueChange={field.onChange}>
                     <FormControl>
                       <SelectTrigger
@@ -155,7 +190,21 @@ const TableInputForm = () => {
               name="category"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-teal-700">商品分類:</FormLabel>
+                  <FormLabel className="flex items-center text-teal-700">
+                    商品分類:
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <HelpOutlineIcon
+                            sx={{ color: "orange", fontSize: "18px" }}
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>請選擇商品分類以便查詢關聯字</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </FormLabel>
                   <Select onValueChange={field.onChange}>
                     <FormControl>
                       <SelectTrigger
@@ -184,7 +233,21 @@ const TableInputForm = () => {
               name="time"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-teal-700">時間區隔:</FormLabel>
+                  <FormLabel className="flex items-center text-teal-700">
+                    時間區隔:
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <HelpOutlineIcon
+                            sx={{ color: "orange", fontSize: "18px" }}
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>選擇想要的資料時間範圍</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </FormLabel>
                   <Select onValueChange={field.onChange}>
                     <FormControl>
                       <SelectTrigger

@@ -1,5 +1,5 @@
 import KeywordInputSection from "./TableInputSection/TableInputSection";
-import KeywordRenderSection from "./TableRenderSection/KeywordRenderSection";
+import KeywordRenderSection from "./TableRenderSection/TableRenderSection";
 
 const TableSection = () => {
   return (

@@ -1,7 +1,7 @@
-import { columns } from "@/components/page/keyword/TableSection/TableRenderSection/dataTable/Columns";
-import { DataTable } from "@/components/page/keyword/TableSection/TableRenderSection/dataTable/DataTable";
+import { columns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/Columns";
+import { DataTable } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/DataTable";
 import type { DataAnalysisColumnsTypes } from "types/dataType";
-import DataTableHeader from "./DataTableHeader";
+import DataTableHeader from "./TableHeader";
 
 {
   /*Fake data(之後可以呼叫真資料後請將此刪掉)*/

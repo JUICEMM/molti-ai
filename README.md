@@ -67,7 +67,7 @@ ex:我將home主頁的code分成4個components，那就把它們放在components
 <img src="./public/README/context.png" alt="Alt Text" width="200"><br>
 這裡存放React context api，裡面的folder structure可以按照Application的route進行排版
 
-ex:在 keyword route 裡有一個 prop drolling 的 state，為了方便維護與處理我們將此state放在名為 DataRowSelectionContext api 裡，並且將需要用到的component當children包在裡面
+ex:在 keyword route 裡有一個 prop drolling 的 state，為了方便維護與處理我們將此state放在名為 DataRowSelectionContext api 裡，並且將需要用到的component當children包在裡面<br>
 <img src="./public/README/data_context.png" alt="Alt Text" width="200">
 
 

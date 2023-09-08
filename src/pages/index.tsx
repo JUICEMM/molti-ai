@@ -150,10 +150,10 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <div>
               <div className="app py-10 text-5xl text-black">
-                <div className="bg-gradient-to-r bg-clip-text text-center text-6xl font-bold text-white">
+                <div className="bg-gradient-to-r bg-clip-text text-center text-3xl md:text-4xl xl:text-6xl font-bold text-white">
                   支援3種不同國家
                 </div>
-                <div className="text-4xl font-bold text-emerald-100">
+                <div className="text-3xl font-bold text-emerald-100">
                   熱門大型電商網站
                 </div>
                 <div className="flex flex-col gap-5 p-2 md:grid md:grid-cols-3">

@@ -1,4 +1,4 @@
-import { useDataRowSelectionContext } from "@/context/keyword/DataRowSelectionContext";
+import { useDataRowSelectionContext } from "@/context/page/keyword/DataRowSelectionContext";
 import { Grid, Col } from "@tremor/react";
 import type { AreaChartDataItem } from "types/chartType";
 import AreaChartComponent from "./chart/AreaChartComponent";
@@ -8,6 +8,8 @@ import LineChartComponent from "./chart/LineChartComponent";
 import ScatterChartComponent from "./chart/ScatterChartComponent";
 
 const DashboardRenderSection = () => {
+
+  //勾選表格行位後，這裡的rowSelection會更新，未來設計會將rowSelection作為參數傳入各個ChartComponent
   const { rowSelection, setRowSelection } = useDataRowSelectionContext();
 
   const chartdata_solo: Array<AreaChartDataItem> = [

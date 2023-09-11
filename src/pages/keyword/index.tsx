@@ -1,7 +1,7 @@
 import Navbar from "@/components/global/Navbars/Navbar";
 import DashboardSection from "@/components/page/keyword/dashboardSection/DashboardSection";
 import TableSection from "@/components/page/keyword/tableSection/TableSection";
-import DataRowSelectionContextProvider from "@/context/keyword/DataRowSelectionContext";
+import DataRowSelectionContextProvider from "@/context/page/keyword/DataRowSelectionContext";
 
 const KeywordPage = () => {
   return (

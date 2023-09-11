@@ -70,6 +70,7 @@ ex:我將home主頁的code分成4個components，那就把它們放在components
 
 ex:在 keyword route 裡有一個 prop drolling 的 state，為了方便維護與處理我們將此state放在名為 DataRowSelectionContext api 裡，並且將需要用到的component當children包在裡面<br>
 <img src="./public/README/data_context.png" alt="Alt Text" width="400">
+ex:目前只有一個控制勾選資料表格行位的state，由於它是控制在 keyword route 裡面的一個資料表格，故將它放在src/context/page/keyword
 
 
 ### libs

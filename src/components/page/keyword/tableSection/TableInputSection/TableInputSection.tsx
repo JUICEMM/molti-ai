@@ -9,7 +9,7 @@ import KeywordInputForm from "./TableInputForm";
 
 const TableInputSection = () => {
   return (
-    <div className="p-8">
+    <div className="p-1 md:p-8">
       <div className="flex items-center justify-center">
         <Card className="w-full border border-teal-500">
           <CardHeader>

@@ -11,7 +11,7 @@
 我們這裡不用NextAuth，我們改用clerk
 
 clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶是molti life(google)<br>
-<img src="./public/README/molti_life_account.png" alt="Alt Text" width="200">
+<img src="./public/README/molti_life_account.png" alt="Alt Text" width="400">
 
 後續如果不知道如何使用可以去看[clerk-nextjs-docs](https://clerk.com/docs/quickstarts/nextjs)
 
@@ -34,46 +34,47 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 
 
 如果熟悉Nextjs，一定對下面的檔案結構不陌生<br>
-<img src="./public/README/folder_structure.png" alt="Alt Text" width="200">
+<img src="./public/README/folder_structure.png" alt="Alt Text" width="400">
 
 ## src
 
 我們先依序來看src裏面的資料夾檔案<br>
-<img src="./public/README/src.png" alt="Alt Text" width="200">
+<img src="./public/README/src.png" alt="Alt Text" width="400">
 
 ### components
 首先最上面的components檔案夾裡有三個資料夾<br>
-<img src="./public/README/components.png" alt="Alt Text" width="200">
+<img src="./public/README/components.png" alt="Alt Text" width="400">
 
 - `global` (存放會出現在各個route的components)<br>
-<img src="./public/README/components-global.png" alt="Alt Text" width="200">
+<img src="./public/README/components-global.png" alt="Alt Text" width="400">
 
 這裡面存放會在各個地方出現的components，像是Navbar會在很多route中出現，故可以將他存放到global資料夾裡
 
 - `page` (裡面放的是各個page的components)<br>
-<img src="./public/README/components-page.png" alt="Alt Text" width="200">
+<img src="./public/README/components-page.png" alt="Alt Text" width="400">
 
 裡面存放的是各個page的components，換句話說是將code切割成數個小部分，將各個部分做成components方便管理，可以將各頁切割或重複使用的components分別依照他在哪一個route存放到page的相對應資料夾裡
 
-ex:我將home主頁的code分成4個components，那就把它們放在components/home/*裡面(＊裡面的資料夾結構就沒有限制了，如果覺得編排的不好可以自己調整方便自己後續找到)
+ex:我將home主頁的code分成4個components，那就把它們放在components//page/home/*裡面(＊裡面的資料夾結構就沒有限制了，如果覺得編排的不好可以自己調整方便自己後續找到，目前是指要是分global跟page(會出現在很多地方或是只有在自己的route))
 
 
 - `ui` (裡面可以不用動，這是拿來存放shadcn/ui的components)<br>
-<img src="./public/README/components-ui.png" alt="Alt Text" width="200">
+<img src="./public/README/components-ui.png" alt="Alt Text" width="400">
 
 後續如果要新增shadcn/ui的components，他會自動載入到這個資料夾，我已經載的就不用重新載了，相關資訊請看[shadcn/ui](https://ui.shadcn.com/)
 
 ### context
-<img src="./public/README/context.png" alt="Alt Text" width="200"><br>
+詳細doc:https://react.dev/reference/react/useContext<br>
+<img src="./public/README/context.png" alt="Alt Text" width="400"><br>
 這裡存放React context api，裡面的folder structure可以按照Application的route進行排版
 
 ex:在 keyword route 裡有一個 prop drolling 的 state，為了方便維護與處理我們將此state放在名為 DataRowSelectionContext api 裡，並且將需要用到的component當children包在裡面<br>
-<img src="./public/README/data_context.png" alt="Alt Text" width="200">
+<img src="./public/README/data_context.png" alt="Alt Text" width="400">
 
 
 ### libs
 libs資料夾主要是放各種function<br>
-<img src="./public/README/lib.png" alt="Alt Text" width="200">
+<img src="./public/README/lib.png" alt="Alt Text" width="400">
 
 - `page`<br>
 
@@ -87,7 +88,7 @@ libs資料夾主要是放各種function<br>
 
 ### pages
 pages是Nextjs裡的固定資料夾，裡面每一個資料夾代表一個route，詳細資料可以去[Nextjs-page-router](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts)<br>
-<img src="./public/README/pages.png" alt="Alt Text" width="200">
+<img src="./public/README/pages.png" alt="Alt Text" width="400">
 
 - `api` 檔案夾是與trpc連接的api，大部分情況下幾乎不會碰到
 
@@ -105,8 +106,8 @@ css檔與icon
 
 ## types
 由於我們使用Typescript，故需要用到大量的types，這個資料夾可以存放各種types<br>
-<img src="./public/README/types.png" alt="Alt Text" width="200"><br>
-<img src="./public/README/types_content.png" alt="Alt Text" width="200">
+<img src="./public/README/types.png" alt="Alt Text" width="400"><br>
+<img src="./public/README/types_content.png" alt="Alt Text" width="400">
 
 ## prisma
 此為prisma檔案，詳細資訊請看：https://www.prisma.io/

@@ -5,19 +5,24 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import KeywordInputForm from "./TableInputForm";
 
-const TableInputSection = () => {
+type AIRenderSectionProps = {
+  result: string
+}
+
+const AIRenderSection = ({result}: AIRenderSectionProps) => {
   return (
     <div className="p-1 md:p-8">
       <div className="flex items-center justify-center">
         <Card className="w-full border border-teal-500">
           <CardHeader>
-            <CardTitle>關鍵字搜索</CardTitle>
-            <CardDescription>選擇相關變數取得關鍵字</CardDescription>
+            <CardTitle>關鍵字排序</CardTitle>
+            <CardDescription></CardDescription>
           </CardHeader>
           <CardContent>
-            <KeywordInputForm />
+            <div>
+              {result}
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -25,4 +30,4 @@ const TableInputSection = () => {
   );
 };
 
-export default TableInputSection;
+export default AIRenderSection;

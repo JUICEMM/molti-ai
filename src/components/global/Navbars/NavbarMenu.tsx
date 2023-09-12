@@ -20,6 +20,11 @@ export const components: { title: string; href: string; description: string }[] 
     description: "透過關鍵字數據進行關聯分析，列舉出關聯度最高的百大關鍵字",
   },
   {
+    title: "AI關鍵字",
+    href: "/keyword-ai",
+    description: "透過AI取得關聯度最高的百大關鍵字",
+  },
+  {
     title: "KOL",
     href: "http://122.116.22.186:5000/dash/kol",
     description:

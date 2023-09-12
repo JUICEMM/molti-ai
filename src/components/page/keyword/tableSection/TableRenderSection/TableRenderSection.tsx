@@ -1,5 +1,5 @@
-import { columns } from "@/components/page/keyword/TableSection/TableRenderSection/dataTable/Columns";
-import { DataTable } from "@/components/page/keyword/TableSection/TableRenderSection/dataTable/DataTable";
+import { columns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/Columns";
+import { DataTable } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/DataTable";
 import type { DataAnalysisColumnsTypes } from "types/dataType";
 import TableRenderHeader from "./TableRenderHeader";
 

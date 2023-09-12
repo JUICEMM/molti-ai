@@ -27,7 +27,7 @@ import { twMerge } from "tailwind-merge";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { CountryEcommerceWebsitesDataTypes } from "types/dataType";
+import type { CountryEcommerceWebsitesDataTypes } from "types/dataType";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 //各個Select component的選項

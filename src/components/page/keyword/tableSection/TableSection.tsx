@@ -1,5 +1,5 @@
-import TableInputSection from "./tableInputSection/TableInputSection";
-import TableRenderSection from "./tableRenderSection/TableRenderSection";
+import TableInputSection from "./TableInputSection/TableInputSection";
+import TableRenderSection from "./TableRenderSection/TableRenderSection";
 
 const TableSection = () => {
   return (

@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import KeywordInputForm from "./TableInputForm";
+import TableInputForm from "./TableInputForm";
 
 const TableInputSection = () => {
   return (
@@ -17,7 +17,7 @@ const TableInputSection = () => {
             <CardDescription>選擇相關變數取得關鍵字</CardDescription>
           </CardHeader>
           <CardContent>
-            <KeywordInputForm />
+            <TableInputForm />
           </CardContent>
         </Card>
       </div>

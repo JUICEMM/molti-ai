@@ -1,3 +1,4 @@
+import LoadingSpinner from "@/components/global/loading/LoadingSpinner";
 import {
   Card,
   CardContent,
@@ -7,10 +8,21 @@ import {
 } from "@/components/ui/card";
 
 type AIRenderSectionProps = {
-  result: string
-}
+  result: string;
+  isLoading: boolean;
+};
 
-const AIRenderSection = ({result}: AIRenderSectionProps) => {
+const AIRenderSection = ({ result, isLoading }: AIRenderSectionProps) => {
+  function splitTextToArray(text: string) {
+    // 使用正则表达式将文本按数字和点号分隔
+    const regex = /\d+\.\s+/;
+    const items = text.split(regex).filter((item) => item.trim() !== "");
+
+    return items;
+  }
+
+  const resultArray = splitTextToArray(result);
+  console.log(resultArray);
   return (
     <div className="p-1 md:p-8">
       <div className="flex items-center justify-center">
@@ -20,8 +32,18 @@ const AIRenderSection = ({result}: AIRenderSectionProps) => {
             <CardDescription></CardDescription>
           </CardHeader>
           <CardContent>
-            <div>
-              {result}
+            <div className="min-h-[70px]">
+              {!!isLoading ? (
+                <div className="flex items-center justify-center">
+                  <LoadingSpinner />
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  {resultArray.map((item, index) => (
+                    <p key={index}>{index+1}.{item}</p>
+                  ))}
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>

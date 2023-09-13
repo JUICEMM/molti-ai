@@ -73,7 +73,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
   }) {
     try {
       setIsLoading(true);
-      const prompt = `請幫我生成10組有關 ${category}分類 ${keyword} 的google關鍵字`;
+      const prompt = `請僅提供 ${category} ${keyword} 前100名SEO關鍵字,`;
       console.log(prompt);
       const completion = await fetchOpenAICompletion(prompt);
       console.log(completion);
@@ -86,7 +86,6 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    console.log(process.env.NEXT_PUBLIC_OPENAI_API_KEY);
     generateText(values);
   }
 
@@ -95,7 +94,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
     <>
       <Card className="m-1 rounded-md border border-teal-500 p-4 md:m-8">
         <CardHeader>
-          <CardTitle>關鍵字AI搜索</CardTitle>
+          <CardTitle>AI產生標題關鍵字</CardTitle>
           <CardDescription>請輸入相關變數取得關鍵字</CardDescription>
         </CardHeader>
         <CardContent>

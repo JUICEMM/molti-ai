@@ -28,9 +28,9 @@ const PriceCard = ({ title, price, features }: PriceCardProps) => {
         </div>
         {/*Plan buying button*/}
         <div>
-          <Button className="w-full bg-teal-500 hover:bg-teal-400">
+          <a href="https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5" target={"_blank"} className="w-full bg-teal-500 hover:bg-teal-400">
             選擇方案
-          </Button>
+          </a>
         </div>
         {/*Plan features*/}
         <div className="flex flex-col gap-3 text-sm">

@@ -34,13 +34,17 @@ const AIRenderSection = ({ result, isLoading }: AIRenderSectionProps) => {
           <CardContent>
             <div className="min-h-[70px]">
               {!!isLoading ? (
-                <div className="flex items-center justify-center">
+                <div className="flex flex-col gap-2 items-center justify-center">
                   <LoadingSpinner />
+                  <span>我會盡力提供您所需的信息，但需要稍微的時間來完成這項任務。</span>
+                  <span>請您耐心等待至少60~100秒，我將竭盡所能為您提供最佳的解答。</span>
                 </div>
               ) : (
                 <div className="flex flex-col gap-2">
                   {resultArray.map((item, index) => (
-                    <p key={index}>{index+1}.{item}</p>
+                    <p key={index}>
+                      {index + 1}.{item}
+                    </p>
                   ))}
                 </div>
               )}

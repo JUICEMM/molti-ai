@@ -38,11 +38,26 @@ import { fetchOpenAICompletion } from "@/utils/openai";
 
 //各個Select component的選項
 const category_data: Array<string> = [
-  "家具",
-  "電子",
-  "飲食",
-  "美妝",
-  "保健食品",
+  "女性衣著",
+  "男性衣著",
+  "運動/健身",
+  "男女鞋",
+  "女生配件/黃金",
+  "美妝保健",
+  "嬰幼童語母親",
+  "女生包包/精品",
+  "男生包包/配件",
+  "戶外/運動",
+  "書籍及雜誌期刊",
+  "居家生活",
+  "美食/伴手禮",
+  "汽機車零件百貨",
+  "電玩遊戲",
+  "娛樂/收藏",
+  "寵物",
+  "手機平板與周邊",
+  "3C與筆電",
+  "家電影音",
 ];
 
 const formSchema = z.object({
@@ -133,7 +148,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                               <SelectValue placeholder="請選擇商品分類..." />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent position="popper">
+                          <SelectContent position="popper" className="overflow-scroll max-h-[300px]">
                             {category_data.map((item) => (
                               <SelectItem key={item} value={item.toLowerCase()}>
                                 {item}

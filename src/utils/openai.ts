@@ -16,7 +16,7 @@ const openai = axios.create({
 export async function fetchOpenAICompletion(prompt: string) {
   try {
     const response = await openai.post("completions", {
-      max_tokens: 7500, // Customize this as needed
+      max_tokens: 8000, // Customize this as needed
       model: model,
       messages: [
         {

@@ -12,31 +12,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 
-export const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "關聯字",
-    href: "/keyword",
-    description: "透過關鍵字數據進行關聯分析，列舉出關聯度最高的百大關鍵字",
-  },
-  {
-    title: "AI關鍵字",
-    href: "/keyword-ai",
-    description: "透過AI取得關聯度最高的百大關鍵字",
-  },
-  {
-    title: "矩陣系統",
-    href: " /matrix-ai",
-    description:
-      "快速製作短影音，霸頻不是夢",
-  },
-  {
-    title: "影片服務",
-    href: " /photoservice",
-    description:
-      "幫助您解決攝影及剪輯問題",
-  },
-];
-
 const NavbarMenu = () => {
   return (
     <div className="hidden flex-1 p-4 md:block">
@@ -71,13 +46,13 @@ const NavbarMenu = () => {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          {/* <NavigationMenuItem>
           <Link href="/price" legacyBehavior passHref>
               <Button variant={"outline"}>               
                   方案
               </Button>
             </Link>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
     </div>

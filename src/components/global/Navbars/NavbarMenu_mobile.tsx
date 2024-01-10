@@ -3,7 +3,7 @@ import Link from "next/link";
 import CloseIcon from "@mui/icons-material/Close";
 import { IconButton } from "@mui/material";
 import { useState } from "react";
-import { components } from "./NavbarMenu";
+import { components } from "./Navbar";
 
 const NavbarMenu_mobile = () => {
   const [isMobileNavbarMenuOpen, setIsMobileNavbarMenuOpen] =

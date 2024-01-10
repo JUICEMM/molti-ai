@@ -16,7 +16,7 @@ type PriceCardProps = {
 };
 const PriceCard = ({ title, price, features, href }: PriceCardProps) => {
   return (
-    <Card className="h-auto w-auto rounded-3xl border border-teal-500 p-1 md:w-[300px]">
+    <Card className="h-auto w-auto rounded-3xl border border-sky-500 p-1 md:w-[300px]">
       <CardHeader className="flex flex-col gap-5">
         <CardTitle>{title}</CardTitle>
       </CardHeader>
@@ -28,14 +28,14 @@ const PriceCard = ({ title, price, features, href }: PriceCardProps) => {
         </div>
         {/*Plan buying button*/}
         {title === "免費版" ? (
-          <Button variant={"default"} className="border border-teal-500">
+          <Button variant={"default"} className="border border-sky-500 bg-sky-600 hover:bg-sky-700">
             <a href={href} target={"_blank"} className="w-full">
               目前方案
             </a>
           </Button>
         ) : (
           <>
-            <Button variant={"outline"} className="border border-teal-500">
+            <Button variant={"outline"} className="border border-sky-500">
               <a href={href} target={"_blank"} className="w-full">
                 選擇方案
               </a>

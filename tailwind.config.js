@@ -164,6 +164,9 @@ module.exports = {
       fontFamily: {
         'Sans': 'Noto Sans TC, sans-serif',
         'Serif': 'Noto Serif TC, serif',
+      },
+      backgroundImage: {
+        'ai': "url('/public/AIbg.jpeg')",
       }
     },
   },

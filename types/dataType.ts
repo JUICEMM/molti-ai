@@ -19,4 +19,5 @@ export type PriceCardDataTypes = {
   title: string;
   price: string;
   features: Array<{ [key: string]: string }>;
+  href?: string;
 };

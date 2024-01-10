@@ -1,97 +1,130 @@
+import * as React from "react"
 import Navbar from "@/components/global/Navbars/Navbar";
 import PriceCard from "@/components/page/price/PriceCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 import type { PriceCardDataTypes } from "types/dataType";
 
-
-const price_card_data: PriceCardDataTypes[] = [
+const price_card_data: Array<PriceCardDataTypes> = [
   {
     title: "免費版",
     price: "0",
     features: [
       {
-        feature_name: "可觀看資料排名",
-        feature_value: "80~100",
+        feature_name: "關鍵詞功能",
+        feature_value: "有",
       },
       {
-        feature_name: "可選擇國家",
-        feature_value: "台灣",
+        feature_name: "關鍵詞AI功能",
+        feature_value: "有",
       },
       {
-        feature_name: "可觀看趨勢圖表",
+        feature_name: "矩陣AI系統",
         feature_value: "無",
       },
       {
-        feature_name: "KOL功能",
-        feature_value: "youtube",
+        feature_name: "影片服務",
+        feature_value: "無",
       },
     ],
   },
   {
-    title: "標準版",
-    price: "699",
+    title: "1個月",
+    price: "880",
     features: [
       {
-        feature_name: "可觀看資料排名",
-        feature_value: "40~100",
+        feature_name: "關鍵詞功能",
+        feature_value: "有",
       },
       {
-        feature_name: "可選擇國家",
-        feature_value: "台灣,日本,美國",
+        feature_name: "關鍵詞AI功能",
+        feature_value: "有",
       },
       {
-        feature_name: "可觀看趨勢圖表",
-        feature_value: "基礎圖表",
+        feature_name: "矩陣AI系統",
+        feature_value: "有 時效1個月",
       },
       {
-        feature_name: "KOL功能",
-        feature_value: "無限制",
+        feature_name: "影片服務",
+        feature_value: "有 時效1個月",
       },
     ],
+    href: "https://cart.cashier.ecpay.com.tw/qp/tkH6",
   },
   {
-    title: "進階版",
-    price: "999",
+    title: "3個月",
+    price: "2640",
     features: [
       {
-        feature_name: "可觀看資料排名",
-        feature_value: "1~100",
+        feature_name: "關鍵詞功能",
+        feature_value: "有",
       },
       {
-        feature_name: "可選擇國家",
-        feature_value: "無限制",
+        feature_name: "關鍵詞AI功能",
+        feature_value: "有",
       },
       {
-        feature_name: "可觀看趨勢圖表",
-        feature_value: "進階圖表",
+        feature_name: "矩陣AI系統",
+        feature_value: "有 時效3個月",
       },
       {
-        feature_name: "KOL功能",
-        feature_value: "無限制",
+        feature_name: "影片服務",
+        feature_value: "有 時效3個月",
       },
     ],
+    href: "https://cart.cashier.ecpay.com.tw/qp/tkG6",
   },
   {
-    title: "專業版",
-    price: "1299",
+    title: "6個月",
+    price: "5280",
     features: [
       {
-        feature_name: "可觀看資料排名",
-        feature_value: "無限制",
+        feature_name: "關鍵詞功能",
+        feature_value: "有",
       },
       {
-        feature_name: "可選擇國家",
-        feature_value: "無限制",
+        feature_name: "關鍵詞AI功能",
+        feature_value: "有",
       },
       {
-        feature_name: "可觀看趨勢圖表",
-        feature_value: "無限制",
+        feature_name: "矩陣AI系統",
+        feature_value: "有 時效6個月",
       },
       {
-        feature_name: "KOL功能",
-        feature_value: "無限制",
+        feature_name: "影片服務",
+        feature_value: "有 時效6個月",
       },
     ],
+    href: "https://cart.cashier.ecpay.com.tw/qp/tkF4",
+  },
+  {
+    title: "12個月",
+    price: "10560",
+    features: [
+      {
+        feature_name: "關鍵詞功能",
+        feature_value: "有",
+      },
+      {
+        feature_name: "關鍵詞AI功能",
+        feature_value: "有",
+      },
+      {
+        feature_name: "矩陣AI系統",
+        feature_value: "有 時效12個月",
+      },
+      {
+        feature_name: "影片服務",
+        feature_value: "有 時效12個月",
+      },
+    ],
+    href: "https://cart.cashier.ecpay.com.tw/qp/tkA3",
   },
 ];
 
@@ -128,11 +161,25 @@ const PricePage = () => {
           }}
           className="flex items-center justify-center py-10"
         >
-          <div className="flex flex-col gap-8 px-5 py-2 md:grid md:grid-cols-2 lg:grid-cols-4">
+          {/* <div className="flex flex-col gap-8 px-5 py-2 md:grid md:grid-cols-3 lg:grid-cols-5">
             {price_card_data.map((card, index) => (
               <PriceCard key={index} {...card} />
             ))}
-          </div>
+          </div> */}
+          <Carousel className="w-full flex justify-center items-center">
+            <CarouselContent className="-ml-1 max-w-[2/3]">
+              {price_card_data.map((card, index) => (
+                <CarouselItem
+                  key={index}
+                  className="flex justify-center items-center pl-1 md:basis-1/2 lg:basis-1/3"
+                >
+                  <PriceCard key={index} {...card} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-5" />
+            <CarouselNext className="absolute right-5" />
+          </Carousel>
         </motion.div>
       </div>
     </div>

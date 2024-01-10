@@ -1,3 +1,4 @@
+import { Button } from "../../ui/button";
 import {
   Card,
   CardContent,
@@ -6,19 +7,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "../../ui/button";
 
 type PriceCardProps = {
   title: string;
   price: string;
-  features: { [key: string]: string }[];
+  features: Array<{ [key: string]: string }>;
+  href?: string;
 };
-const PriceCard = ({ title, price, features }: PriceCardProps) => {
+const PriceCard = ({ title, price, features, href }: PriceCardProps) => {
   return (
     <Card className="h-auto w-auto rounded-3xl border border-teal-500 p-1 md:w-[300px]">
       <CardHeader className="flex flex-col gap-5">
         <CardTitle>{title}</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-8">
         {/*Plan price*/}
@@ -27,11 +27,21 @@ const PriceCard = ({ title, price, features }: PriceCardProps) => {
           <span className="text-md">/月</span>
         </div>
         {/*Plan buying button*/}
-        <div>
-          <a href="https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5" target={"_blank"} className="w-full bg-teal-500 hover:bg-teal-400">
-            選擇方案
-          </a>
-        </div>
+        {title === "免費版" ? (
+          <Button variant={"default"} className="border border-teal-500">
+            <a href={href} target={"_blank"} className="w-full">
+              目前方案
+            </a>
+          </Button>
+        ) : (
+          <>
+            <Button variant={"outline"} className="border border-teal-500">
+              <a href={href} target={"_blank"} className="w-full">
+                選擇方案
+              </a>
+            </Button>
+          </>
+        )}
         {/*Plan features*/}
         <div className="flex flex-col gap-3 text-sm">
           {features.map((feature, index) => (

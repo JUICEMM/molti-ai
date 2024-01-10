@@ -5,13 +5,12 @@ import { cn } from "@/lib/utils";
 
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
 
 export const components: { title: string; href: string; description: string }[] = [
   {
@@ -25,10 +24,16 @@ export const components: { title: string; href: string; description: string }[] 
     description: "透過AI取得關聯度最高的百大關鍵字",
   },
   {
-    title: "KOL",
-    href: "http://122.116.22.186:5000/dash/kol",
+    title: "矩陣系統",
+    href: " /matrix-ai",
     description:
-      "利用關鍵詞查詢高度相關的KOL，幫助企業家查詢有利的代言合作夥伴",
+      "快速製作短影音，霸頻不是夢",
+  },
+  {
+    title: "影片服務",
+    href: " /photoservice",
+    description:
+      "幫助您解決攝影及剪輯問題",
   },
 ];
 
@@ -45,26 +50,32 @@ const NavbarMenu = () => {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>資料分析</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    <span className="text-xs">{component.description}</span>
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
+            <Link href="/keyword" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                關鍵字
+              </NavigationMenuLink>
+            </Link>
+            <Link href="/keyword-ai" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                關鍵字AI
+              </NavigationMenuLink>
+            </Link>
+            <Link href="/matrix-ai" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+               矩陣AI系統
+              </NavigationMenuLink>
+            </Link>
+            <Link href="/photoservice" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+               影片服務
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/price" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                方案
-              </NavigationMenuLink>
+          <Link href="/price" legacyBehavior passHref>
+              <Button variant={"outline"}>               
+                  方案
+              </Button>
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>

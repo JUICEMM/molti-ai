@@ -1,17 +1,22 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import CountryCard from "@/components/page/home/CountryCard";
 import japan from "../../public/japan.png";
 import taiwan from "../../public/taiwan.png";
 import us from "../../public/united-states.png";
+import photograph from "../../public/攝影.png";
+import moltiai from "../../public/矩陣系統截圖.png";
+import keywordai from "../../public/關鍵字AI截圖.png";
+import keyword from "../../public/關鍵字頁面截圖.png";
 import Navbar from "@/components/global/Navbars/Navbar";
-import { Button } from "@/components/ui/button";
-import FunctionCard from "@/components/page/home/FunctionCard";
+import CountryCard from "@/components/page/home/CountryCard";
 import FeatureCard from "@/components/page/home/FeatureCard";
-import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
+import FunctionCard from "@/components/page/home/FunctionCard";
+import { Button } from "@/components/ui/button";
+import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
-import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
+import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
+import { motion } from "framer-motion";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function Home() {
   const countryData = [
@@ -43,41 +48,58 @@ export default function Home() {
 
   const featureData = [
     {
-      icon: <QueryStatsOutlinedIcon sx={{ color: "#FF8C00",fontSize: "3.2rem" }}/>,
-      title: "精準分析",
-      description:
-        "可以精準尋找特定商品的關聯字詞，幫助企業家做出決策",
+      icon: (
+        <PsychologyOutlinedIcon sx={{ color: "green", fontSize: "3.2rem" }} />
+      ),
+      title: "AI科學營運",
+      description: "利用AI打造強大功能解決問題",
     },
     {
-      icon: <UpdateOutlinedIcon sx={{ color: "#4169E1",fontSize: "3.2rem" }}/>,
-      title: "每週更新",
-      description:
-        "每週更新數據，資料永遠在最前端，讓您在任何時候都能夠看到最新的資訊",
+      icon: (
+        <UpdateOutlinedIcon sx={{ color: "#4169E1", fontSize: "3.2rem" }} />
+      ),
+      title: "快速、效率",
+      description: "我們主打快速並且有效率解決問題",
     },
     {
-      icon: <PsychologyOutlinedIcon sx={{ color: "green",fontSize: "3.2rem" }}/>,
-      title: "科學營運",
-      description:
-        "基於歷史銷售量、流量、價格數據等全方位數據，有依據精細化運營關鍵詞等",
+      icon: (
+        <QueryStatsOutlinedIcon sx={{ color: "#FF8C00", fontSize: "3.2rem" }} />
+      ),
+      title: "專業服務",
+      description: "如果想增進拍攝影片服務，可以我們專業團隊聯繫",
     },
   ];
 
   const functionData = [
     {
-      imageUrl:
-        "https://img1.wsimg.com/cdn/Image/All/FOS-Intl/1/All/e94917b6-8a41-414b-aa53-00e05467eed0/redacted-img-brand-lander-wm-free-trial.jpg",
+      imageUrl: keyword,
       title: "關鍵字",
       description:
         "產品關鍵字查詢可精確尋找特定商品的關聯字詞，提供搜索趨勢、PPC競價及特性等資訊，幫助企業家在廣告投放做出明智選擇",
       href: "/keyword",
+      pay: false,
     },
     {
-      imageUrl:
-        "https://img1.wsimg.com/cdn/Image/All/FOS-Intl/1/All/b5c7036b-7b96-40bc-a521-a2c838b6f618/redacted-img-brand-lander-professional-email.jpg",
-      title: "kol",
+      imageUrl: keywordai,
+      title: "AI關鍵字",
       description:
-        "利用關鍵詞查詢高度相關的KOL，幫助企業家查詢有利的代言合作夥伴",
-      href: "/kol",
+        "利用AI取得關聯度最高的百大關鍵字，幫助企業家在廣告投放做出明智選擇",
+      href: "/keyword-ai",
+      pay: false,
+    },
+    {
+      imageUrl: moltiai,
+      title: "矩陣系統",
+      description: "矩陣系統能幫助您有效製作短影音，增加影片產出效率",
+      href: "/matrix-ai",
+      pay: true,
+    },
+    {
+      imageUrl: photograph,
+      title: "影音拍攝服務",
+      description: "我們提供專業攝影師的服務，確保您影片的產出品質",
+      href: "/photoservice",
+      pay: true,
     },
   ];
 
@@ -96,38 +118,66 @@ export default function Home() {
           <div className="gradient" />
         </div>
         {/*Heading section */}
-        <div className="flex h-screen flex-col items-center justify-center gap-5 bg-gradient-to-b from-teal-700 to-teal-500">
-          <div className="app py-10 text-5xl text-black">
-            <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-5xl font-bold text-transparent md:text-8xl">
-              Molti分析
-            </div>
-            <div className="text-center text-2xl font-bold text-white md:text-6xl">
-              國內外大型電商網站數據分析
-            </div>
-          </div>
-          <div className="flex items-center justify-center gap-5">
-            <div>
-              <Button variant={"default"} className="text-md" onClick={()=>router.push("/keyword")}>
-                Start Your Free Trial
-              </Button>
-            </div>
-            <div>
-              <Button variant={"outline"} className="text-md">
-                <AnchorLink href="#contact">Contact Us</AnchorLink>
-              </Button>
-            </div>
+
+        <div className="flex h-screen items-center justify-center gap-5 bg-gradient-to-b from-teal-700 to-teal-500">
+          <div className="flex flex-col items-center justify-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.1 }}
+              viewport={{ once: true }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 50 },
+              }}
+              className="app py-10 text-5xl text-black"
+            >
+              <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-5xl font-bold text-transparent md:text-8xl">
+                MoltiAI
+              </div>
+              <div className="text-center text-2xl font-bold text-white md:text-6xl">
+                MoltiAI幫你解決生活大小事
+              </div>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.3 }}
+              viewport={{ once: true }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 50 },
+              }}
+              className="flex flex-1 items-center justify-center gap-5"
+            >
+              <div>
+                <Button
+                  variant={"default"}
+                  className="text-md"
+                  onClick={() => router.push("/keyword")}
+                >
+                  Start Your Free Trial
+                </Button>
+              </div>
+              <div>
+                <Button variant={"outline"} className="text-md">
+                  <AnchorLink href="#contact">Contact Us</AnchorLink>
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </div>
+
         {/*feature section*/}
         <div className="py-16">
           <div className="py-12 text-center">
             <p className="font-serif text-5xl font-bold">三大核心優勢</p>
           </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
-              {featureData.map((item, index) => (
-                <FeatureCard key={index} {...item} />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-3">
+            {featureData.map((item, index) => (
+              <FeatureCard key={index} {...item} />
+            ))}
+          </div>
         </div>
         {/*function section*/}
         <div className="flex h-auto items-center bg-white bg-gradient-to-b py-10">
@@ -150,7 +200,7 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <div>
               <div className="app py-10 text-5xl text-black">
-                <div className="bg-gradient-to-r bg-clip-text text-center text-3xl md:text-4xl xl:text-5xl font-bold text-white">
+                <div className="bg-gradient-to-r bg-clip-text text-center text-3xl font-bold text-white md:text-4xl xl:text-5xl">
                   支援3種不同國家
                 </div>
                 <div className="text-3xl font-bold text-emerald-100">
@@ -166,9 +216,7 @@ export default function Home() {
           </div>
         </div>
         {/*Contact section*/}
-        <div>
-
-        </div>
+        <div></div>
       </main>
     </>
   );

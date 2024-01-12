@@ -3,9 +3,12 @@ import Link from "next/link";
 import CloseIcon from "@mui/icons-material/Close";
 import { IconButton } from "@mui/material";
 import { useState } from "react";
-import { components } from "./Navbar";
 
-const NavbarMenu_mobile = () => {
+type NavbarMenu_mobileProps = {
+  navItems: Array<{ title: string; href: string }>;
+}
+
+const NavbarMenu_mobile = ({navItems}: NavbarMenu_mobileProps) => {
   const [isMobileNavbarMenuOpen, setIsMobileNavbarMenuOpen] =
     useState<boolean>(false);
   return (
@@ -33,13 +36,13 @@ const NavbarMenu_mobile = () => {
             >
               首頁
             </Link>
-            {components.map((component) => (
+            {navItems.map((navitem) => (
               <Link
-                key={component.title}
-                href={component.href}
+                key={navitem.title}
+                href={navitem.href}
                 className="rounded-md px-8 py-2 text-center transition-colors duration-200 ease-in-out hover:bg-teal-300"
               >
-                {component.title}
+                {navitem.title}
               </Link>
             ))}
           </div>

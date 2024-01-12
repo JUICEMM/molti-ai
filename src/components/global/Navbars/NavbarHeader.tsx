@@ -4,7 +4,8 @@ import Image from "next/image";
 const NavbarHeader = () => {
   return (
     <div className="p-4">
-      <Image src={logo} alt="logo" width={130} height={130} className="rounded-md"/>
+      {/* <Image src={logo} alt="logo" priority width={130} height={130} className="rounded-md"/> */}
+      Molti
     </div>
   );
 };

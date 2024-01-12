@@ -25,6 +25,10 @@ const config = {
         protocol: 'https',
         hostname: 'img1.wsimg.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'umi-intelligence.oss-cn-shenzhen.aliyuncs.com',
+      },
     ],
   },
 

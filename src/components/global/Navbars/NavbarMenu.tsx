@@ -1,8 +1,3 @@
-import * as React from "react";
-import Link from "next/link";
-
-import { cn } from "@/lib/utils";
-
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -10,49 +5,28 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import * as React from "react";
 
-const NavbarMenu = () => {
+type NavbarMenuProps = {
+  navItems: Array<{ title: string; href: string }>;
+};
+
+const NavbarMenu = ({ navItems }: NavbarMenuProps) => {
   return (
     <div className="hidden flex-1 p-4 md:block">
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                首頁
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/keyword" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                關鍵字
-              </NavigationMenuLink>
-            </Link>
-            <Link href="/keyword-ai" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                關鍵字AI
-              </NavigationMenuLink>
-            </Link>
-            <Link href="/matrix-ai" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-               矩陣AI系統
-              </NavigationMenuLink>
-            </Link>
-            <Link href="/photoservice" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-               影片服務
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          {/* <NavigationMenuItem>
-          <Link href="/price" legacyBehavior passHref>
-              <Button variant={"outline"}>               
-                  方案
-              </Button>
-            </Link>
-          </NavigationMenuItem> */}
+          {navItems.map((navItem) => (
+            <NavigationMenuItem>
+              <Link href={navItem.href} legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  {navItem.title}
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
     </div>

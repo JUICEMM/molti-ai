@@ -6,12 +6,11 @@ import moltiai from "../../public/矩陣系統截圖.png";
 import keywordai from "../../public/關鍵字AI截圖.png";
 import keyword from "../../public/關鍵字頁面截圖.png";
 import Navbar from "@/components/global/Navbars/Navbar";
-import CountryCard from "@/components/page/home/CountryCard";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import FunctionCard from "@/components/page/home/FunctionCard";
 import { Button } from "@/components/ui/button";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
-import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -63,7 +62,7 @@ export default function Home() {
     },
     {
       icon: (
-        <QueryStatsOutlinedIcon sx={{ color: "#FF8C00", fontSize: "3.2rem" }} />
+        <SupportAgentIcon sx={{ color: "#FF8C00", fontSize: "3.2rem" }} />
       ),
       title: "專業服務",
       description: "如果想增進拍攝影片服務，可以我們專業團隊聯繫",
@@ -118,7 +117,6 @@ export default function Home() {
           <div className="gradient" />
         </div>
         {/*Heading section */}
-
         <div className="flex h-screen items-center justify-center gap-5 bg-gradient-to-b from-teal-700 to-teal-500">
           <div className="flex flex-col items-center justify-center">
             <motion.div
@@ -196,7 +194,7 @@ export default function Home() {
           </div>
         </div>
         {/*Country section*/}
-        <div className="h-auto bg-gradient-to-b from-teal-500 to-teal-600">
+        {/* <div className="h-auto bg-gradient-to-b from-teal-500 to-teal-600">
           <div className="flex items-center justify-center">
             <div>
               <div className="app py-10 text-5xl text-black">
@@ -214,7 +212,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/*Contact section*/}
         <div></div>
       </main>

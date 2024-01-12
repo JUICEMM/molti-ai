@@ -11,6 +11,10 @@ const config = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'img.clerk.com',
       },
       {
@@ -23,11 +27,11 @@ const config = {
       },
       {
         protocol: 'https',
-        hostname: 'img1.wsimg.com',
+        hostname: 'umi-intelligence.oss-cn-shenzhen.aliyuncs.com',
       },
       {
         protocol: 'https',
-        hostname: 'umi-intelligence.oss-cn-shenzhen.aliyuncs.com',
+        hostname: 'picsum.photos',
       },
     ],
   },

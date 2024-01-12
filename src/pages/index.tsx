@@ -10,7 +10,7 @@ import FeatureCard from "@/components/page/home/FeatureCard";
 import FunctionCard from "@/components/page/home/FunctionCard";
 import { Button } from "@/components/ui/button";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -61,9 +61,7 @@ export default function Home() {
       description: "我們主打快速並且有效率解決問題",
     },
     {
-      icon: (
-        <SupportAgentIcon sx={{ color: "#FF8C00", fontSize: "3.2rem" }} />
-      ),
+      icon: <SupportAgentIcon sx={{ color: "#FF8C00", fontSize: "3.2rem" }} />,
       title: "專業服務",
       description: "如果想增進拍攝影片服務，可以我們專業團隊聯繫",
     },
@@ -173,7 +171,13 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-3">
             {featureData.map((item, index) => (
-              <FeatureCard key={index} {...item} />
+              <FeatureCard
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                index={index}
+              />
             ))}
           </div>
         </div>

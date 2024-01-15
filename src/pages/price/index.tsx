@@ -1,6 +1,6 @@
 import * as React from "react"
 import Navbar from "@/components/global/Navbars/Navbar";
-import PriceCard from "@/components/page/price/PriceCard";
+import PriceCard from "@/components/price/PriceCard";
 import {
   Carousel,
   CarouselContent,

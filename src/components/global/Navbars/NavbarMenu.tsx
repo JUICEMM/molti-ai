@@ -19,7 +19,7 @@ const NavbarMenu = ({ navItems }: NavbarMenuProps) => {
       <NavigationMenu>
         <NavigationMenuList>
           {navItems.map((navItem) => (
-            <NavigationMenuItem>
+            <NavigationMenuItem key={navItem.title}>
               <Link href={navItem.href} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {navItem.title}

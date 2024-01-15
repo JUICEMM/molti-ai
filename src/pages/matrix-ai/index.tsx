@@ -1,11 +1,11 @@
 import aibg from "../../../public/AIbg.jpeg";
-import white_bg from "../../../public/white_bg.jpg";
 import martixai from "../../../public/matrix_header.jpg";
+import white_bg from "../../../public/white_bg.jpg";
 import Navbar from "@/components/global/Navbars/Navbar";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import MainFeatureCard from "@/components/page/matrix-ai/MainFeatureCard";
 import ProblemCard from "@/components/page/matrix-ai/ProblemCard";
-import PriceCard from "@/components/page/price/PriceCard";
+import PriceCard from "@/components/price/PriceCard";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,8 +20,8 @@ import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import type { PriceCardDataTypes } from "types/dataType";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const price_card_data: Array<PriceCardDataTypes> = [
   // {
@@ -191,9 +191,7 @@ const SECOND_FEATURE_DATA = [
     description: "優質平台，方便管理你的帳號及影片",
   },
   {
-    icon: (
-      <QueryStatsOutlinedIcon sx={{ color: "blue", fontSize: "3.2rem" }} />
-    ),
+    icon: <QueryStatsOutlinedIcon sx={{ color: "blue", fontSize: "3.2rem" }} />,
     title: "提升曝光度",
     description: "跨平台的關鍵詞佈局，提升企業及產品曝光",
   },
@@ -207,12 +205,10 @@ export default function MatrixAIPage() {
         <div className="gradient_matrix" />
       </div>
       {/*Header*/}
-      <section className="w-full h-screen bg-cover bg-center bg-no-repeat flex justify-center items-center">
-        <Image
-          src={aibg}
-          alt="aibg"
-          className="w-full h-full object-cover absolute z-[-999] opacity-80"
-        />
+      <section
+        className="w-full h-screen bg-cover bg-center bg-no-repeat flex justify-center items-center"
+        style={{ backgroundImage: `url(${aibg.src})` }}
+      >
         <div className="flex justify-center items-center">
           <div className="flex flex-col lg:flex-row lg:gap-12 items-center w-[70%]">
             <motion.div
@@ -237,10 +233,7 @@ export default function MatrixAIPage() {
               </div>
               <div className="flex items-center gap-3">
                 <Button variant={"outline"}>
-                  <AnchorLink href="#price">
-
-                  查看方案
-                  </AnchorLink>
+                  <AnchorLink href="#price">查看方案</AnchorLink>
                 </Button>
                 <Button>立即試用</Button>
               </div>

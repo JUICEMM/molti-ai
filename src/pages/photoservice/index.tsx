@@ -1,5 +1,6 @@
 import photoHeader from "../../../public/photo.jpg";
-import { Card, CardContent } from "@/components/ui/card";
+import PhotoService from "@/components/page/photoservice/PhotoService";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   Carousel,
   CarouselContent,
@@ -7,6 +8,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
+import EmojiObjectsOutlinedIcon from "@mui/icons-material/EmojiObjectsOutlined";
+import MusicNoteOutlinedIcon from "@mui/icons-material/MusicNoteOutlined";
 import Image from "next/image";
 import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -42,23 +46,21 @@ const PHOTOSERVICEDATA = [
     service_detail: [
       {
         title: "專業剪輯師",
-        description: "我們提供專業攝影師的服務，確保您的短視頻內容更上一層樓。",
+        description: "我們的專業剪輯師將為您創造出令人激賞的短視頻內容。",
         image:
-          "https://images.unsplash.com/photo-1508004680771-708b02aabdc0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1605826832916-d0ea9d6fe71e?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         title: "特效和後期製作",
-        description:
-          "我們會幫助您選擇最適合您內容的拍攝場景，以營造出最佳的視覺效果",
+        description: "為您的視頻添加特效和後期製作，使內容更引人注目",
         image:
-          "https://images.unsplash.com/photo-1511765392540-a4f3d816bfbb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1607112812619-182cb1c7bb61?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         title: "音樂和音效",
-        description:
-          "由影像團隊初剪完成後供業主參考是否有需要調整的內容，提交影片檔案，提供影片下載連結",
+        description: "選用合適的音樂和音效，為您的短視頻增添更多的情感跟氛圍",
         image:
-          "https://images.unsplash.com/photo-1487537708572-3c850b5e856e?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     ],
   },
@@ -100,7 +102,10 @@ export default function PhotoServicePage() {
         </div>
       </section>
       {/*服務介紹*/}
-      <section className="w-full min-h-screen bg-neutral-800">
+      <section
+        id="service"
+        className="w-full min-h-screen bg-neutral-800 pt-16"
+      >
         <Carousel className="w-full">
           <CarouselContent>
             {PHOTOSERVICEDATA.map((data) => (
@@ -111,6 +116,86 @@ export default function PhotoServicePage() {
           <CarouselNext className="absolute top-1/2 right-5 -translate-y-1/2" />
         </Carousel>
       </section>
+      {/*教學介紹*/}
+      <section
+        id="tutorial"
+        className="w-full min-h-screen bg-neutral-700 py-20"
+      >
+        <div className="flex justify-center py-5">
+          <h2 className="w-[50%] text-center text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+            <span>-</span> 剪輯全方位教學，專業攝影師指導<span>-</span>
+          </h2>
+        </div>
+        <div className="mt-10">
+          <div className="md:w-[80%] mx-auto flex justify-between items-center md:items-stretch flex-col md:flex-row gap-3 font-mono text-neutral-800">
+            <div className="p-10 bg-white shadow-2xl shadow-neutral-900 flex flex-col gap-3 w-[300px] rounded-sm hover:scale-105 transition duration-100 ease-in-out">
+              <p className="font-bold text-lg">我想剪輯</p>
+              <p className="text-2xl font-bold">但不知道如何利用音樂跟特效？</p>
+              <div className="flex justify-center">
+                <MusicNoteOutlinedIcon sx={{ fontSize: "8rem" }} />
+              </div>
+              <p>
+                學習基本的剪輯技巧，以及如何運用特效和音效創造出令人驚艷的視覺效果
+              </p>
+            </div>
+            <div className="p-10 bg-white shadow-2xl shadow-neutral-900 flex flex-col gap-3 w-[300px] rounded-sm hover:scale-105 transition duration-100 ease-in-out">
+              <p className="font-bold text-lg">會放背景音樂</p>
+              <p className="text-2xl font-bold">但不知道後期製作技巧？</p>
+              <div className="flex justify-center">
+                <ColorLensOutlinedIcon sx={{ fontSize: "8rem" }} />
+              </div>
+              <p>暸解後期製作的技巧，包含顏色較準、畫面穩地和過場效果等。</p>
+            </div>
+            <div className="p-10 bg-white shadow-2xl shadow-neutral-900 flex flex-col gap-3 w-[300px] rounded-sm hover:scale-105 transition duration-100 ease-in-out">
+              <p className="font-bold text-lg">影片製作沒問題</p>
+              <p className="text-2xl font-bold">但總覺得影片始終如一沒創新？</p>
+              <div className="flex justify-center">
+                <EmojiObjectsOutlinedIcon sx={{ fontSize: "8rem" }} />
+              </div>
+              <p>學習如何發揮創意，創造出獨特而吸引人的影片內容。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*攝影團隊歷年經驗*/}
+      <section className="w-full min-h-screen bg-neutral-800 py-20">
+        <div className="w-full bg-neutral-800 flex justify-center">
+          <h1 className="text-3xl font-bold text-white font-mono">
+            攝影團隊歷年經驗
+          </h1>
+        </div>
+        <div>
+          <p></p>
+          <div>
+            {/* <Image
+              src={
+                "https://static.wixstatic.com/media/0b36f0_d580da4977cd4899a2f47f8ea5041e63~mv2.jpg/v1/fill/w_325,h_217,q_90/0b36f0_d580da4977cd4899a2f47f8ea5041e63~mv2.jpg"
+              }
+              alt="活動紀錄"
+              width={325}
+              height={217}
+            /> */}
+          </div>
+        </div>
+      </section>
+      {/*預約*/}
+      <section id="booking" className="w-full bg-neutral-700 py-20">
+        <div className="flex justify-center py-5">
+          <h2 className="w-fit text-4xl font-bold text-white">
+            對我們的服務有興趣的您可以
+          </h2>
+        </div>
+        <div className="flex justify-center items-center gap-10">
+          <button className="p-8 bg-neutral-600 border border-neutral-950 rounded-xl text-xl text-white">
+            立即預約諮詢
+          </button>
+          <button className="p-8 bg-neutral-600 border border-neutral-950 rounded-xl text-xl text-white">
+            查看預約時間
+          </button>
+        </div>
+      </section>
+      {/*方案*/}
+      <PhotoService />
     </main>
   );
 }
@@ -128,22 +213,24 @@ type PhotoServiceCardProps = {
 function PhotoServiceCard({ service_detail }: PhotoServiceCardProps) {
   return (
     <CarouselItem>
-      <div className="flex justify-center items-center font-mono font-bold text-white py-10 text-3xl">
+      <div className="flex justify-center items-center font-mono font-bold text-white py-10 text-4xl">
         <h2 className="border-b-4 border-white w-fit">
           {service_detail.service_name}
         </h2>
       </div>
       <div className="flex justify-center items-center gap-6">
-        <div className="flex items-center gap-16">
+        <div className="flex items-center flex-col md:flex-row gap-16">
           {service_detail.service_detail.map((data) => (
-            <div className="w-[300px] h-auto bg-neutral-800 flex flex-col rounded-2xl">
-              <Image
-                src={data.image}
-                alt={data.title}
-                width={300}
-                height={300}
-                className="rounded-2xl"
-              />
+            <div className="w-[350px] h-auto bg-neutral-800 flex flex-col rounded-2xl">
+              <AspectRatio ratio={16 / 9}>
+                <Image
+                  src={data.image}
+                  alt={data.title}
+                  fill
+                  priority
+                  className="rounded-2xl"
+                />
+              </AspectRatio>
               <h3 className="p-4 text-white text-2xl font-bold font-mono">
                 {data.title}
               </h3>

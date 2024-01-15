@@ -9,11 +9,11 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: "/",
   },
   {
-    title: "關聯字",
+    title: "熱點排名",
     href: "/keyword",
   },
   {
-    title: "AI關鍵字",
+    title: "AI產生關鍵字排序",
     href: "/keyword-ai",
   },
   {

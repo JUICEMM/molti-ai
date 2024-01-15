@@ -88,7 +88,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
   }) {
     try {
       setIsLoading(true);
-      const prompt = `請僅提供 ${category} ${keyword} 前100名SEO關鍵字,`;
+      const prompt = `請僅提供 ${category} ${keyword} 前30名SEO關鍵字,`;
       console.log(prompt);
       const completion = await fetchOpenAICompletion(prompt);
       console.log(completion);

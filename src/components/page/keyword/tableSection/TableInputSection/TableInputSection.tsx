@@ -18,8 +18,8 @@ const TableInputSection = ({ setIframeUrl }: TableInputSectionProps) => {
       <div className="flex items-center justify-center">
         <Card className="w-full border-0">
           <CardHeader>
-            <CardTitle>關鍵字搜索</CardTitle>
-            <CardDescription>選擇相關變數取得關鍵字</CardDescription>
+            <CardTitle>內容創作工具</CardTitle>
+            <CardDescription>各個熱點排行給您做參考</CardDescription>
           </CardHeader>
           <CardContent>
             <TableInputForm setIframeUrl={setIframeUrl}/>

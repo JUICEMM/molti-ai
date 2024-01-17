@@ -30,12 +30,6 @@ const NavbarMenu_mobile = ({navItems}: NavbarMenu_mobileProps) => {
         </div>
         <div className="flex h-screen items-center justify-center">
           <div className="flex flex-col gap-3 font-bold text-white">
-            <Link
-              href={"/"}
-              className="rounded-md px-8 py-2 text-center transition-colors duration-200 ease-in-out hover:bg-teal-300"
-            >
-              首頁
-            </Link>
             {navItems.map((navitem) => (
               <Link
                 key={navitem.title}

@@ -9,7 +9,7 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: "/",
   },
   {
-    title: "熱點搜索",
+    title: "熱點工具",
     href: "/hotspot",
   },
   {

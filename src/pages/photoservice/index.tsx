@@ -91,7 +91,7 @@ export default function PhotoServicePage() {
       </nav>
       {/*Header*/}
       <section
-        className="relative w-full h-screen bg-cover bg-no-repeat bg-fixed"
+        className="relative w-full h-screen bg-cover bg-no-repeat bg-fixed bg-center"
         style={{ backgroundImage: `url(${photoHeader.src})` }}
       >
         <div className="flex justify-center items-center h-full">
@@ -170,7 +170,7 @@ export default function PhotoServicePage() {
         </div>
         <div className="p-5 space-y-5">
           <p className="text-white font-mono font-bold text-2xl"></p>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-col md:flex-row items-center gap-5">
             <Image
               src={ex1}
               alt="活動紀錄"
@@ -205,15 +205,15 @@ export default function PhotoServicePage() {
       {/*預約*/}
       <section id="booking" className="w-full bg-neutral-700 py-20">
         <div className="flex justify-center py-5">
-          <h2 className="w-fit text-4xl font-bold text-white">
+          <h2 className="w-fit text-2xl md:text-4xl font-bold text-white">
             對我們的服務有興趣的您可以
           </h2>
         </div>
         <div className="flex justify-center items-center gap-10">
-          <button className="p-8 bg-neutral-600 border border-neutral-950 rounded-xl text-xl text-white">
+          <button className="p-4 md:p-8 bg-neutral-600 border border-neutral-950 rounded-xl text-md md:text-xl text-white">
             立即預約諮詢
           </button>
-          <button className="p-8 bg-neutral-600 border border-neutral-950 rounded-xl text-xl text-white">
+          <button className="p-4 md:p-8 bg-neutral-600 border border-neutral-950 rounded-xl text-md md:text-xl text-white">
             查看預約時間
           </button>
         </div>

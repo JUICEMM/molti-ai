@@ -8,18 +8,13 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const plans = [
   {
-    name: "影片剪輯教學服務",
-    price: "11000",
-    priceUrl: "https://cart.cashier.ecpay.com.tw/qp/tm9E",
-  },
-  {
-    name: "影像影音拍攝服務",
+    name: "直播拍攝服務",
     price: "13200",
-    priceUrl: "https://cart.cashier.ecpay.com.tw/qp/tm66",
+    priceUrl: "https://cart.cashier.ecpay.com.tw/qp/tntB",
   },
 ];
 
-export default function PhotoServiceBusinessPage() {
+export default function PhotoServiceLivePage() {
   const [selected, setSelected] = useState(plans[0]);
   return (
     <>
@@ -30,7 +25,7 @@ export default function PhotoServiceBusinessPage() {
               <AspectRatio ratio={16 / 9}>
                 <Image
                   src={
-                    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    "https://images.unsplash.com/photo-1522327646852-4e28586a40dd?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   }
                   alt="image"
                   fill
@@ -40,10 +35,10 @@ export default function PhotoServiceBusinessPage() {
               </AspectRatio>
             </div>
             <h1 className="font-mono font-bold text-2xl md:text-4xl text-white">
-              我們提供專業的商業攝影服務
+              我們提供專業的直播服務
             </h1>
             <p className="font-mono font-bold text-white">
-              保證您的作品質感更上一層樓
+              保證您有優良的直播品質
             </p>
           </div>
           <div className="basis-1/2 flex items-center">

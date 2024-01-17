@@ -15,55 +15,22 @@ import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function Home() {
-  const countryData = [
-    {
-      imageUrl: taiwan,
-      title: "Taiwan",
-      description: [
-        { store: "蝦皮", status: true },
-        { store: "露天", status: true },
-        { store: "Momo", status: false },
-        { store: "Rakutan", status: false },
-        { store: "Amazon", status: false },
-      ],
-    },
-    {
-      imageUrl: japan,
-      title: "Japan",
-      description: [
-        { store: "Amazon", status: true },
-        { store: "Rakutan", status: false },
-      ],
-    },
-    {
-      imageUrl: us,
-      title: "United States",
-      description: [{ store: "Amazon", status: true }],
-    },
-  ];
-
   const featureData = [
-    {
-      icon: (
-        <PsychologyOutlinedIcon sx={{ color: "green", fontSize: "3.2rem" }} />
-      ),
-      title: "AI科學營運",
-      description: "利用AI打造強大功能解決問題",
-    },
     {
       icon: (
         <UpdateOutlinedIcon sx={{ color: "#4169E1", fontSize: "3.2rem" }} />
       ),
       title: "快速、效率",
-      description: "我們主打快速並且有效率解決問題",
+      description: "我們主打有效率利用AI強大的功能快速解決問題",
     },
     {
       icon: <SupportAgentIcon sx={{ color: "#FF8C00", fontSize: "3.2rem" }} />,
       title: "專業服務",
-      description: "如果想增進拍攝影片服務，可以我們專業團隊聯繫",
+      description: "並提供專業拍攝影片服務，自從IP打造到腳本規劃，一站式服務讓您的品牌擁有最完整短影音策略方案！",
     },
   ];
 
@@ -99,8 +66,28 @@ export default function Home() {
       pay: true,
     },
   ];
+  //   async function fetchHotlistData() {
+  //     const url = "https://v.api.aa1.cn/api/douyin-hot/index.php?aa1=hot";
 
-  const router = useRouter();
+  //     try {
+  //       const response = await fetch(url);
+
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! Status: ${response.status}`);
+  //       }
+
+  //       const dataText = await response.json();
+
+  //       // 在這裡處理獲得的資料
+  //     } catch (error) {
+  //       console.error("Error fetching hotlist data:", error);
+  //       // 在這裡處理錯誤
+  //     }
+  //   }
+
+  //   // 使用範例
+  //   fetchHotlistData();
+  // }, []);
 
   return (
     <>
@@ -115,7 +102,7 @@ export default function Home() {
           <div className="gradient" />
         </div>
         {/*Heading section */}
-        <div className="flex h-screen items-center justify-center gap-5 bg-gradient-to-b from-teal-700 to-teal-500">
+        <div className="flex h-[300px] items-center justify-center gap-5 bg-gradient-to-b from-teal-700 to-teal-500">
           <div className="flex flex-col items-center justify-center">
             <motion.div
               initial="hidden"
@@ -126,39 +113,13 @@ export default function Home() {
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: 50 },
               }}
-              className="app py-10 text-5xl text-black"
+              className="app pt-20 text-5xl text-black"
             >
-              <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-5xl font-bold text-transparent md:text-8xl">
+              <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-3xl font-bold text-transparent md:text-5xl">
                 MoltiAI
               </div>
-              <div className="text-center text-2xl font-bold text-white md:text-6xl">
+              <div className="text-center text-xl font-bold text-white md:text-4xl">
                 MoltiAI幫你解決生活大小事
-              </div>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.3 }}
-              viewport={{ once: true }}
-              variants={{
-                visible: { opacity: 1, y: 0 },
-                hidden: { opacity: 0, y: 50 },
-              }}
-              className="flex flex-1 items-center justify-center gap-5"
-            >
-              <div>
-                <Button
-                  variant={"default"}
-                  className="text-md"
-                  onClick={() => router.push("/keyword")}
-                >
-                  Start Your Free Trial
-                </Button>
-              </div>
-              <div>
-                <Button variant={"outline"} className="text-md">
-                  <AnchorLink href="#contact">Contact Us</AnchorLink>
-                </Button>
               </div>
             </motion.div>
           </div>
@@ -167,58 +128,35 @@ export default function Home() {
         {/*feature section*/}
         <div className="py-16">
           <div className="py-12 text-center">
-            <p className="font-serif text-5xl font-bold">三大核心優勢</p>
+            <p className="font-serif text-5xl font-bold">四大優勢</p>
           </div>
-          <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-3">
-            {featureData.map((item, index) => (
-              <FeatureCard
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
-                index={index}
-              />
+          <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2">
+            {functionData.map((item, index) => (
+              <FunctionCard key={index} {...item} />
             ))}
           </div>
         </div>
         {/*function section*/}
         <div className="flex h-auto items-center bg-white bg-gradient-to-b py-10">
           <div className="mx-auto w-[90%]">
+            <div className="grid grid-cols-1 justify-items-center gap-3 md:grid-cols-2 md:gap-1">
+              {featureData.map((item, index) => (
+                <FeatureCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  index={index}
+                />
+              ))}
+            </div>
             <div className="flex flex-col items-center justify-center gap-4 px-4 py-6 text-6xl font-bold text-black md:py-2">
               <div className="text-center text-4xl md:text-5xl">
-                Molti助您擴展企業規模
+                Molti助您擴展企業品牌
               </div>
-              <p className="text-lg">精準分析產品趨勢及關鍵詞</p>
-            </div>
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-1">
-              {functionData.map((item, index) => (
-                <FunctionCard key={index} {...item} />
-              ))}
             </div>
           </div>
         </div>
-        {/*Country section*/}
-        {/* <div className="h-auto bg-gradient-to-b from-teal-500 to-teal-600">
-          <div className="flex items-center justify-center">
-            <div>
-              <div className="app py-10 text-5xl text-black">
-                <div className="bg-gradient-to-r bg-clip-text text-center text-3xl font-bold text-white md:text-4xl xl:text-5xl">
-                  支援3種不同國家
-                </div>
-                <div className="text-3xl font-bold text-emerald-100">
-                  熱門大型電商網站
-                </div>
-                <div className="flex flex-col gap-5 p-2 md:grid md:grid-cols-3">
-                  {countryData.map((item, index) => (
-                    <CountryCard key={index} {...item} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        {/*Contact section*/}
-        <div></div>
       </main>
     </>
   );

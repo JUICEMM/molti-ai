@@ -9,8 +9,8 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: "/",
   },
   {
-    title: "熱點排名",
-    href: "/keyword",
+    title: "熱點搜索",
+    href: "/hotspot",
   },
   {
     title: "AI產生關鍵字排序",

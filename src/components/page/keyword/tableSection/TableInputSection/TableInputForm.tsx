@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -19,67 +20,84 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { useMemo, useState } from "react";
-import { twMerge } from "tailwind-merge";
-import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import type { CountryEcommerceWebsitesDataTypes } from "types/dataType";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import { useMemo, useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { useForm } from "react-hook-form";
+import { twMerge } from "tailwind-merge";
+import type { CountryHotspotDataTypes } from "types/dataType";
+import * as z from "zod";
 
 //各個Select component的選項
-const country_data: Array<string> = ["台灣", "美國", "日本", "英國"];
-const ecommerce_data: Array<CountryEcommerceWebsitesDataTypes> = [
-  { 台灣: ["蝦皮", "MOMO", "露天拍賣", "Rakutan"] },
-  { 日本: ["Amazon", "Yahoo! JAPAN", "Rakutan"] },
-  { 美國: ["Amazon"] },
+const COUNTRY: Array<string> = ["全球", "台灣", "中國大陸"];
+const HOTSPOT: Array<CountryHotspotDataTypes> = [
+  { 全球: ["熱門網站排名"] },
+  { 台灣: ["google趨勢", "youtube熱門"] },
+  { 中國大陸: ["抖音", "小紅書", "微博"] },
 ];
-const category_data: Array<string> = [
-  "女性衣著",
-  "男性衣著",
-  "運動/健身",
-  "男女鞋",
-  "女生配件/黃金",
-  "美妝保健",
-  "嬰幼童語母親",
-  "女生包包/精品",
-  "男生包包/配件",
-  "戶外/運動",
-  "書籍及雜誌期刊",
-  "居家生活",
-  "美食/伴手禮",
-  "汽機車零件百貨",
-  "電玩遊戲",
-  "娛樂/收藏",
-  "寵物",
-  "手機平板與周邊",
-  "3C與筆電",
-  "家電影音",
-];
-const time_data: Array<string> = [
-  "過去7天",
-  "過去14天",
-  "過去30天",
-  "過去5個月",
+
+const HOTSPOT_DATA: Array<{
+  country: string;
+  data: Array<{ store: string; iframeUrl: string }>;
+}> = [
+  {
+    country: "全球",
+    data: [
+      {
+        store: "熱門網站排名",
+        iframeUrl: "https://www.similarweb.com/zh-tw/top-websites/",
+      },
+    ],
+  },
+  {
+    country: "台灣",
+    data: [
+      {
+        store: "google趨勢",
+        iframeUrl:
+          "https://trends.google.com.tw/trends/explore?geo=TW&hl=zh-TW",
+      },
+      {
+        store: "youtube熱門",
+        iframeUrl: "https://tw.noxinfluencer.com/youtube-video-rank",
+      },
+    ],
+  },
+  {
+    country: "中國大陸",
+    data: [
+      {
+        store: "抖音",
+        iframeUrl: "https://douhot.douyin.com/ranking?active_tab=ranking_rise",
+      },
+      {
+        store: "小紅書",
+        iframeUrl: "https://www.qian-gua.com/rank/fans/1/1/20240115/93.html",
+      },
+      {
+        store: "微博",
+        iframeUrl: "https://www.kaolamedia.com/hot",
+      },
+    ],
+  },
 ];
 
 const formSchema = z.object({
   country: z.string().nonempty({ message: "國家不能為空值" }),
   store: z.string().nonempty({ message: "電商不能為空值" }),
-  category: z.string().nonempty({ message: "商品分類不能為空值" }),
-  time: z.string(),
-  keyword: z.string(),
 });
 
-const TableInputForm = () => {
+type TableInputSectionProps = {
+  setIframeUrl: Dispatch<SetStateAction<string>>;
+};
+
+const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
   const [country, setCountry] = useState("");
 
   //當使用者選擇了某一國家，我們只會取得該國家的電商網站
   const currentCountryStores: string[] = useMemo(
-    () => ecommerce_data.find((item) => item[country])?.[country] ?? [],
+    () => HOTSPOT.find((item) => item[country])?.[country] ?? [],
     [country]
   );
 
@@ -88,9 +106,6 @@ const TableInputForm = () => {
     defaultValues: {
       country: "",
       store: "",
-      category: "",
-      time: "",
-      keyword: "",
     },
   });
 
@@ -98,6 +113,11 @@ const TableInputForm = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    setIframeUrl(
+      HOTSPOT_DATA.find((item) => item.country === values.country)?.data.find(
+        (item) => item.store === values.store
+      )?.iframeUrl ?? ""
+    );
   }
 
   return (
@@ -112,7 +132,7 @@ const TableInputForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex items-center text-teal-700">
-                    國家:
+                    地區:
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
@@ -121,7 +141,7 @@ const TableInputForm = () => {
                           />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>請選擇國家以便查詢電商網站</p>
+                          <p>請選擇地區</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -145,8 +165,11 @@ const TableInputForm = () => {
                         <SelectValue placeholder="請選擇國家..." />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent position="popper" className="overflow-scroll max-h-[300px]">
-                      {country_data.map((item) => (
+                    <SelectContent
+                      position="popper"
+                      className="overflow-scroll max-h-[300px]"
+                    >
+                      {COUNTRY.map((item) => (
                         <SelectItem key={item} value={item.toLowerCase()}>
                           {item}
                         </SelectItem>
@@ -163,7 +186,7 @@ const TableInputForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex items-center text-teal-700">
-                    電商:
+                    平台:
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
@@ -172,7 +195,7 @@ const TableInputForm = () => {
                           />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>選擇電商之前，請先選擇國家</p>
+                          <p>選擇平台之前，請先選擇地區以方便做查詢</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -185,10 +208,13 @@ const TableInputForm = () => {
                           "hover:border-teal-500 focus:ring-teal-500"
                         )}
                       >
-                        <SelectValue placeholder="請選擇電商..." />
+                        <SelectValue placeholder="請選擇欲查詢平台..." />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent position="popper" className="overflow-scroll max-h-[300px]">
+                    <SelectContent
+                      position="popper"
+                      className="overflow-scroll max-h-[300px]"
+                    >
                       {currentCountryStores.map((item) => (
                         <SelectItem key={item} value={item.toLowerCase()}>
                           {item}
@@ -200,13 +226,13 @@ const TableInputForm = () => {
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name="category"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex items-center text-teal-700">
-                    商品分類:
+                    熱點分類:
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
@@ -215,7 +241,7 @@ const TableInputForm = () => {
                           />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>請選擇商品分類以便查詢關聯字</p>
+                          <p>請選擇熱點分類</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -228,7 +254,7 @@ const TableInputForm = () => {
                           "hover:border-teal-500 focus:ring-teal-500"
                         )}
                       >
-                        <SelectValue placeholder="請選擇商品分類..." />
+                        <SelectValue placeholder="請選擇熱點分類..." />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent position="popper" className="overflow-scroll max-h-[300px]">
@@ -242,8 +268,8 @@ const TableInputForm = () => {
                   </Select>
                 </FormItem>
               )}
-            />
-            <FormField
+            /> */}
+            {/* <FormField
               control={form.control}
               name="time"
               render={({ field }) => (
@@ -285,9 +311,9 @@ const TableInputForm = () => {
                   </Select>
                 </FormItem>
               )}
-            />
+            /> */}
           </div>
-          <div className="mt-4 flex flex-col space-y-1.5 md:flex-row">
+          {/* <div className="mt-4 flex flex-col space-y-1.5 md:flex-row">
             <FormField
               control={form.control}
               name="keyword"
@@ -305,7 +331,7 @@ const TableInputForm = () => {
                 </div>
               )}
             />
-          </div>
+          </div> */}
         </div>
         <div className="flex justify-end py-5">
           <div className="flex items-center gap-5">

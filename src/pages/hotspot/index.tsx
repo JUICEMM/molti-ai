@@ -10,7 +10,6 @@ const KeywordPage = () => {
       <main className="min-h-screen pt-[70px]">
         <DataRowSelectionContextProvider>
           <TableSection />
-          <DashboardSection />
         </DataRowSelectionContextProvider>
       </main>
     </>

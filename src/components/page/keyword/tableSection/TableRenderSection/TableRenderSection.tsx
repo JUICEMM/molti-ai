@@ -1,9 +1,11 @@
+import TableRenderHeader from "./TableRenderHeader";
 import { columns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/Columns";
 import { DataTable } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/DataTable";
 import type { DataAnalysisColumnsTypes } from "types/dataType";
-import TableRenderHeader from "./TableRenderHeader";
 
-{/*Fake data(之後可以呼叫真資料後請將此刪掉)*/}
+{
+  /*Fake data(之後可以呼叫真資料後請將此刪掉)*/
+}
 export const data: DataAnalysisColumnsTypes[] = [
   {
     id: "1",
@@ -97,13 +99,21 @@ export const data: DataAnalysisColumnsTypes[] = [
   },
 ];
 
-const TableRenderSection = () => {
+type TableRenderSectionProps = {
+  iframeUrl: string;
+};
+
+const TableRenderSection = ({ iframeUrl }: TableRenderSectionProps) => {
   return (
-    <div className="p-1 md:p-8">
-      <div className="rounded-md border border-teal-500 bg-white">
-        <TableRenderHeader />
-        {/*我們使用Shadcn/ui的Table，詳細資訊請看:https://ui.shadcn.com/docs/components/data-table*/}
-        <DataTable columns={columns} data={data} />
+    <div className="p-1 md:p-8 bg-slate-100">
+      <div className="rounded-md border-0 bg-white">
+        <iframe
+          src={iframeUrl}
+          width={"100%"}
+          height="600"
+          allowFullScreen
+          className="rounded-md"
+        />
       </div>
     </div>
   );

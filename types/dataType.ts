@@ -9,9 +9,9 @@ export type DataAnalysisColumnsTypes = {
   產品平均價格: number;
 };
 
-//*Data
-//Type of country e-commerce website data in KeywordInputSection
-export type CountryEcommerceWebsitesDataTypes = {
+// hotspot Data type
+// Type of country e-commerce website data in KeywordInputSection
+export type CountryHotspotDataTypes = {
   [key: string]: Array<string>;
 };
 //Type of PriceCard component

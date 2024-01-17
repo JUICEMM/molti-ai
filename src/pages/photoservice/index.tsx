@@ -1,4 +1,8 @@
 import photoHeader from "../../../public/photo.jpg";
+import ex1 from "../../../public/photoservice-ex1.png";
+import ex2 from "../../../public/photoservice-ex2.png";
+import ex3 from "../../../public/photoservice-ex3.png";
+import ex4 from "../../../public/photoservice-ex4.png";
 import PhotoService from "@/components/page/photoservice/PhotoService";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
@@ -164,17 +168,37 @@ export default function PhotoServicePage() {
             攝影團隊歷年經驗
           </h1>
         </div>
-        <div>
-          <p></p>
-          <div>
-            {/* <Image
-              src={
-                "https://static.wixstatic.com/media/0b36f0_d580da4977cd4899a2f47f8ea5041e63~mv2.jpg/v1/fill/w_325,h_217,q_90/0b36f0_d580da4977cd4899a2f47f8ea5041e63~mv2.jpg"
-              }
+        <div className="p-5 space-y-5">
+          <p className="text-white font-mono font-bold text-2xl"></p>
+          <div className="flex items-center gap-5">
+            <Image
+              src={ex1}
               alt="活動紀錄"
               width={325}
               height={217}
-            /> */}
+              className="hover:scale-105 transition duration-100 ease-in-out"
+            />
+            <Image
+              src={ex2}
+              alt="活動紀錄"
+              width={325}
+              height={217}
+              className="hover:scale-105 transition duration-100 ease-in-out"
+            />
+            <Image
+              src={ex3}
+              alt="活動紀錄"
+              width={325}
+              height={217}
+              className="hover:scale-105 transition duration-100 ease-in-out"
+            />
+            <Image
+              src={ex4}
+              alt="活動紀錄"
+              width={325}
+              height={217}
+              className="hover:scale-105 transition duration-100 ease-in-out"
+            />
           </div>
         </div>
       </section>

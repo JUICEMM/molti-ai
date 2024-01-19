@@ -110,8 +110,8 @@ export default function Home() {
               }}
               className="flex items-center pt-20 text-5xl text-black"
             >
-              <div className="relative basis-1/2">
-                <div className="w-[400px] absolute top-[-70px] left-16 hidden md:block">
+              <div className="relative basis-1/2 hidden md:block">
+                <div className="w-[400px] absolute top-[-70px] left-16">
                   <Image
                     src={moltiai_banner_img}
                     alt="logo"

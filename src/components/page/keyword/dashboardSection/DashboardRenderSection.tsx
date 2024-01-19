@@ -1,4 +1,4 @@
-import { useDataRowSelectionContext } from "@/context/page/keyword/DataRowSelectionContext";
+import { useDataRowSelectionContext } from "@/context/page/hotspot/DataRowSelectionContext";
 import { Grid, Col } from "@tremor/react";
 import type { AreaChartDataItem } from "types/chartType";
 import AreaChartComponent from "./chart/AreaChartComponent";

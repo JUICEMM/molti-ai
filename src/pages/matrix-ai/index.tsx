@@ -1,7 +1,6 @@
 import aibg from "../../../public/AIbg.jpeg";
 import martixai from "../../../public/matrix_header.jpg";
 import white_bg from "../../../public/white_bg.jpg";
-import Navbar from "@/components/global/Navbars/Navbar";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import MainFeatureCard from "@/components/page/matrix-ai/MainFeatureCard";
 import ProblemCard from "@/components/page/matrix-ai/ProblemCard";

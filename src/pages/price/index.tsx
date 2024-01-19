@@ -1,5 +1,5 @@
 import * as React from "react"
-import Navbar from "@/components/global/Navbars/Navbar";
+import Navbar from "@/components/global/navbars/Navbar";
 import PriceCard from "@/components/price/PriceCard";
 import {
   Carousel,

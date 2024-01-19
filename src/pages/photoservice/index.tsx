@@ -1,4 +1,3 @@
-import NavbarMenu_mobile from "@/components/global/Navbars/NavbarMenu_mobile";
 import photoHeader from "../../../public/photo.jpg";
 import ex1 from "../../../public/photoservice-ex1.png";
 import ex2 from "../../../public/photoservice-ex2.png";
@@ -6,7 +5,6 @@ import ex3 from "../../../public/photoservice-ex3.png";
 import ex4 from "../../../public/photoservice-ex4.png";
 import ex5 from "../../../public/photoservice-ex5.png";
 import ex6 from "../../../public/photoservice-ex6.png";
-import { navItems } from "@/components/global/Navbars/Navbar";
 import PhotoService from "@/components/page/photoservice/PhotoService";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {

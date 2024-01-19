@@ -35,6 +35,7 @@ const NavbarMenu_mobile = ({navItems}: NavbarMenu_mobileProps) => {
                 key={navitem.title}
                 href={navitem.href}
                 className="rounded-md px-8 py-2 text-center transition-colors duration-200 ease-in-out hover:bg-neutral-300"
+                onClick={() => setIsMobileNavbarMenuOpen(false)}
               >
                 {navitem.title}
               </Link>

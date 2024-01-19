@@ -3,7 +3,7 @@ import moltiai_banner_img from "../../public/moltiai-banner-img.png";
 import photograph from "../../public/攝影.png";
 import moltiai from "../../public/矩陣系統截圖.png";
 import keywordai from "../../public/關鍵字AI截圖.png";
-import Navbar from "@/components/global/Navbars/Navbar";
+import Navbar from "@/components/global/navbars/Navbar";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import FunctionCard from "@/components/page/home/FunctionCard";
 import { AspectRatio } from "@/components/ui/aspect-ratio";

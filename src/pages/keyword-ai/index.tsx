@@ -1,4 +1,4 @@
-import Navbar from "@/components/global/Navbars/Navbar";
+import Navbar from "@/components/global/navbars/Navbar";
 import AIInputSection from "@/components/page/keyword-ai/AIInputSection";
 import AIRenderSection from "@/components/page/keyword-ai/AIRenderSection";
 import { useState } from "react";

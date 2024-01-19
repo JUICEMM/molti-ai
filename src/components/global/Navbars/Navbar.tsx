@@ -30,7 +30,6 @@ export const navItems: Array<{ title: string; href: string; }> = [
   },
 ];
 const Navbar = () => {
-
   return (
     <>
       <nav className="fixed z-[999] flex w-full bg-white">

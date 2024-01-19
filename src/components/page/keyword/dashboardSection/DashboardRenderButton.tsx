@@ -5,7 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useDataRowSelectionContext } from "@/context/page/keyword/DataRowSelectionContext";
+import { useDataRowSelectionContext } from "@/context/page/hotspot/DataRowSelectionContext";
 import _ from "lodash";
 
 type DashboardRenderButtonProps = {

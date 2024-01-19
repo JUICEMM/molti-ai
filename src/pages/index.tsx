@@ -61,28 +61,6 @@ export default function Home() {
       pay: true,
     },
   ];
-  //   async function fetchHotlistData() {
-  //     const url = "https://v.api.aa1.cn/api/douyin-hot/index.php?aa1=hot";
-
-  //     try {
-  //       const response = await fetch(url);
-
-  //       if (!response.ok) {
-  //         throw new Error(`HTTP error! Status: ${response.status}`);
-  //       }
-
-  //       const dataText = await response.json();
-
-  //       // 在這裡處理獲得的資料
-  //     } catch (error) {
-  //       console.error("Error fetching hotlist data:", error);
-  //       // 在這裡處理錯誤
-  //     }
-  //   }
-
-  //   // 使用範例
-  //   fetchHotlistData();
-  // }, []);
 
   return (
     <>
@@ -121,7 +99,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div className="basis-1/2 flex flex-col gap-5">
+              <div className="md:basis-1/2 basis-0 flex flex-col gap-5">
                 <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-3xl font-bold text-transparent md:text-5xl">
                   Molti矩陣系統
                 </div>

@@ -205,7 +205,7 @@ export default function MatrixAIPage() {
       </div>
       {/*Header*/}
       <section
-        className="w-full h-dvh bg-cover bg-center bg-no-repeat flex justify-center items-center"
+        className="h-dvh bg-cover bg-center bg-no-repeat flex justify-center items-center"
         style={{ backgroundImage: `url(${aibg.src})` }}
       >
         <div className="flex justify-center items-center">

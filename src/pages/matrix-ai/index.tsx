@@ -272,7 +272,7 @@ export default function MatrixAIPage() {
           className="w-full h-full object-cover absolute z-[-999] opacity-85"
         />
         <div className="py-20 px-10">
-          <h2 className="text-center text-5xl font-bold py-16">
+          <h2 className="text-center text-3xl md:text-5xl font-bold py-16">
             有面臨這些問題？
           </h2>
           <div className="flex flex-col gap-20">
@@ -290,7 +290,7 @@ export default function MatrixAIPage() {
 
       {/*介紹*/}
       <section className="relative py-20">
-        <h2 className="text-center text-5xl font-bold pb-20 pt-8">
+        <h2 className="text-center text-3xl md:text-5xl font-bold pb-20 pt-8">
           矩陣系統能能給你帶來什麼？
         </h2>
         <div className="flex flex-col gap-20">
@@ -308,10 +308,10 @@ export default function MatrixAIPage() {
           transition={{ duration: 0.7, ease: "easeInOut", delay: 0.1 }}
           viewport={{ once: true, amount: 0.5 }}
           variants={{
-            visible: { opacity: 1, x: 0 },
-            hidden: { opacity: 0, x: 50 },
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 50 },
           }}
-          className="pt-10 pb-20 text-center font-bold text-5xl"
+          className="pt-10 pb-20 text-center font-bold text-3xl md:text-5xl"
         >
           為什麼你一定要用矩陣AI?
         </motion.h3>

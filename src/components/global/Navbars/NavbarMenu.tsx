@@ -15,7 +15,7 @@ type NavbarMenuProps = {
 
 const NavbarMenu = ({ navItems }: NavbarMenuProps) => {
   return (
-    <div className="hidden flex-1 p-4 md:block">
+    <div className="hidden flex-1 p-4 lg:block">
       <NavigationMenu>
         <NavigationMenuList>
           {navItems.map((navItem) => (

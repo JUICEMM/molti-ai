@@ -206,7 +206,7 @@ export default function MatrixAIPage() {
       </div>
       {/*Header*/}
       <section
-        className="w-full h-screen bg-cover bg-center bg-no-repeat flex justify-center items-center"
+        className="w-full h-dvh bg-cover bg-center bg-no-repeat flex justify-center items-center"
         style={{ backgroundImage: `url(${aibg.src})` }}
       >
         <div className="flex justify-center items-center">
@@ -315,7 +315,7 @@ export default function MatrixAIPage() {
         >
           為什麼你一定要用矩陣AI?
         </motion.h3>
-        <div className="w-[70%] mx-auto">
+        <div className="w-[90%] mx-auto">
           <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-3">
             {SECOND_FEATURE_DATA.map((item, index) => (
               <FeatureCard key={index} {...item} index={index} />
@@ -326,7 +326,7 @@ export default function MatrixAIPage() {
 
       <section id="price" className="relative">
         <div className="absolute top-0 -z-[999] h-[600px] w-full rounded-b-full bg-gradient-to-b from-white via-blue-300 to-blue-400" />
-        <div className="min-h-screen gap-10 pt-[73px] font-serif text-black">
+        <div className="h-dvh gap-10 pt-[73px] font-serif text-black">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -354,11 +354,6 @@ export default function MatrixAIPage() {
             }}
             className="flex items-center justify-center py-10"
           >
-            {/* <div className="flex flex-col gap-8 px-5 py-2 md:grid md:grid-cols-3 lg:grid-cols-5">
-            {price_card_data.map((card, index) => (
-              <PriceCard key={index} {...card} />
-            ))}
-          </div> */}
             <Carousel className="w-full flex justify-center items-center">
               <CarouselContent className="-ml-1 max-w-[2/3]">
                 {price_card_data.map((card, index) => (

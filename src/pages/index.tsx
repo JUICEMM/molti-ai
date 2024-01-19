@@ -1,10 +1,7 @@
-import japan from "../../public/japan.png";
-import taiwan from "../../public/taiwan.png";
-import us from "../../public/united-states.png";
+import hotspot from "../../public/hotspot.png";
 import photograph from "../../public/攝影.png";
 import moltiai from "../../public/矩陣系統截圖.png";
 import keywordai from "../../public/關鍵字AI截圖.png";
-import keyword from "../../public/關鍵字頁面截圖.png";
 import Navbar from "@/components/global/Navbars/Navbar";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import FunctionCard from "@/components/page/home/FunctionCard";
@@ -14,9 +11,6 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function Home() {
   const featureData = [
@@ -30,24 +24,24 @@ export default function Home() {
     {
       icon: <SupportAgentIcon sx={{ color: "#FF8C00", fontSize: "3.2rem" }} />,
       title: "專業服務",
-      description: "並提供專業拍攝影片服務，自從IP打造到腳本規劃，一站式服務讓您的品牌擁有最完整短影音策略方案！",
+      description:
+        "並提供專業拍攝影片服務，自從IP打造到腳本規劃，一站式服務讓您的品牌擁有最完整短影音策略方案！",
     },
   ];
 
   const functionData = [
     {
-      imageUrl: keyword,
-      title: "關鍵字",
-      description:
-        "產品關鍵字查詢可精確尋找特定商品的關聯字詞，提供搜索趨勢、PPC競價及特性等資訊，幫助企業家在廣告投放做出明智選擇",
-      href: "/keyword",
+      imageUrl: hotspot,
+      title: "熱點搜索工具",
+      description: "利用熱點工具幫助您在製作短影音",
+      href: "/hotspot",
       pay: false,
     },
     {
       imageUrl: keywordai,
-      title: "AI關鍵字",
+      title: "AI產生關鍵字排序",
       description:
-        "利用AI取得關聯度最高的百大關鍵字，幫助企業家在廣告投放做出明智選擇",
+        "利用AI取得關聯度最高的前30關鍵字，幫助企業家在廣告投放做出明智選擇",
       href: "/keyword-ai",
       pay: false,
     },

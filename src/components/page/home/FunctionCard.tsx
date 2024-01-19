@@ -30,11 +30,11 @@ const FunctionCard = ({
           priority
         />
       </div>
-      <div className="flex flex-col gap-2 px-5 text-center">
+      <div className="flex flex-col gap-2 px-5 text-center mt-auto">
         <h1 className="text-3xl text-black font-bold">{title}</h1>
         <p className="text-xl text-gray-700">{description}</p>
       </div>
-      <div className="mt-auto flex justify-start gap-2 px-5">
+      <div className="flex justify-start gap-2 px-5">
         <>
           <Button
             variant={"outline"}

@@ -60,11 +60,11 @@ export default function PhotoService() {
       className="w-[90%] mx-auto bg-white pt-20 font-mono py-20"
     >
       <div className="py-5 px-5 mb-5 border-l-8 border-neutral-800">
-        <h1 className="text-3xl font-bold">Molti Photo 服務</h1>
+        <h1 className="text-3xl font-bold">Molti Photo 選擇方案</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-5">
         {PhotoServiceData.map((data) => (
-          <Link href={data.href} className="relative w-[300px] overflow-hidden group">
+          <Link key={data.id} href={data.href} className="relative w-[300px] overflow-hidden group">
             <AspectRatio ratio={1 / 1}>
               <Image
                 src={data.imageUrl}

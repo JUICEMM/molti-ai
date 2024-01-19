@@ -3,6 +3,9 @@ import ex1 from "../../../public/photoservice-ex1.png";
 import ex2 from "../../../public/photoservice-ex2.png";
 import ex3 from "../../../public/photoservice-ex3.png";
 import ex4 from "../../../public/photoservice-ex4.png";
+import ex5 from "../../../public/photoservice-ex5.png";
+import ex6 from "../../../public/photoservice-ex6.png";
+import { navItems } from "@/components/global/Navbars/Navbar";
 import PhotoService from "@/components/page/photoservice/PhotoService";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
@@ -77,9 +80,16 @@ export default function PhotoServicePage() {
         <ul className="flex items-center w-[80%] mx-auto">
           <li className="text-xl">Molti Photo</li>
           <div className="flex items-center gap-3 ml-auto">
-            <li className="hover:border-b-2 hover:border-white">
-              <Link href={"/photoservice"}>Home</Link>
+          {navItems.map((item) => (
+            <li
+              key={item.title}
+              className="text-md font-mono hover:border-b-2 hover:border-white"
+            >
+              <Link href={item.href}>{item.title}</Link>
             </li>
+          ))}
+          </div>
+          <div className="flex items-center gap-3 ml-auto">
             <li className="hover:border-b-2 hover:border-white">
               <AnchorLink href={"#service"}>服務</AnchorLink>
             </li>
@@ -170,32 +180,46 @@ export default function PhotoServicePage() {
         </div>
         <div className="p-5 space-y-5">
           <p className="text-white font-mono font-bold text-2xl"></p>
-          <div className="flex flex-col md:flex-row items-center gap-5">
+          <div className="grid grid-cols-1  md:grid-cols-2 justify-items-center items-center gap-5">
             <Image
               src={ex1}
               alt="活動紀錄"
-              width={325}
+              width={500}
               height={217}
               className="hover:scale-105 transition duration-100 ease-in-out"
             />
             <Image
               src={ex2}
               alt="活動紀錄"
-              width={325}
+              width={500}
               height={217}
               className="hover:scale-105 transition duration-100 ease-in-out"
             />
             <Image
               src={ex3}
               alt="活動紀錄"
-              width={325}
+              width={500}
               height={217}
               className="hover:scale-105 transition duration-100 ease-in-out"
             />
             <Image
               src={ex4}
               alt="活動紀錄"
-              width={325}
+              width={500}
+              height={217}
+              className="hover:scale-105 transition duration-100 ease-in-out"
+            />
+            <Image
+              src={ex5}
+              alt="活動紀錄"
+              width={500}
+              height={217}
+              className="hover:scale-105 transition duration-100 ease-in-out"
+            />
+            <Image
+              src={ex6}
+              alt="活動紀錄"
+              width={500}
               height={217}
               className="hover:scale-105 transition duration-100 ease-in-out"
             />

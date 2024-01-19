@@ -89,7 +89,7 @@ export default function Home() {
               className="flex items-center pt-20 text-5xl text-black"
             >
               <div className="relative basis-1/2 hidden md:block">
-                <div className="w-[400px] absolute top-[-70px] left-16">
+                <div className="absolute top-[-70px] left-16">
                   <Image
                     src={moltiai_banner_img}
                     alt="logo"
@@ -99,7 +99,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div className="md:basis-1/2 basis-0 flex flex-col gap-5">
+              <div className="md:basis-1/2 basis-auto flex flex-col gap-5">
                 <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-3xl font-bold text-transparent md:text-5xl">
                   Molti矩陣系統
                 </div>

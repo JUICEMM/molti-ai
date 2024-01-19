@@ -41,7 +41,7 @@ export default function Home() {
       imageUrl: keywordai,
       title: "AI產生關鍵字排序",
       description:
-        "利用AI取得關聯度最高的前30關鍵字，幫助企業家在廣告投放做出明智選擇",
+        "利利用AI取得關聯度最高的前30關鍵字，幫助企業在優化搜尋上做出明智選擇",
       href: "/keyword-ai",
       pay: false,
     },

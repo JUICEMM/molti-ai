@@ -19,17 +19,17 @@ const NavbarMenu_mobile = ({navItems}: NavbarMenu_mobileProps) => {
       <div
         className={
           isMobileNavbarMenuOpen === true
-            ? "fixed inset-0  z-[999] h-screen bg-teal-600 bg-opacity-90 backdrop:blur"
+            ? "fixed inset-0  z-[999] h-screen bg-neutral-200 bg-opacity-90 backdrop:blur"
             : "fixed z-[999]  hidden h-0"
         }
       >
         <div className="absolute top-5 right-5">
           <IconButton onClick={() => setIsMobileNavbarMenuOpen(false)}>
-            <CloseIcon sx={{ color: "white",fontSize: "2rem" }} />
+            <CloseIcon sx={{ color: "black",fontSize: "2rem" }} />
           </IconButton>
         </div>
         <div className="flex h-screen items-center justify-center">
-          <div className="flex flex-col gap-3 font-bold text-white">
+          <div className="flex flex-col gap-3 font-bold text-neutral-800">
             {navItems.map((navitem) => (
               <Link
                 key={navitem.title}

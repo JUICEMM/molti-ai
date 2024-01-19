@@ -24,6 +24,10 @@ const HOTSPOT_DATA = [
     title: "千瓜數據",
     iframeUrl: "https://www.qian-gua.com/rank/fans/",
   },
+  {
+    title: "Countik熱門歌曲",
+    iframeUrl: "https://countik.com/zh/popular/songs",
+  },
 ];
 
 const formSchema = z.object({

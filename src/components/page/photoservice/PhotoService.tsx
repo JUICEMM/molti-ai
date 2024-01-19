@@ -2,33 +2,6 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import Link from "next/link";
 
-const PhotoServicePriceData = [
-  {
-    id: 1,
-    title: "影片剪輯教學服務",
-    price: "11000",
-    url: "https://cart.cashier.ecpay.com.tw/qp/tm9E",
-  },
-  {
-    id: 2,
-    title: "90秒短影音剪輯服務",
-    price: "3850",
-    url: "https://cart.cashier.ecpay.com.tw/qp/tm86",
-  },
-  {
-    id: 3,
-    title: "3-5分鐘短影音剪輯服務",
-    price: "13200",
-    url: "https://cart.cashier.ecpay.com.tw/qp/tm73",
-  },
-  {
-    id: 4,
-    title: "影像影音拍攝服務",
-    price: "13200",
-    url: "https://cart.cashier.ecpay.com.tw/qp/tm66",
-  },
-];
-
 const PhotoServiceData = [
   {
     id: 1,
@@ -60,7 +33,7 @@ export default function PhotoService() {
       className="w-[90%] mx-auto bg-white pt-20 font-mono py-20"
     >
       <div className="py-5 px-5 mb-5 border-l-8 border-neutral-800">
-        <h1 className="text-3xl font-bold">Molti Photo 選擇方案</h1>
+        <h1 className="text-3xl font-bold">Molti Photo 選擇方案(立即訂購)</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-5">
         {PhotoServiceData.map((data) => (

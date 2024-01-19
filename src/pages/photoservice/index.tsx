@@ -1,3 +1,4 @@
+import NavbarMenu_mobile from "@/components/global/Navbars/NavbarMenu_mobile";
 import photoHeader from "../../../public/photo.jpg";
 import ex1 from "../../../public/photoservice-ex1.png";
 import ex2 from "../../../public/photoservice-ex2.png";
@@ -79,7 +80,7 @@ export default function PhotoServicePage() {
       <nav className="text-white font-mono bg-neutral-800 fixed left-0 right-0 z-[999] py-5">
         <ul className="flex items-center w-[80%] mx-auto">
           <li className="text-xl">Molti Photo</li>
-          <div className="flex items-center gap-3 ml-auto">
+          <div className="md:ml-auto hidden md:flex md:items-center md:gap-3">
           {navItems.map((item) => (
             <li
               key={item.title}
@@ -97,6 +98,7 @@ export default function PhotoServicePage() {
               <AnchorLink href={"#price"}>方案</AnchorLink>
             </li>
           </div>
+        <NavbarMenu_mobile navItems={navItems}/>
         </ul>
       </nav>
       {/*Header*/}
@@ -123,7 +125,7 @@ export default function PhotoServicePage() {
         <Carousel className="w-full">
           <CarouselContent>
             {PHOTOSERVICEDATA.map((data) => (
-              <PhotoServiceCard service_detail={data} />
+              <PhotoServiceCard key={data.service_name} service_detail={data} />
             ))}
           </CarouselContent>
           <CarouselPrevious className="absolute top-1/2 left-5 -translate-y-1/2" />
@@ -269,7 +271,7 @@ function PhotoServiceCard({ service_detail }: PhotoServiceCardProps) {
       <div className="flex justify-center items-center gap-6">
         <div className="flex items-center flex-col md:flex-row gap-16">
           {service_detail.service_detail.map((data) => (
-            <div className="w-[350px] h-auto bg-neutral-800 flex flex-col rounded-2xl">
+            <div key={data.title} className="w-[350px] h-auto bg-neutral-800 flex flex-col rounded-2xl">
               <AspectRatio ratio={16 / 9}>
                 <Image
                   src={data.image}

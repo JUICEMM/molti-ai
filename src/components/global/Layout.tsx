@@ -19,9 +19,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Common layout elements, footer, etc. */}
       <footer>
         <div className="bg-neutral-900 p-5 space-y-2 text-white flex flex-col items-center">
-          <p className="font-bold font-mono text-2xl">Moltiai.com</p>
-          <p>Copyright © 2022- All rights reserved.</p>
-          <p className="text-sm text-center">
+          <p className="font-bold font-mono text-lg md:text-2xl">Moltiai.com</p>
+          <p className="font-bold font-mono text-lg md:text-2xl">Copyright © 2024- All rights reserved.</p>
+          <p className="text-xs md:text-sm text-center">
             Moltiai 不隸屬於 TikTok
             或字節跳動有限公司，也不受其支持。我們的網站顯示由 TikTok
             之外的第三方服務提供的內容。Countik

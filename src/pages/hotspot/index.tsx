@@ -6,11 +6,10 @@ import DataRowSelectionContextProvider from "@/context/page/keyword/DataRowSelec
 const KeywordPage = () => {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen pt-[70px]">
-        <DataRowSelectionContextProvider>
+        {/* <DataRowSelectionContextProvider> */}
           <TableSection />
-        </DataRowSelectionContextProvider>
+        {/* </DataRowSelectionContextProvider> */}
       </main>
     </>
   );

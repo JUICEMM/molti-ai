@@ -131,7 +131,6 @@ const price_card_data: Array<PriceCardDataTypes> = [
 const PricePage = () => {
   return (
     <div>
-      <Navbar />
       <div className="absolute top-0 -z-[999] h-[600px] w-full rounded-b-full bg-gradient-to-b from-teal-600 via-teal-500 to-teal-400" />
       <div className="min-h-screen gap-10 pt-[73px] font-serif text-black">
         <motion.div

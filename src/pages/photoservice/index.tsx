@@ -77,30 +77,6 @@ const PHOTOSERVICEDATA = [
 export default function PhotoServicePage() {
   return (
     <main>
-      <nav className="text-white font-mono bg-neutral-800 fixed left-0 right-0 z-[999] py-5">
-        <ul className="flex items-center w-[80%] mx-auto">
-          <li className="text-xl">Molti Photo</li>
-          <div className="md:ml-auto hidden md:flex md:items-center md:gap-3">
-          {navItems.map((item) => (
-            <li
-              key={item.title}
-              className="text-md font-mono hover:border-b-2 hover:border-white"
-            >
-              <Link href={item.href}>{item.title}</Link>
-            </li>
-          ))}
-          </div>
-          <div className="flex items-center gap-3 ml-auto">
-            <li className="hover:border-b-2 hover:border-white">
-              <AnchorLink href={"#service"}>服務</AnchorLink>
-            </li>
-            <li className="hover:border-b-2 hover:border-white">
-              <AnchorLink href={"#price"}>方案</AnchorLink>
-            </li>
-          </div>
-        <NavbarMenu_mobile navItems={navItems}/>
-        </ul>
-      </nav>
       {/*Header*/}
       <section
         className="relative w-full h-dvh bg-cover bg-no-repeat bg-fixed bg-center"

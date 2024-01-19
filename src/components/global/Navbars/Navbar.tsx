@@ -9,20 +9,20 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: "/",
   },
   {
-    title: "熱點工具",
-    href: "/hotspot",
-  },
-  {
-    title: "AI產生關鍵字排序",
-    href: "/keyword-ai",
-  },
-  {
     title: "矩陣系統",
     href: " /matrix-ai",
   },
   {
     title: "影片服務",
     href: " /photoservice",
+  },
+  {
+    title: "熱點工具",
+    href: "/hotspot",
+  },
+  {
+    title: "AI產生關鍵字排序",
+    href: "/keyword-ai",
   },
   {
     title: "銷售夥伴後台入口",

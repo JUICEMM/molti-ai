@@ -1,16 +1,17 @@
 import hotspot from "../../public/hotspot.png";
+import moltiai_banner_img from "../../public/moltiai-banner-img.png";
 import photograph from "../../public/攝影.png";
 import moltiai from "../../public/矩陣系統截圖.png";
 import keywordai from "../../public/關鍵字AI截圖.png";
 import Navbar from "@/components/global/Navbars/Navbar";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import FunctionCard from "@/components/page/home/FunctionCard";
-import { Button } from "@/components/ui/button";
-import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   const featureData = [
@@ -96,7 +97,7 @@ export default function Home() {
           <div className="gradient" />
         </div>
         {/*Heading section */}
-        <div className="flex h-[300px] items-center justify-center gap-5 bg-gradient-to-b from-teal-700 to-teal-500">
+        <div className="flex h-[400px] items-center justify-center gap-5 bg-gradient-to-b from-sky-800 via-sky-600 to-sky-500">
           <div className="flex flex-col items-center justify-center">
             <motion.div
               initial="hidden"
@@ -107,13 +108,26 @@ export default function Home() {
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: 50 },
               }}
-              className="app pt-20 text-5xl text-black"
+              className="flex items-center pt-20 text-5xl text-black"
             >
-              <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-3xl font-bold text-transparent md:text-5xl">
-                MoltiAI
+              <div className="relative basis-1/2">
+                <div className="w-[400px] absolute top-[-70px] left-16">
+                  <Image
+                    src={moltiai_banner_img}
+                    alt="logo"
+                    width={400}
+                    priority
+                    className=""
+                  />
+                </div>
               </div>
-              <div className="text-center text-xl font-bold text-white md:text-4xl">
-                MoltiAI幫你解決生活大小事
+              <div className="basis-1/2 flex flex-col gap-5">
+                <div className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-center text-3xl font-bold text-transparent md:text-5xl">
+                  Molti矩陣系統
+                </div>
+                <div className="text-center text-xl font-bold text-white md:text-2xl">
+                  採用SaaS模式，無需部署，快捷方便。人工智能技術，解放人力。覆蓋輿情工作各個環節。
+                </div>
               </div>
             </motion.div>
           </div>

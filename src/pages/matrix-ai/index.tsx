@@ -200,7 +200,6 @@ const SECOND_FEATURE_DATA = [
 export default function MatrixAIPage() {
   return (
     <main>
-      <Navbar />
       <div className="main">
         <div className="gradient_matrix" />
       </div>
@@ -222,10 +221,10 @@ export default function MatrixAIPage() {
               }}
               className="flex flex-col items-center gap-3 basis-1/2"
             >
-              <h1 className="font-bold text-4xl text-white">
+              <h1 className="font-bold text-3xl text-white">
                 省時、省力、有效的AI剪輯軟體 致力提供最輕鬆的剪輯服務
               </h1>
-              <div className="text-lg text-gray-200">
+              <div className="text-md text-gray-200">
                 這款AI剪輯軟體結合了高效率與優越的省時省力特性，
                 讓使用者能夠快速輕鬆地進行影片剪輯。
                 擁有智能化的功能，有效提升剪輯流程，

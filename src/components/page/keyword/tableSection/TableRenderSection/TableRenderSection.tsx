@@ -106,7 +106,7 @@ type TableRenderSectionProps = {
 const TableRenderSection = ({ iframeUrl }: TableRenderSectionProps) => {
   return (
     <div className="p-1 md:p-8 bg-slate-100">
-      <div className="rounded-md border-0 bg-white">
+      <div className="relative rounded-md border-0 bg-white">
         <iframe
           src={iframeUrl}
           width={"100%"}
@@ -114,6 +114,7 @@ const TableRenderSection = ({ iframeUrl }: TableRenderSectionProps) => {
           allowFullScreen
           className="rounded-md"
         />
+        <div className="absolute left-0 right-0 top-0 h-[80px] bg-slate-100" />
       </div>
     </div>
   );

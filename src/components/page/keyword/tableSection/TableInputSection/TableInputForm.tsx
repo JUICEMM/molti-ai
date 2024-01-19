@@ -1,9 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/router";
 import type { Dispatch, SetStateAction } from "react";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
 
 //各個Select component的選項
 
@@ -25,54 +22,80 @@ const HOTSPOT_DATA = [
     iframeUrl: "https://www.qian-gua.com/rank/fans/",
   },
   {
-    title: "Countik熱門歌曲",
+    title: "Countik Tiktok熱門歌曲",
     iframeUrl: "https://countik.com/zh/popular/songs",
   },
+  {
+    title: "Countik Tiktok熱門創作者",
+    iframeUrl: "https://countik.com/zh/popular/creators",
+  },
+  {
+    title: "Countik Tiktok熱門話題",
+    iframeUrl: "https://countik.com/zh/popular/topics",
+  },
+  {
+    title: "SocialBook Instagram熱門創作家",
+    iframeUrl:
+      "https://socialbook.io/instagram-channel-rank/top-100-instagrammers-from-united-states",
+  },
+  {
+    title: "SocialBook Youtube熱門頻道",
+    iframeUrl:
+      "https://socialbook.io/youtube-channel-rank/top-100-youtubers?sort=followers",
+  },
+  {
+    title: "FastMoss Tiktok熱門直播",
+    iframeUrl: "https://www.fastmoss.com/live/search",
+  },
+  {
+    title: "FastMoss Tiktok熱門商品",
+    iframeUrl: "https://www.fastmoss.com/e-commerce/search",
+  },
+  {
+    title: "FastMoss Tiktok熱門店鋪",
+    iframeUrl: "https://www.fastmoss.com/shop-marketing/search",
+  },
+  {
+    title: "FastMoss Tiktok熱門創作家",
+    iframeUrl: "https://www.fastmoss.com/influencer/search",
+  },
+  {
+    title: "FastMoss Tiktok熱門廣告",
+    iframeUrl: "https://www.fastmoss.com/marketing/search",
+  },
 ];
-
-const formSchema = z.object({
-  country: z.string().nonempty({ message: "國家不能為空值" }),
-  store: z.string().nonempty({ message: "電商不能為空值" }),
-});
 
 type TableInputSectionProps = {
   setIframeUrl: Dispatch<SetStateAction<string>>;
 };
 
 const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      country: "",
-      store: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
-
+  const router = useRouter();
   return (
-    //這裡我們使用了Shadcn/ui的Form與Select，詳細資訊請看：https://ui.shadcn.com/docs/components/form
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="w-full items-center gap-4">
-          <div className="flex flex-col gap-2 text-black md:flex-row">
-            {HOTSPOT_DATA.map((item) => (
-              <Button
-                key={item.title}
-                variant={"outline"}
-                onClick={() => setIframeUrl(item.iframeUrl)}
-              >
-                {item.title}
+    <div className="w-full items-center gap-4">
+      <div className="flex flex-col gap-2 text-black md:flex-row md:flex-wrap">
+        {HOTSPOT_DATA.map((item) => {
+          if (item.title.includes("FastMoss"))
+            return (
+              <Button key={item.title} variant={"outline"}>
+                <a href={item.iframeUrl} target="_blank">
+                  {item.title}
+                </a>
               </Button>
-            ))}
-          </div>
-        </div>
-      </form>
-    </Form>
+            );
+
+          return (
+            <Button
+              key={item.title}
+              variant={"outline"}
+              onClick={() => setIframeUrl(item.iframeUrl)}
+            >
+              {item.title}
+            </Button>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 

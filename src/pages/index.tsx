@@ -57,7 +57,7 @@ export default function Home() {
       imageUrl: keywordai,
       title: "AI產生關鍵字排序",
       description:
-        "利利用AI取得關聯度最高的前30關鍵字，幫助企業在優化搜尋上做出明智選擇",
+        "利用AI取得關聯度最高的前30關鍵字",
       href: "/keyword-ai",
       pay: false,
     },
@@ -88,17 +88,17 @@ export default function Home() {
               visible: { opacity: 1, y: 0 },
               hidden: { opacity: 0, y: 50 },
             }}
-            className="flex items-center gap-10 pt-[150px] text-5xl text-black"
+            className="md:flex md:items-center md:gap-10 pt-[150px] text-5xl text-black"
           >
             <div className="md:basis-1/2 basis-auto flex flex-col gap-5">
-              <div className="bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-start text-4xl font-bold text-transparent md:text-6xl">
+              <div className="bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-center md:text-start text-4xl font-bold text-transparent md:text-6xl">
                 Molti<br></br>
                 短影音服務
               </div>
-              <div className="text-start text-lg text-white lg:text-xl">
-                短視頻剪輯、影音拍攝、直播服務、各大平台趨勢熱點搜尋 一次搞定
+              <div className="text-center md:text-start text-sm text-white lg:text-lg">
+                Molti讓影片剪輯更加容易，也更加專業 一次搞定
               </div>
-              <div>
+              <div className="flex justify-center md:justify-start">
                 <Link href="/matrix-ai">
                   <Button
                     className="bg-[#4169E1] m:w-30 px-8 md:px-16 py-6 md:py-8 text-xl"
@@ -118,7 +118,7 @@ export default function Home() {
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: 50 },
               }}
-              className="relative basis-1/2 hidden md:flex md:justify-center"
+              className="relative md:basis-1/2 hidden md:flex md:justify-center"
             >
               <Image
                 src={
@@ -140,7 +140,7 @@ export default function Home() {
               visible: { opacity: 1, y: 0 },
               hidden: { opacity: 0, y: 50 },
             }}
-            className="flex justify-center mt-12"
+            className="flex justify-center mt-32 md:mt-12"
           >
             <AnchorLink
               href="#function"
@@ -172,7 +172,20 @@ export default function Home() {
               }}
               className="text-3xl md:text-5xl font-bold text-white"
             >
-              我們提供的服務
+              服務內容
+            </motion.p>
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.25 }}
+              viewport={{ once: true }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 50 },
+              }}
+              className="text-sm md:text-lg text-white mt-5"
+            >
+              我們提供多種服務選擇供你們選擇
             </motion.p>
           </div>
           <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-2">

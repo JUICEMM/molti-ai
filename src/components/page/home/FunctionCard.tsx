@@ -30,16 +30,15 @@ const FunctionCard = ({
         visible: { opacity: 1, y: 0 },
         hidden: { opacity: 0, y: 50 },
       }}
-      className="flex flex-col gap-3 px-5 py-5 text-white"
+      className="flex flex-col gap-3 px-5 py-5 text-white rounded-xl overflow-hidden"
     >
       <div className="w-[100%] md:w-[600px] flex justify-center px-5">
-        <AspectRatio ratio={16 / 9}>
+        <AspectRatio ratio={16 / 9} className="rounded-xl">
           <Image
             src={imageUrl}
             alt="image"
             fill
-            sizes="(100vw - 2rem)"
-            className="object-cover"
+            className="object-cover rounded-3xl"
             priority
           />
         </AspectRatio>

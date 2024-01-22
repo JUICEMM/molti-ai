@@ -1,5 +1,4 @@
-import aibg from "../../../public/AIbg.jpeg";
-import martixai from "../../../public/matrix_header.jpg";
+import moltiai_banner_img from "../../../public/moltiai-banner-img.png";
 import white_bg from "../../../public/white_bg.jpg";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import MainFeatureCard from "@/components/page/matrix-ai/MainFeatureCard";
@@ -203,10 +202,7 @@ export default function MatrixAIPage() {
         <div className="gradient_matrix" />
       </div>
       {/*Header*/}
-      <section
-        className="h-dvh bg-cover bg-center bg-no-repeat flex justify-center items-center"
-        style={{ backgroundImage: `url(${aibg.src})` }}
-      >
+      <section className="h-[500px] bg-cover bg-center bg-no-repeat flex justify-center items-center">
         <div className="flex justify-center items-center">
           <div className="flex flex-col lg:flex-row lg:gap-12 items-center w-[70%]">
             <motion.div
@@ -218,16 +214,15 @@ export default function MatrixAIPage() {
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: 50 },
               }}
-              className="flex flex-col items-center gap-3 basis-1/2"
+              className="flex flex-col items-start gap-3 basis-1/2"
             >
-              <h1 className="font-bold text-3xl text-white">
-                省時、省力、有效的AI剪輯軟體 致力提供最輕鬆的剪輯服務
+              <h1 className="bg-gradient-to-r from-neutral-700 via-zinc-800 to-gray-700 bg-clip-text text-6xl font-bold text-transparent md:text-7xl">
+                Molti<br></br>
+                <span className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-700 bg-clip-text text-6xl font-bold text-transparent md:text-7xl">矩陣系統</span>
               </h1>
-              <div className="text-md text-gray-200">
-                這款AI剪輯軟體結合了高效率與優越的省時省力特性，
-                讓使用者能夠快速輕鬆地進行影片剪輯。
-                擁有智能化的功能，有效提升剪輯流程，
-                為影片製作帶來更簡便而出色的體驗。
+              <div className="text-md text-gray-800">
+                省時、省力、有效的AI剪輯軟體，致力提供最輕鬆的剪輯服務
+                採用SaaS模式，無需部署，快捷方便。人工智能技術，解放人力。覆蓋輿情工作各個環節。
               </div>
               <div className="flex items-center gap-3">
                 <Button variant={"outline"}>
@@ -246,16 +241,19 @@ export default function MatrixAIPage() {
                   visible: { opacity: 1, y: 0 },
                   hidden: { opacity: 0, y: 50 },
                 }}
-                className="w-[450px]"
+                className="relative"
               >
-                <AspectRatio ratio={1 / 1}>
-                  <Image
-                    src={martixai}
-                    alt="matrix-ai"
-                    fill
-                    className="rounded-full object-cover"
-                  />
-                </AspectRatio>
+                <div className="absolute top-[-70px] left-16 z-10 w-[400px] h-[400px]">
+                  <AspectRatio ratio={16 / 9}>
+                    <Image
+                      src={moltiai_banner_img}
+                      alt="logo"
+                      fill
+                      priority
+                      className="object-cover"
+                    />
+                  </AspectRatio>
+                </div>
               </motion.div>
             </div>
           </div>

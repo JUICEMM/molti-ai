@@ -18,8 +18,6 @@ import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
 import EmojiObjectsOutlinedIcon from "@mui/icons-material/EmojiObjectsOutlined";
 import MusicNoteOutlinedIcon from "@mui/icons-material/MusicNoteOutlined";
 import Image from "next/image";
-import Link from "next/link";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const PHOTOSERVICEDATA = [
   {

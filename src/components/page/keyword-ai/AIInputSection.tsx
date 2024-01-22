@@ -132,7 +132,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                                 />
                               </TooltipTrigger>
                               <TooltipContent>
-                                <p>請選擇商品分類以便查詢關聯字</p>
+                                <p>請選擇分類及你想查詢的關鍵字，例如：女性衣著 及 短裙，以便我們幫你產生相關關鍵字</p>
                               </TooltipContent>
                             </Tooltip>
                           </TooltipProvider>
@@ -181,6 +181,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                   />
                 </div>
               </div>
+              <p className="text-sm font-mono font-bold my-2 text-neutral-500">請選擇分類及你想查詢的關鍵字，例如：女性衣著 及 短裙，以便我們幫你產生相關關鍵字</p>
               <div className="flex justify-end py-5">
                 <div className="flex items-center gap-5">
                   <Button className="bg-teal-500 text-white hover:bg-teal-400">

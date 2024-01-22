@@ -17,12 +17,20 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: " /photoservice",
   },
   {
+    title: "直播剪輯服務",
+    href: " /liveservice",
+  },
+  {
     title: "熱點工具",
     href: "/hotspot",
   },
   {
     title: "AI產生關鍵字排序",
     href: "/keyword-ai",
+  },
+  {
+    title: "顧問服務",
+    href: "/consultant",
   },
   {
     title: "銷售夥伴後台入口",
@@ -32,7 +40,7 @@ export const navItems: Array<{ title: string; href: string; }> = [
 const Navbar = () => {
   return (
     <>
-      <nav className="fixed z-[999] flex w-full bg-white">
+      <nav className="sticky top-0 z-[999] flex w-full bg-white">
         <div className="mx-auto flex items-center w-[90%]">
           <NavbarHeader />
           <NavbarMenu navItems={navItems}/>

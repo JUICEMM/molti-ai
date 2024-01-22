@@ -44,24 +44,12 @@ const HOTSPOT_DATA = [
       "https://socialbook.io/youtube-channel-rank/top-100-youtubers?sort=followers",
   },
   {
-    title: "FastMoss Tiktok熱門直播",
-    iframeUrl: "https://www.fastmoss.com/live/search",
+    title: "Tiktok",
+    iframeUrl: "https://didadog.com/libraryProduct/productHotList",
   },
   {
-    title: "FastMoss Tiktok熱門商品",
-    iframeUrl: "https://www.fastmoss.com/e-commerce/search",
-  },
-  {
-    title: "FastMoss Tiktok熱門店鋪",
-    iframeUrl: "https://www.fastmoss.com/shop-marketing/search",
-  },
-  {
-    title: "FastMoss Tiktok熱門創作家",
-    iframeUrl: "https://www.fastmoss.com/influencer/search",
-  },
-  {
-    title: "FastMoss Tiktok熱門廣告",
-    iframeUrl: "https://www.fastmoss.com/marketing/search",
+    title: "小紅書",
+    iframeUrl: "https://xh.newrank.cn/?source=10000&l=t_ys_sjfu_dspsj_xh",
   },
 ];
 
@@ -70,7 +58,6 @@ type TableInputSectionProps = {
 };
 
 const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
-  const router = useRouter();
   return (
     <div className="w-full items-center gap-4">
       <div className="flex flex-col gap-2 text-black md:flex-row md:flex-wrap">
@@ -95,6 +82,7 @@ const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
           );
         })}
       </div>
+      <p className="text-xs text-gray-500 mt-5">Moltiai為跨境賣家提供的專業TikTok一站式的營運必備工具箱，專為TikTok經營者以及跨境出海賣家，提供TikTok營運、學習教學課程、工具、直播、變現、數據分析、廣告投放、社媒 行銷等一站式的TikTok營運必備工具，讓跨國出海更簡單、更方便！ Moltiai網站上的服務皆為第三方提供，與Moltiai無關。 請使用者注意識別服務，避免上當！</p>
     </div>
   );
 };

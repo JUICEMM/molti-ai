@@ -9,7 +9,7 @@ const KeywordAIPage = () => {
 
   return (
     <>
-      <main className="min-h-screen pt-[70px]">
+      <main className="min-h-dvh">
         <AIInputSection setResult={setResult} setIsLoading={setIsLoading}/>
         <AIRenderSection result={result} isLoading={isLoading}/>
       </main>

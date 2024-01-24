@@ -131,7 +131,7 @@ const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
             )}
           </TabsList>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {HOTSPOT_DATA.map((data) => (
             <TabsContent
               value={data.filter_by.find((key) => key.includes("熱")) || ""}

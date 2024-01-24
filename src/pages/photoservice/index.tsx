@@ -110,8 +110,8 @@ export default function PhotoServicePage() {
         className="w-full min-h-screen bg-neutral-700 py-20"
       >
         <div className="flex justify-center py-5">
-          <h2 className="w-[50%] text-center text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-            <span>-</span> 剪輯全方位教學，專業攝影師指導<span>-</span>
+          <h2 className="w-[50%] text-center text-3xl md:text-3xl lg:text-4xl font-bold text-white">
+            剪輯全方位教學<br></br>專業攝影師指導
           </h2>
         </div>
         <div className="mt-10">
@@ -243,7 +243,10 @@ function PhotoServiceCard({ service_detail }: PhotoServiceCardProps) {
       <div className="flex justify-center items-center gap-6">
         <div className="flex items-center flex-col md:flex-row gap-16">
           {service_detail.service_detail.map((data) => (
-            <div key={data.title} className="w-[350px] h-auto bg-neutral-800 flex flex-col rounded-2xl">
+            <div
+              key={data.title}
+              className="w-[350px] h-auto bg-neutral-800 flex flex-col rounded-2xl"
+            >
               <AspectRatio ratio={16 / 9}>
                 <Image
                   src={data.image}

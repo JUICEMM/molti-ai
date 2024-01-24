@@ -24,11 +24,11 @@ const FunctionCard = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      transition={{ duration: 0.7, ease: "easeInOut", delay: 0.5 }}
+      transition={{ duration: 0.2, ease: "easeInOut", delay: 0.2 }}
       viewport={{ once: true }}
       variants={{
         visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 50 },
+        hidden: { opacity: 0, y: 20 },
       }}
       className="flex flex-col gap-3 px-5 py-5 text-white rounded-xl overflow-hidden"
     >

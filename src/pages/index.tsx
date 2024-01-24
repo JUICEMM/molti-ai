@@ -164,7 +164,7 @@ export default function Home() {
             <motion.p
               initial="hidden"
               whileInView="visible"
-              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.2 }}
+              transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
               viewport={{ once: true }}
               variants={{
                 visible: { opacity: 1, y: 0 },
@@ -177,7 +177,7 @@ export default function Home() {
             <motion.p
               initial="hidden"
               whileInView="visible"
-              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.25 }}
+              transition={{ duration: 0.3, ease: "easeInOut", delay: 0.25 }}
               viewport={{ once: true }}
               variants={{
                 visible: { opacity: 1, y: 0 },

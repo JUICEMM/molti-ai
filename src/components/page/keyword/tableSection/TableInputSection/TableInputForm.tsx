@@ -118,7 +118,7 @@ type TableInputSectionProps = {
 
 const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="w-full flex flex-col gap-9">
       <Tabs defaultValue="即時熱點排行">
         <div className="overflow-x-scroll">
           <TabsList>
@@ -147,7 +147,6 @@ const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
           ))}
         </div>
       </Tabs>
-
       <Tabs defaultValue="Tiktok" className="w-auto">
         <div className="overflow-x-scroll">
           <TabsList>

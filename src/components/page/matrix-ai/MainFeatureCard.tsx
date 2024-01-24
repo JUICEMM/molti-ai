@@ -24,7 +24,7 @@ export default function MainFeatureCard({
       }
     >
       <div className="flex flex-col items-center gap-3 basis-1/2">
-        <h1 className="font-bold text-2xl">{feature.title}</h1>
+        <h1 className="text-xl">{feature.title}</h1>
         <div className="text-lg leading-8">{feature.description}</div>
       </div>
       <div className="basis-1/2 hidden lg:block">

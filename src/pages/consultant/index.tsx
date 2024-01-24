@@ -5,14 +5,14 @@ export default function ConsultantPage() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat min-h-[450px] flex flex-col items-center justify-center font-sans text-white"
+        className="bg-cover bg-center bg-no-repeat min-h-[450px] flex flex-col items-center justify-center font-sans text-white "
         style={{
           backgroundImage: `url(https://web-assets.bcg.com/dims4/default/7f82b31/2147483647/strip/true/crop/1920x708+0+0/resize/2560x944!/brightness/-18x0/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2F85%2Fbd%2F90153a2541bbb69372ba4bb0c1d5%2Fhero-people-culture.jpg)`,
         }}
       >
         {/* 主Header */}
         <div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white">
+          <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white font-Serif">
             我們還提供顧問服務
           </h1>
         </div>

@@ -56,8 +56,7 @@ export default function Home() {
     {
       imageUrl: keywordai,
       title: "AI產生關鍵字排序",
-      description:
-        "利用AI取得關聯度最高的前30關鍵字",
+      description: "利用AI取得關聯度最高的前30關鍵字",
       href: "/keyword-ai",
       pay: false,
     },
@@ -92,7 +91,8 @@ export default function Home() {
           >
             <div className="md:basis-1/2 basis-auto flex flex-col gap-5">
               <div className="bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-center md:text-start text-4xl font-bold text-transparent md:text-6xl">
-                <span className="text-6xl">Molti</span><br></br>
+                <span className="text-6xl">Molti</span>
+                <br></br>
                 短影音服務
               </div>
               <div className="text-center md:text-start text-sm text-white lg:text-lg">
@@ -101,10 +101,10 @@ export default function Home() {
               <div className="flex justify-center md:justify-start">
                 <Link href="/matrix-ai">
                   <Button
-                    className="bg-[#4169E1] m:w-30 px-8 md:px-16 py-6 md:py-8 text-xl"
+                    className="bg-[#4169E1] m:w-30 px-8 md:px-16 py-6 md:py-8 text-sm md:text-xl"
                     variant={"default"}
                   >
-                    立即使用
+                    立即探索
                   </Button>
                 </Link>
               </div>
@@ -161,34 +161,14 @@ export default function Home() {
           className="py-16 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-700"
         >
           <div className="py-12 text-center">
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
-              viewport={{ once: true }}
-              variants={{
-                visible: { opacity: 1, y: 0 },
-                hidden: { opacity: 0, y: 50 },
-              }}
-              className="text-3xl md:text-5xl font-bold text-white"
-            >
+            <p className="text-2xl md:text-4xl font-bold text-white">
               服務內容
-            </motion.p>
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.3, ease: "easeInOut", delay: 0.25 }}
-              viewport={{ once: true }}
-              variants={{
-                visible: { opacity: 1, y: 0 },
-                hidden: { opacity: 0, y: 50 },
-              }}
-              className="text-sm md:text-lg text-white mt-5"
-            >
+            </p>
+            <p className="text-sm md:text-lg text-white mt-5">
               我們提供多種服務選擇供你們選擇
-            </motion.p>
+            </p>
           </div>
-          <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-2">
+          <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2">
             {functionData.map((item, index) => (
               <FunctionCard key={index} {...item} />
             ))}
@@ -197,22 +177,12 @@ export default function Home() {
         {/*feature section*/}
         <div className="flex h-auto items-center bg-white bg-gradient-to-b py-10">
           <div className="mx-auto w-[90%]">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.05 }}
-              viewport={{ once: true }}
-              variants={{
-                visible: { opacity: 1, y: 0 },
-                hidden: { opacity: 0, y: 50 },
-              }}
-              className="flex flex-col items-center justify-center gap-4 px-4 py-6 text-6xl font-bold text-black md:py-2"
-            >
-              <div className="text-center text-3xl md:text-5xl mt-5 mb-8">
+            <div className="flex flex-col items-center justify-center gap-4 px-4 py-6 text-6xl font-bold text-black md:py-2">
+              <div className="text-center text-2xl md:text-4xl mt-5 mb-8">
                 Molti助您擴展企業品牌
               </div>
-            </motion.div>
-            <div className="grid grid-cols-1 justify-items-center gap-3 md:grid-cols-2 md:gap-1">
+            </div>
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-1">
               {featureData.map((item, index) => (
                 <FeatureCard
                   key={index}
@@ -228,11 +198,4 @@ export default function Home() {
       </main>
     </>
   );
-}
-
-export async function getStaticProps() {
-  // You can leave this function empty since there's no data fetching needed
-  return {
-    props: {},
-  };
 }

@@ -21,7 +21,7 @@ const HOTSPOT_DATA = [
     filter_by: ["熱門影片排行"],
   },
   {
-    title: "熱門創作者 千瓜數據",
+    title: "小紅書熱門創作者 千瓜數據",
     iframeUrl: "https://www.qian-gua.com/rank/fans/",
     filter_by: ["熱門創作者排行", "小紅書"],
   },
@@ -62,6 +62,11 @@ const HOTSPOT_DATA = [
     iframeUrl: "https://xh.newrank.cn/?source=10000&l=t_ys_sjfu_dspsj_xh",
     filter_by: ["小紅書"],
   },
+  {
+    title: "巨量 抖音",
+    iframeUrl: "https://trendinsight.oceanengine.com/arithmetic-list?source=yqzs&type=0&appName=aweme&showType=list",
+    filter_by: ["抖音"],
+  },
 ];
 
 const HOT_FILTER_DATA = [
@@ -90,6 +95,9 @@ const SOCIALMEDIA_FILTER_DATA = [
     keys: [
       {
         key: "Tiktok",
+      },
+      {
+        key: "抖音",
       },
       {
         key: "Instagram",

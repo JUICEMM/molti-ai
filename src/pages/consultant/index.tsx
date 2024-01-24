@@ -30,8 +30,8 @@ export default function ConsultantPage() {
           </p>
         </div>
       </div>
-        <div className="py-2 ">
-          <Button className="px-10 py-8">
+        <div className="py-2">
+          <Button className="">
             <a href="https://lin.ee/LciUsSk">立即聯絡</a>
           </Button>
         </div>

@@ -71,21 +71,9 @@ const NavbarUserAvator = () => {
           </DropdownMenuContent>
         </DropdownMenu>
       ) : (
-        // <div className="flex items-center gap-2">
-        //   <SignOutButton>
-        //     <Button>Sign out</Button>
-        //   </SignOutButton>
-        // <Image
-        //   src={user?.imageUrl || "https://github.com/shadcn.png"}
-        //   alt={`${user?.firstName} ${user?.lastName}-avatar`}
-        //   width={40}
-        //   height={40}
-        //   className="rounded-full"
-        // />
-        // </div>
         <>
           <SignInButton>
-            <Button variant={"outline"}>Sign in</Button>
+            <Button variant={"default"}>Sign in</Button>
           </SignInButton>
         </>
       )}

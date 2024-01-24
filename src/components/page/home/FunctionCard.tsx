@@ -1,5 +1,5 @@
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "../../ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
@@ -21,44 +21,34 @@ const FunctionCard = ({
 }: FunctionCardProps) => {
   const router = useRouter();
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      transition={{ duration: 0.2, ease: "easeInOut", delay: 0.2 }}
-      viewport={{ once: true }}
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 20 },
-      }}
-      className="flex flex-col gap-3 px-5 py-5 text-white rounded-xl overflow-hidden"
-    >
-      <div className="w-[100%] md:w-[600px] flex justify-center px-5">
-        <AspectRatio ratio={16 / 9} className="rounded-xl">
+    <div className="flex flex-col items-center gap-3 px-5 py-5 w-[80%] text-white rounded-xl overflow-hidden">
+      <div className="w-[300px] md:w-[400px] lg:w-[500px] flex items-center justify-center px-5">
+        <AspectRatio ratio={16 / 9} className="w-[90%] mx-auto rounded-md">
           <Image
             src={imageUrl}
             alt="image"
             fill
-            className="object-cover rounded-3xl"
+            className="object-cover rounded-md"
             priority
           />
         </AspectRatio>
       </div>
       <div className="flex flex-col gap-2 px-5 text-center">
-        <h1 className="text-3xl font-bold text-white">{title}</h1>
-        <p className="text-xl text-gray-200">{description}</p>
+        <h1 className="text-xl font-bold text-white">{title}</h1>
+        <p className="text-md text-gray-200">{description}</p>
       </div>
       <div className="flex justify-start gap-2 px-5 mt-auto">
         <>
           <Button
             variant={"outline"}
-            className="text-md border-black text-black"
+            className="text-xs border-black text-black"
             onClick={() => router.push(href)}
           >
             立即前往
           </Button>
         </>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -24,35 +24,35 @@ const AIRenderSection = ({ result, isLoading }: AIRenderSectionProps) => {
   const resultArray = splitTextToArray(result);
   console.log(resultArray);
   return (
-    <div className="p-1 md:p-8">
-      <div className="flex items-center justify-center">
-        <Card className="w-full border border-teal-500">
-          <CardHeader>
-            <CardTitle>關鍵字排序</CardTitle>
-            <CardDescription></CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="min-h-[70px]">
-              {!!isLoading ? (
-                <div className="flex flex-col gap-2 items-center justify-center">
-                  <LoadingSpinner />
-                  <span>我會盡力提供您所需的信息，但需要稍微的時間來完成這項任務。</span>
-                  <span>請您耐心等待至少60~100秒，我將竭盡所能為您提供最佳的解答。</span>
-                </div>
-              ) : (
-                <div className="flex flex-col gap-2">
-                  {resultArray.map((item, index) => (
-                    <p key={index}>
-                      {index + 1}.{item}
-                    </p>
-                  ))}
-                </div>
-              )}
+    <Card className="rounded-md border border-zinc-200 p-4 m-1 md:m-2">
+      <CardHeader>
+        <CardTitle>標籤</CardTitle>
+        <CardDescription></CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="">
+          {!!isLoading ? (
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <LoadingSpinner />
+              <span>
+                我會盡力提供您所需的信息，但需要稍微的時間來完成這項任務。
+              </span>
+              <span>
+                請您耐心等待至少60~100秒，我將竭盡所能為您提供最佳的解答。
+              </span>
             </div>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+          ) : (
+            <div className="flex flex-col gap-2">
+              {resultArray.map((item, index) => (
+                <p key={index}>
+                  {index + 1}.{item}
+                </p>
+              ))}
+            </div>
+          )}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 

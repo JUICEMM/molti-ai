@@ -23,31 +23,11 @@ export default function MainFeatureCard({
           : "flex flex-col lg:flex-row lg:gap-9 items-center w-[70%] mx-auto"
       }
     >
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 0.7, ease: "easeInOut", delay: 0.1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: 50 },
-        }}
-        className="flex flex-col items-center gap-3 basis-1/2"
-      >
-        <h1 className="font-bold text-3xl">{feature.title}</h1>
+      <div className="flex flex-col items-center gap-3 basis-1/2">
+        <h1 className="font-bold text-2xl">{feature.title}</h1>
         <div className="text-lg leading-8">{feature.description}</div>
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 0.7, ease: "easeInOut", delay: 0.3 }}
-        viewport={{ once: true, amount: 0.5 }}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: 50 },
-        }}
-        className="basis-1/2 hidden lg:block"
-      >
+      </div>
+      <div className="basis-1/2 hidden lg:block">
         <div className="w-[550px]">
           <AspectRatio ratio={16 / 9}>
             <Image
@@ -59,7 +39,7 @@ export default function MainFeatureCard({
             />
           </AspectRatio>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

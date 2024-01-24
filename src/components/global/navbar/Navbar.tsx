@@ -21,11 +21,11 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: " /liveservice",
   },
   {
-    title: "熱點工具",
+    title: "熱門趨勢",
     href: "/hotspot",
   },
   {
-    title: "AI產生關鍵字排序",
+    title: "AI社群標籤生成工具",
     href: "/keyword-ai",
   },
   {

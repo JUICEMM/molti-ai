@@ -268,7 +268,7 @@ export default function MatrixAIPage() {
           className="w-full h-full object-cover absolute z-[-999] opacity-85"
         />
         <div className="py-20 px-10">
-          <h2 className="text-center text-3xl md:text-5xl font-bold py-16">
+          <h2 className="text-center text-2xl md:text-4xl font-bold py-16">
             有面臨這些問題？
           </h2>
           <div className="flex flex-col gap-20">
@@ -286,7 +286,7 @@ export default function MatrixAIPage() {
 
       {/*介紹*/}
       <section className="relative py-20">
-        <h2 className="text-center text-3xl md:text-5xl font-bold pb-20 pt-8 leading-10">
+        <h2 className="text-center text-2xl md:text-4xl font-bold pb-20 pt-8 leading-10">
           矩陣系統<br></br>能給你帶來什麼？
         </h2>
         <div className="flex flex-col gap-20">
@@ -307,7 +307,7 @@ export default function MatrixAIPage() {
             visible: { opacity: 1, y: 0 },
             hidden: { opacity: 0, y: 50 },
           }}
-          className="pt-10 pb-20 text-center font-bold text-3xl md:text-5xl leading-10"
+          className="pt-10 pb-20 text-center font-bold text-2xl md:text-4xl leading-10"
         >
           為什麼<br></br>你一定要用矩陣AI?
         </motion.h3>
@@ -323,31 +323,17 @@ export default function MatrixAIPage() {
       <section id="price" className="relative">
         <div className="absolute top-0 -z-[999] h-[600px] w-full rounded-b-full bg-gradient-to-b from-white via-blue-300 to-blue-400" />
         <div className="h-dvh gap-10 pt-[73px] font-serif text-black">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 0.7, ease: "easeInOut" }}
-            viewport={{ once: true, amount: 0.5 }}
-            variants={{
-              visible: { opacity: 1, y: 0 },
-              hidden: { opacity: 0, y: 50 },
-            }}
+          <div
+            
             className="relative flex flex-col items-center justify-center gap-5 py-[50px]"
           >
             <h1 className="text-4xl font-bold text-black md:text-7xl">
               請選擇您的方案
             </h1>
             <p className="text-black">立即選擇方案，開始您的短影音之旅</p>
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 0.7, ease: "easeInOut", delay: 0.4 }}
-            viewport={{ once: true }}
-            variants={{
-              visible: { opacity: 1, y: 0 },
-              hidden: { opacity: 0, y: 50 },
-            }}
+          </div>
+          <div
+            
             className="flex items-center justify-center py-10"
           >
             <Carousel className="w-full flex justify-center items-center">
@@ -364,7 +350,7 @@ export default function MatrixAIPage() {
               <CarouselPrevious className="absolute left-5" />
               <CarouselNext className="absolute right-5" />
             </Carousel>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

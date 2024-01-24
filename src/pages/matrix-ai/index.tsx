@@ -259,6 +259,7 @@ export default function MatrixAIPage() {
                 image={problem.image}
                 index={index}
                 key={index}
+                className={index % 2 !== 0 ? "ml-auto" : ""}
               />
             ))}
           </div>

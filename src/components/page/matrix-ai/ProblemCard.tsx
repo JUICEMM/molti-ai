@@ -4,12 +4,17 @@ type ProblemCardProps = {
   title: string;
   image: string;
   index: number;
+  className: string;
 };
-export default function ProblemCard({ title, image, index }: ProblemCardProps) {
+export default function ProblemCard({
+  title,
+  image,
+  index,
+  className,
+}: ProblemCardProps) {
   return (
     <div
-      
-      className="relative rounded-full py-10 px-20 w-full shadow-lg"
+      className={`relative rounded-full py-10 px-20 shadow-lg w-fit ${className}`}
     >
       <div className="absolute left-[-20px] bottom-16 shadow-md text-white text-md flex justify-center items-center rounded-full w-[80px] h-[80px] bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400">
         {index + 1}

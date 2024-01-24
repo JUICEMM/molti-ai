@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div>
+    <div className="font-serif">
       {/* Common layout elements, header, footer, etc. */}
       <Navbar />
 

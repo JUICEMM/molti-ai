@@ -75,7 +75,7 @@ export default function PhotoServicePage() {
     <main>
       {/*Header*/}
       <section
-        className="relative w-full h-dvh bg-cover bg-no-repeat bg-fixed bg-center"
+        className="relative h-[400px] bg-cover bg-no-repeat bg-normal lg:bg-fixed bg-center"
         style={{ backgroundImage: `url(${photoHeader.src})` }}
       >
         <div className="flex justify-center items-center h-full">

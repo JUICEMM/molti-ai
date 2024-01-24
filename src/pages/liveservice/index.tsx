@@ -48,15 +48,15 @@ const CONTAIN_DATA = [
 ];
 const LiveServicePage = () => {
   return (
-    <div className=" bg-gray-100">
+    <div className="bg-gray-100">
       <Head>
         <title>影音教學課程-快速上手"剪映"</title>
         <meta name="description" content="直播剪輯服務 - 剪映教學" />
       </Head>
 
-      <main className="flex flex-col justify-center items-center">
+      <main className="flex flex-col">
         <div
-          className="h-svh w-full bg-cover bg-no-repeat bg-top"
+          className="h-[400px] bg-cover bg-no-repeat bg-top"
           style={{
             backgroundImage: `url(https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
           }}
@@ -65,20 +65,22 @@ const LiveServicePage = () => {
             影音教學課程<br></br>快速上手"剪映"
           </h1>
         </div>
-        <div className="bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700">
-          <div className="p-5 flex justify-center items-center">
-            <h2 className="text-3xl font-serif text-white underline-text-gradient">課程內容</h2>
+        <div className="bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 py-5">
+          <div className="flex justify-center items-center">
+            <h2 className="text-3xl font-serif text-white underline-text-gradient">
+              課程內容
+            </h2>
           </div>
-          <div className="flex flex-wrap p-4 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
             {CONTAIN_DATA.map((item, index) => (
               <section
                 key={item.title}
-                className="p-4 rounded-lg shadow-lg mb-6 bg-white hover:bg-transparent hover:text-white transition duration-300"
+                className="p-2 rounded-lg shadow-md bg-white hover:bg-transparent hover:text-white transition duration-300"
               >
-                <h2 className="text-3xl mb-4 font-serif underline-text-gradient">
+                <h2 className="text-xl mb-2 font-serif underline-text-gradient">
                   {item.title}
                 </h2>
-                <p className="text-lg font-serif leading-relaxed underline-text-gradient">
+                <p className="text-sm font-serif leading-relaxed underline-text-gradient">
                   {item.content}
                 </p>
               </section>

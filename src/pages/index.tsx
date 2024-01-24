@@ -229,3 +229,10 @@ export default function Home() {
     </>
   );
 }
+
+export async function getStaticProps() {
+  // You can leave this function empty since there's no data fetching needed
+  return {
+    props: {},
+  };
+}

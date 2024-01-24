@@ -92,7 +92,7 @@ export default function Home() {
           >
             <div className="md:basis-1/2 basis-auto flex flex-col gap-5">
               <div className="bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-center md:text-start text-4xl font-bold text-transparent md:text-6xl">
-                Molti<br></br>
+                <span className="text-6xl">Molti</span><br></br>
                 短影音服務
               </div>
               <div className="text-center md:text-start text-sm text-white lg:text-lg">

@@ -286,8 +286,8 @@ export default function MatrixAIPage() {
 
       {/*介紹*/}
       <section className="relative py-20">
-        <h2 className="text-center text-3xl md:text-5xl font-bold pb-20 pt-8">
-          矩陣系統能能給你帶來什麼？
+        <h2 className="text-center text-3xl md:text-5xl font-bold pb-20 pt-8 leading-10">
+          矩陣系統<br></br>能給你帶來什麼？
         </h2>
         <div className="flex flex-col gap-20">
           {MAIN_FEATURE_DATA.map((feature, index) => (
@@ -307,9 +307,9 @@ export default function MatrixAIPage() {
             visible: { opacity: 1, y: 0 },
             hidden: { opacity: 0, y: 50 },
           }}
-          className="pt-10 pb-20 text-center font-bold text-3xl md:text-5xl"
+          className="pt-10 pb-20 text-center font-bold text-3xl md:text-5xl leading-10"
         >
-          為什麼你一定要用矩陣AI?
+          為什麼<br></br>你一定要用矩陣AI?
         </motion.h3>
         <div className="w-[90%] mx-auto">
           <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-3">

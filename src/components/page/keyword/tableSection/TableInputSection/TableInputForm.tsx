@@ -119,16 +119,18 @@ type TableInputSectionProps = {
 const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
   return (
     <div className="w-full flex flex-col gap-4">
-      <Tabs defaultValue="即時熱點排行" className="w-auto">
-        <TabsList>
-          {HOT_FILTER_DATA.map((keysObect) =>
-            keysObect.keys.map((key) => (
-              <TabsTrigger value={key.key} key={key.key}>
-                {key.key}
-              </TabsTrigger>
-            ))
-          )}
-        </TabsList>
+      <Tabs defaultValue="即時熱點排行">
+        <div className="overflow-x-scroll">
+          <TabsList>
+            {HOT_FILTER_DATA.map((keysObect) =>
+              keysObect.keys.map((key) => (
+                <TabsTrigger value={key.key} key={key.key}>
+                  {key.key}
+                </TabsTrigger>
+              ))
+            )}
+          </TabsList>
+        </div>
         <div className="flex items-center gap-2">
           {HOTSPOT_DATA.map((data) => (
             <TabsContent
@@ -136,7 +138,7 @@ const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
               key={data.title}
             >
               <Button
-                variant={"default"}
+                variant={"outline"}
                 onClick={() => setIframeUrl(data.iframeUrl)}
               >
                 {data.title}
@@ -147,23 +149,25 @@ const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
       </Tabs>
 
       <Tabs defaultValue="Tiktok" className="w-auto">
-        <TabsList>
-          {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
-            keysObect.keys.map((key) => (
-              <TabsTrigger value={key.key} key={key.key}>
-                {key.key}
-              </TabsTrigger>
-            ))
-          )}
-        </TabsList>
-        <div className="flex items-center gap-2">
+        <div className="overflow-x-scroll">
+          <TabsList>
+            {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
+              keysObect.keys.map((key) => (
+                <TabsTrigger value={key.key} key={key.key}>
+                  {key.key}
+                </TabsTrigger>
+              ))
+            )}
+          </TabsList>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
           {HOTSPOT_DATA.map((data) => (
             <TabsContent
               value={data.filter_by.find((key) => !key.includes("熱")) || ""}
               key={data.title}
             >
               <Button
-                variant={"default"}
+                variant={"outline"}
                 onClick={() => setIframeUrl(data.iframeUrl)}
               >
                 {data.title}
@@ -173,23 +177,25 @@ const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
         </div>
       </Tabs>
       <Tabs defaultValue="大數據詞雲" className="w-auto">
-        <TabsList>
-          {TOOL_FILTER_DATA.map((keysObect) =>
-            keysObect.keys.map((key) => (
-              <TabsTrigger value={key.key} key={key.key}>
-                {key.key}
-              </TabsTrigger>
-            ))
-          )}
-        </TabsList>
-        <div className="flex items-center gap-2">
+        <div className="overflow-x-scroll">
+          <TabsList>
+            {TOOL_FILTER_DATA.map((keysObect) =>
+              keysObect.keys.map((key) => (
+                <TabsTrigger value={key.key} key={key.key}>
+                  {key.key}
+                </TabsTrigger>
+              ))
+            )}
+          </TabsList>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
           {HOTSPOT_DATA.map((data) => (
             <TabsContent
               value={data.filter_by.find((key) => !key.includes("熱")) || ""}
               key={data.title}
             >
               <Button
-                variant={"default"}
+                variant={"outline"}
                 onClick={() => setIframeUrl(data.iframeUrl)}
               >
                 {data.title}

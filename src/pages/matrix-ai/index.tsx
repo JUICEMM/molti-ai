@@ -16,7 +16,6 @@ import {
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import type { PriceCardDataTypes } from "types/dataType";
@@ -205,20 +204,12 @@ export default function MatrixAIPage() {
       <section className="h-[500px] bg-cover bg-center bg-no-repeat flex justify-center items-center">
         <div className="flex justify-center items-center">
           <div className="flex flex-col lg:flex-row lg:gap-12 items-center w-[70%]">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.1 }}
-              viewport={{ once: true }}
-              variants={{
-                visible: { opacity: 1, y: 0 },
-                hidden: { opacity: 0, y: 50 },
-              }}
-              className="flex flex-col items-start gap-3 basis-1/2"
-            >
+            <div className="flex flex-col items-start gap-3 basis-1/2">
               <h1 className="bg-gradient-to-r from-neutral-700 via-zinc-800 to-gray-700 bg-clip-text text-6xl font-bold text-transparent md:text-7xl">
                 Molti<br></br>
-                <span className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-700 bg-clip-text text-6xl font-bold text-transparent md:text-7xl">矩陣系統</span>
+                <span className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-700 bg-clip-text text-6xl font-bold text-transparent md:text-7xl">
+                  矩陣系統
+                </span>
               </h1>
               <div className="text-md text-gray-800">
                 省時、省力、有效的AI剪輯軟體，致力提供最輕鬆的剪輯服務
@@ -230,19 +221,9 @@ export default function MatrixAIPage() {
                 </Button>
                 <Button>立即試用</Button>
               </div>
-            </motion.div>
+            </div>
             <div className="basis-1/2 hidden lg:block">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                transition={{ duration: 0.7, ease: "easeInOut", delay: 0.2 }}
-                viewport={{ once: true }}
-                variants={{
-                  visible: { opacity: 1, y: 0 },
-                  hidden: { opacity: 0, y: 50 },
-                }}
-                className="relative"
-              >
+              <div className="relative">
                 <div className="absolute top-[-70px] left-16 z-10 w-[400px] h-[400px]">
                   <AspectRatio ratio={16 / 9}>
                     <Image
@@ -254,7 +235,7 @@ export default function MatrixAIPage() {
                     />
                   </AspectRatio>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -298,19 +279,9 @@ export default function MatrixAIPage() {
 
       {/*好處*/}
       <section className="">
-        <motion.h3
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          variants={{
-            visible: { opacity: 1, y: 0 },
-            hidden: { opacity: 0, y: 50 },
-          }}
-          className="pt-10 pb-20 text-center font-bold text-2xl md:text-4xl leading-10"
-        >
+        <h3 className="pt-10 pb-20 text-center font-bold text-2xl md:text-4xl leading-10">
           為什麼<br></br>你一定要用矩陣AI?
-        </motion.h3>
+        </h3>
         <div className="w-[90%] mx-auto">
           <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-3">
             {SECOND_FEATURE_DATA.map((item, index) => (
@@ -323,19 +294,13 @@ export default function MatrixAIPage() {
       <section id="price" className="relative">
         <div className="absolute top-0 -z-[999] h-[600px] w-full rounded-b-full bg-gradient-to-b from-white via-blue-300 to-blue-400" />
         <div className="h-dvh gap-10 pt-[73px] font-serif text-black">
-          <div
-            
-            className="relative flex flex-col items-center justify-center gap-5 py-[50px]"
-          >
+          <div className="relative flex flex-col items-center justify-center gap-5 py-[50px]">
             <h1 className="text-4xl font-bold text-black md:text-7xl">
               請選擇您的方案
             </h1>
             <p className="text-black">立即選擇方案，開始您的短影音之旅</p>
           </div>
-          <div
-            
-            className="flex items-center justify-center py-10"
-          >
+          <div className="flex items-center justify-center py-10">
             <Carousel className="w-full flex justify-center items-center">
               <CarouselContent className="-ml-1 max-w-[2/3]">
                 {price_card_data.map((card, index) => (

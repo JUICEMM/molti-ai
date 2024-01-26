@@ -1,12 +1,15 @@
 //*DataTable
-export type DataAnalysisColumnsTypes = {
-  id: string;
-  關聯字: string;
-  商品分類: string;
-  平均日搜索量: number;
-  平均月搜索增長率: number;
-  ppc競價: number;
-  產品平均價格: number;
+export type HotSpotDataColumnsTypes_TwitchStreams = {
+  user_name: string;
+  game_name: string;
+  title: string;
+  viewer_count: string;
+  language: string;
+  tags: string;
+};
+export type HotSpotDataColumnsTypes_TwitchGames = {
+  name: string;
+  box_art_url: string;
 };
 
 // hotspot Data type

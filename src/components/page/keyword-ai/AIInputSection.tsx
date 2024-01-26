@@ -102,7 +102,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
   }) {
     try {
       setIsLoading(true);
-      const prompt = `請僅提供在 ${socialMedia}裡 ${category}分類中有關 ${keyword} 的前10個熱門社群標籤並且按照編號排下來，不要出現多餘的字詞`;
+      const prompt = `請僅提供在 ${socialMedia}裡 ${category}分類中有關 ${keyword} 的前30個熱門社群標籤並且按照編號排下來，不要出現多餘的字詞`;
       console.log(prompt);
       const completion = await fetchOpenAICompletion(prompt);
       console.log(completion);

@@ -1,10 +1,10 @@
-import type { ColumnDef } from "@tanstack/react-table";
-import type { DataAnalysisColumnsTypes } from "types/dataType";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import type { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
+import type { HotSpotDataColumnsTypes_TwitchStreams } from "types/dataType";
 
-export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
+export const TwitchTopStreamsColumns: ColumnDef<HotSpotDataColumnsTypes_TwitchStreams>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -25,21 +25,12 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "關聯字",
-    header: "關鍵字",
-    cell: ({ row }) => (
-      <div className="w-max">{row.getValue("關聯字")}</div>
-    ),
+    accessorKey: "user_name",
+    header: "實況主名稱",
+    cell: ({ row }) => <div className="w-max">{row.getValue("user_name")}</div>,
   },
   {
-    accessorKey: "商品分類",
-    header: "商品分類",
-    cell: ({ row }) => (
-      <div className="w-max">{row.getValue("商品分類")}</div>
-    ),
-  },
-  {
-    accessorKey: "平均日搜索量",
+    accessorKey: "title",
     header: ({ column }) => {
       return (
         <Button
@@ -47,19 +38,42 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           className="w-max"
         >
-          平均日搜索量
+          "實況名稱"
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
+    },
+    cell: ({ row }) => <div className="lowercase">{row.getValue("title")}</div>,
+    enableSorting: true,
+    enableHiding: true,
+  },
+  {
+    accessorKey: "game_name",
+    header: "遊戲名稱",
+    cell: ({ row }) => <div className="w-max">{row.getValue("game_name")}</div>,
+  },
+  {
+    accessorKey: "viewer_count",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="w-max"
+        >
+          "觀看人數"
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
     },
     cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("平均日搜索量")}</div>
+      <div className="lowercase">{row.getValue("viewer_count")}</div>
     ),
     enableSorting: true,
     enableHiding: true,
   },
   {
-    accessorKey: "平均月搜索增長率",
+    accessorKey: "language",
     header: ({ column }) => {
       return (
         <Button
@@ -67,54 +81,21 @@ export const columns: ColumnDef<DataAnalysisColumnsTypes>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           className="w-max"
         >
-          平均月搜索量增長率
+          "語言"
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
     cell: ({ row }) => (
-      <div className="lowercase">
-        {row.getValue("平均月搜索增長率")}
-      </div>
+      <div className="lowercase">{row.getValue("language")}</div>
     ),
     enableSorting: true,
     enableHiding: true,
   },
   {
-    accessorKey: "ppc競價",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="w-max"
-        >
-          PPC競價
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("ppc競價")}</div>,
-    enableSorting: true,
-    enableHiding: true,
-  },
-  {
-    accessorKey: "產品平均價格",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="w-max"
-        >
-          產品平均價格
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
-    cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("產品平均價格")}</div>
-    ),
+    accessorKey: "tags",
+    header: "標籤",
+    cell: ({ row }) => <div>{row.getValue("tags")}</div>,
     enableSorting: true,
     enableHiding: true,
   },

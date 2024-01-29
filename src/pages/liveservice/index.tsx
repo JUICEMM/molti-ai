@@ -71,16 +71,16 @@ const LiveServicePage = () => {
               課程內容
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+          <div className="flex items-start flex-wrap gap-4 p-4">
             {CONTAIN_DATA.map((item, index) => (
               <section
                 key={item.title}
-                className="p-2 rounded-lg shadow-md bg-white hover:bg-transparent hover:text-white transition duration-300"
+                className="p-2 rounded-lg shadow-md bg-white overflow-hidden group"
               >
-                <h2 className="text-xl mb-2 font-serif underline-text-gradient">
+                <h2 className="text-xl mb-2 font-serif">
                   {item.title}
                 </h2>
-                <p className="text-sm font-serif leading-relaxed underline-text-gradient">
+                <p className="text-sm font-serif leading-relaxed overflow-hidden max-h-0 group-hover:max-h-[100px] transition-all duration-500 ease-in-out">
                   {item.content}
                 </p>
               </section>
@@ -97,12 +97,12 @@ const LiveServicePage = () => {
         </p>
         <div className="flex items-center gap-2">
           <a
-            href="https://cart.cashier.ecpay.com.tw/qp/tm9E"
+            href="https://app.simplymeet.me/moltiai-photo/ying-pian-jian-ji-jiao-xue-fu-wu"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-4 px-6 py-3 bg-teal-500 text-white font-bold rounded-full hover:bg-teal-600 transition duration-300"
           >
-            立即付款
+            立即預約
           </a>
           <a
             href="https://lin.ee/LciUsSk"

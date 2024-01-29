@@ -32,6 +32,7 @@ import {
 import { fetchOpenAICompletion } from "@/utils/openai";
 import { zodResolver } from "@hookform/resolvers/zod";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import * as z from "zod";
@@ -46,28 +47,115 @@ const SOCIALMEDIA_DATA = [
   "抖音",
 ];
 
+type SocialMediaCategory = "美妝" | "時尚" | "生活" | "旅行" | "美食" | "手作" | "文化" | "教育" | "科技";
+
+type SocialMediaData = {
+  socialMedia: string;
+  socialMedia_category: SocialMediaCategory[];
+};
+
+type SocialMediaArray = SocialMediaData[];
+
 //各個Select component的選項
-const category_data: Array<string> = [
-  "女性衣著",
-  "男性衣著",
-  "運動/健身",
-  "男女鞋",
-  "女生配件/黃金",
-  "美妝保健",
-  "嬰幼童語母親",
-  "女生包包/精品",
-  "男生包包/配件",
-  "戶外/運動",
-  "書籍及雜誌期刊",
-  "居家生活",
-  "美食/伴手禮",
-  "汽機車零件百貨",
-  "電玩遊戲",
-  "娛樂/收藏",
-  "寵物",
-  "手機平板與周邊",
-  "3C與筆電",
-  "家電影音",
+const CATEGORY_DATA: SocialMediaArray = [
+  {
+    socialMedia: "小紅書",
+    socialMedia_category: [
+      "美妝",
+      "時尚",
+      "生活",
+      "旅行",
+      "美食",
+      "手作",
+      "文化",
+      "教育",
+      "科技",
+    ],
+  },
+  {
+    socialMedia: "抖音",
+    socialMedia_category: [
+      "美妝",
+      "時尚",
+      "生活",
+      "旅行",
+      "美食",
+      "手作",
+      "文化",
+      "教育",
+      "科技",
+    ],
+  },
+  {
+    socialMedia: "Tiktok",
+    socialMedia_category: [
+      "美妝",
+      "時尚",
+      "生活",
+      "旅行",
+      "美食",
+      "手作",
+      "文化",
+      "教育",
+      "科技",
+    ],
+  },
+  {
+    socialMedia: "Facebook",
+    socialMedia_category: [
+      "美妝",
+      "時尚",
+      "生活",
+      "旅行",
+      "美食",
+      "手作",
+      "文化",
+      "教育",
+      "科技",
+    ],
+  },
+  {
+    socialMedia: "Instagram",
+    socialMedia_category: [
+      "美妝",
+      "時尚",
+      "生活",
+      "旅行",
+      "美食",
+      "手作",
+      "文化",
+      "教育",
+      "科技",
+    ],
+  },
+  {
+    socialMedia: "Youtube",
+    socialMedia_category: [
+      "美妝",
+      "時尚",
+      "生活",
+      "旅行",
+      "美食",
+      "手作",
+      "文化",
+      "教育",
+      "科技",
+    ],
+  },
+  {
+    socialMedia: "Twitch",
+    socialMedia_category: [
+      "美妝",
+      "時尚",
+      "生活",
+      "旅行",
+      "美食",
+      "手作",
+      "文化",
+      "教育",
+      "科技",
+    ],
+  },
 ];
 
 const formSchema = z.object({
@@ -82,6 +170,7 @@ type AIInputSectionProps = {
 };
 
 const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
+  const [socialMedia, setSocialMedia] = useState("Facebook");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -117,6 +206,8 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
     console.log(values);
     generateText(values);
   }
+
+  console.log(socialMedia);
 
   return (
     //這裡我們使用了Shadcn/ui的Form與Select，詳細資訊請看：https://ui.shadcn.com/docs/components/form
@@ -171,7 +262,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                           className="overflow-scroll max-h-[300px]"
                         >
                           {SOCIALMEDIA_DATA.map((item) => (
-                            <SelectItem key={item} value={item.toLowerCase()}>
+                            <SelectItem onSelect={() => setSocialMedia(item)} key={item} value={item.toLowerCase()}>
                               {item}
                             </SelectItem>
                           ))}
@@ -221,11 +312,17 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                           position="popper"
                           className="overflow-scroll max-h-[300px]"
                         >
-                          {category_data.map((item) => (
-                            <SelectItem key={item} value={item.toLowerCase()}>
-                              {item}
-                            </SelectItem>
-                          ))}
+                          {CATEGORY_DATA.map((item) => {
+                            if(item.socialMedia !== socialMedia) return;
+                            return item.socialMedia_category!.map((category:string) => (
+                              <SelectItem
+                                key={category}
+                                value={category.toLowerCase()}
+                              >
+                                {category}
+                              </SelectItem>
+                            ));
+                          })}
                         </SelectContent>
                         <FormMessage className="py-2 pl-3" />
                       </Select>

@@ -20,6 +20,10 @@ module.exports = {
       },
     },
     extend: {
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+      },
       colors: {
         // tremor
         // light mode

@@ -17,7 +17,7 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: " /photoservice",
   },
   {
-    title: "直播剪輯服務",
+    title: "影片剪輯教學服務",
     href: " /liveservice",
   },
   {

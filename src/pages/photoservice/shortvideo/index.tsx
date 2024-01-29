@@ -61,7 +61,7 @@ export default function PhotoServiceBusinessPage() {
                             ? "ring-2 ring-white/60 ring-offset-2 ring-offset-sky-300"
                             : ""
                         }
-                    ${checked ? "bg-neutral-900/75 text-white" : "bg-white"}
+                    ${checked ? "bg-neutral-900 text-white" : "bg-neutral-800"}
                       relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
                       }
                     >
@@ -73,7 +73,7 @@ export default function PhotoServiceBusinessPage() {
                                 <RadioGroup.Label
                                   as="p"
                                   className={`font-medium  ${
-                                    checked ? "text-white" : "text-gray-900"
+                                    checked ? "text-white" : "text-white"
                                   }`}
                                 >
                                   {plan.name}
@@ -105,7 +105,7 @@ export default function PhotoServiceBusinessPage() {
                 className="border-2 border-white bg-neutral-800 text-white"
                 
               >
-                <a href={selected?.priceUrl} className="w-full">立即付款</a>
+                <a href={selected?.priceUrl} className="w-full">立即預約</a>
               </Button>
             </div>
           </div>

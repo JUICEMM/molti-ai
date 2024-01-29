@@ -8,11 +8,6 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const plans = [
   {
-    name: "影片剪輯教學服務",
-    price: "11000",
-    priceUrl: "https://app.simplymeet.me/moltiai-photo/ying-pian-jian-ji-jiao-xue-fu-wu",
-  },
-  {
     name: "影像影音拍攝服務",
     price: "13200",
     priceUrl: "https://app.simplymeet.me/moltiai-photo/ying-yin-ying-xiang-pai-she-fu-wu",

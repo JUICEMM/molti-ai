@@ -10,7 +10,7 @@ const plans = [
   {
     name: "直播拍攝服務",
     price: "13200",
-    priceUrl: "https://cart.cashier.ecpay.com.tw/qp/tntB",
+    priceUrl: "https://app.simplymeet.me/moltiai-photo/zhi-bo-pai-she-fu-wu",
   },
 ];
 

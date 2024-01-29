@@ -2,20 +2,18 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { RadioGroup } from "@headlessui/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const plans = [
   {
     name: "90秒短影音剪輯服務",
     price: "3850",
-    priceUrl: "https://cart.cashier.ecpay.com.tw/qp/tm86",
+    priceUrl: "https://app.simplymeet.me/moltiai-photo/90miao-duan-ying-yin-jian-ji-fu-wu",
   },
   {
     name: "3-5分鐘短影音剪輯服務",
     price: "13200",
-    priceUrl: "https://cart.cashier.ecpay.com.tw/qp/tm73",
+    priceUrl: "https://app.simplymeet.me/moltiai-photo/3-5fen-zhong-duan-ying-yin-jian-ji-fu-wu",
   },
 ];
 

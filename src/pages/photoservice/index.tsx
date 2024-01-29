@@ -207,14 +207,17 @@ export default function PhotoServicePage() {
             對我們的服務有興趣的您可以
           </h2>
         </div>
-        <div className="flex justify-center items-center gap-10">
+        <div>
+    
+        </div>
+        {/* <div className="flex justify-center items-center gap-10">
           <button className="p-4 md:p-8 bg-neutral-600 border border-neutral-950 rounded-xl text-md md:text-xl text-white">
             立即預約諮詢
           </button>
           <button className="p-4 md:p-8 bg-neutral-600 border border-neutral-950 rounded-xl text-md md:text-xl text-white">
             查看預約時間
           </button>
-        </div>
+        </div> */}
       </section>
       {/*方案*/}
       <PhotoService />

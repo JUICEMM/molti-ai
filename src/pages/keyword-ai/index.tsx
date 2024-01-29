@@ -1,4 +1,3 @@
-import Navbar from "@/components/global/navbar/Navbar";
 import AIHeader from "@/components/page/keyword-ai/AIHeader";
 import AIInputSection from "@/components/page/keyword-ai/AIInputSection";
 import AIRenderSection from "@/components/page/keyword-ai/AIRenderSection";

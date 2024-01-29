@@ -47,11 +47,9 @@ const SOCIALMEDIA_DATA = [
   "抖音",
 ];
 
-type SocialMediaCategory = "美妝" | "時尚" | "生活" | "旅行" | "美食" | "手作" | "文化" | "教育" | "科技";
-
 type SocialMediaData = {
   socialMedia: string;
-  socialMedia_category: SocialMediaCategory[];
+  socialMedia_category: string[];
 };
 
 type SocialMediaArray = SocialMediaData[];
@@ -74,31 +72,11 @@ const CATEGORY_DATA: SocialMediaArray = [
   },
   {
     socialMedia: "抖音",
-    socialMedia_category: [
-      "美妝",
-      "時尚",
-      "生活",
-      "旅行",
-      "美食",
-      "手作",
-      "文化",
-      "教育",
-      "科技",
-    ],
+    socialMedia_category: ["搞笑", "才藝表演", "美妝", "時尚", "生活小技巧"],
   },
   {
     socialMedia: "Tiktok",
-    socialMedia_category: [
-      "美妝",
-      "時尚",
-      "生活",
-      "旅行",
-      "美食",
-      "手作",
-      "文化",
-      "教育",
-      "科技",
-    ],
+    socialMedia_category: ["搞笑", "才藝表演", "美妝", "時尚", "生活小技巧"],
   },
   {
     socialMedia: "Facebook",
@@ -117,29 +95,24 @@ const CATEGORY_DATA: SocialMediaArray = [
   {
     socialMedia: "Instagram",
     socialMedia_category: [
-      "美妝",
+      "生活風格",
+      "美食攝影",
+      "旅遊",
       "時尚",
-      "生活",
-      "旅行",
-      "美食",
-      "手作",
-      "文化",
-      "教育",
-      "科技",
+      "健身",
+      "藝術",
     ],
   },
   {
     socialMedia: "Youtube",
     socialMedia_category: [
-      "美妝",
-      "時尚",
-      "生活",
-      "旅行",
-      "美食",
-      "手作",
-      "文化",
+      "影片創作",
       "教育",
-      "科技",
+      "娛樂",
+      "美食",
+      "運動",
+      "音樂",
+      "新聞",
     ],
   },
   {
@@ -170,7 +143,7 @@ type AIInputSectionProps = {
 };
 
 const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
-  const [socialMedia, setSocialMedia] = useState("Facebook");
+  const [socialMedia, setSocialMedia] = useState("Tiktok");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -246,7 +219,10 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                           </Tooltip>
                         </TooltipProvider>
                       </FormLabel>
-                      <Select onValueChange={field.onChange}>
+                      <Select onValueChange={(value)=>{
+                        setSocialMedia(value)
+                        field.onChange(value)
+                      }}>
                         <FormControl>
                           <SelectTrigger
                             id="framework"
@@ -262,7 +238,13 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                           className="overflow-scroll max-h-[300px]"
                         >
                           {SOCIALMEDIA_DATA.map((item) => (
-                            <SelectItem onSelect={() => setSocialMedia(item)} key={item} value={item.toLowerCase()}>
+                            <SelectItem
+                              onClick={() =>
+                                setSocialMedia(item)
+                              }
+                              key={item}
+                              value={item}
+                            >
                               {item}
                             </SelectItem>
                           ))}
@@ -313,15 +295,17 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                           className="overflow-scroll max-h-[300px]"
                         >
                           {CATEGORY_DATA.map((item) => {
-                            if(item.socialMedia !== socialMedia) return;
-                            return item.socialMedia_category!.map((category:string) => (
-                              <SelectItem
-                                key={category}
-                                value={category.toLowerCase()}
-                              >
-                                {category}
-                              </SelectItem>
-                            ));
+                            if (item.socialMedia !== socialMedia) return;
+                            return item.socialMedia_category!.map(
+                              (category: string) => (
+                                <SelectItem
+                                  key={category}
+                                  value={category.toLowerCase()}
+                                >
+                                  {category}
+                                </SelectItem>
+                              )
+                            );
                           })}
                         </SelectContent>
                         <FormMessage className="py-2 pl-3" />

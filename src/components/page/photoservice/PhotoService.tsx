@@ -30,10 +30,10 @@ export default function PhotoService() {
   return (
     <section
       id="price"
-      className="w-[90%] mx-auto bg-white pt-20 font-mono py-20"
+      className="w-[90%] mx-auto bg-white pt-20 font-mono py-20 font-serif"
     >
       <div className="py-5 px-5 mb-5 border-l-8 border-neutral-800">
-        <h1 className="text-3xl font-bold">Molti Photo 立即預約</h1>
+        <h1 className="text-2xl font-bold">Molti Photo 立即預約</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-5">
         {PhotoServiceData.map((data) => (

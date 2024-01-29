@@ -92,7 +92,7 @@ export default function PhotoServicePage() {
       {/*服務介紹*/}
       <section
         id="service"
-        className="w-full min-h-screen bg-neutral-800 pt-16"
+        className="w-full min-h-screen bg-neutral-800 py-16"
       >
         <Carousel className="w-full">
           <CarouselContent>
@@ -110,12 +110,12 @@ export default function PhotoServicePage() {
         className="w-full min-h-screen bg-neutral-700 py-20"
       >
         <div className="flex justify-center py-5">
-          <h2 className="w-[50%] text-center text-3xl md:text-3xl lg:text-4xl font-bold text-white">
+          <h2 className="w-[50%] text-center text-xl md:text-2xl lg:text-2xl font-bold text-white">
             剪輯全方位教學<br></br>專業攝影師指導
           </h2>
         </div>
         <div className="mt-10">
-          <div className="md:w-[80%] mx-auto flex justify-between items-center md:items-stretch flex-col md:flex-row gap-3 font-mono text-neutral-800">
+          <div className="md:w-[80%] mx-auto flex justify-between items-center md:items-stretch flex-col md:flex-row gap-3 font-serif text-neutral-800">
             <div className="p-10 bg-white shadow-2xl shadow-neutral-900 flex flex-col gap-3 w-[300px] rounded-sm hover:scale-105 transition duration-100 ease-in-out">
               <p className="font-bold text-lg">我想剪輯</p>
               <p className="text-2xl font-bold">但不知道如何利用音樂跟特效？</p>
@@ -148,13 +148,13 @@ export default function PhotoServicePage() {
       {/*攝影團隊歷年經驗*/}
       <section className="w-full min-h-screen bg-neutral-800 py-20">
         <div className="w-full bg-neutral-800 flex justify-center">
-          <h1 className="text-3xl font-bold text-white font-mono">
+          <h1 className="text-xl font-bold text-white font-serif">
             攝影團隊歷年經驗
           </h1>
         </div>
         <div className="p-5 space-y-5">
-          <p className="text-white font-mono font-bold text-2xl"></p>
-          <div className="grid grid-cols-1  md:grid-cols-2 justify-items-center items-center gap-5">
+          <p className="text-white font-serif font-bold text-2xl"></p>
+          <div className="grid grid-cols-1 p-4  md:grid-cols-2 justify-items-center items-center gap-5">
             <Image
               src={ex1}
               alt="活動紀錄"
@@ -228,13 +228,13 @@ type PhotoServiceCardProps = {
 function PhotoServiceCard({ service_detail }: PhotoServiceCardProps) {
   return (
     <CarouselItem>
-      <div className="flex justify-center items-center font-mono font-bold text-white py-10 text-4xl">
+      <div className="flex justify-center items-center font-serif font-bold text-white py-5 text-xl md:text-2xl lg:text-3xl">
         <h2 className="border-b-4 border-white w-fit">
           {service_detail.service_name}
         </h2>
       </div>
-      <div className="flex justify-center items-center gap-6">
-        <div className="flex items-center flex-col md:flex-row gap-16">
+      <div className="flex justify-center items-center gap-6 font-serif">
+        <div className="flex items-center flex-col lg:flex-row gap-8">
           {service_detail.service_detail.map((data) => (
             <div
               key={data.title}
@@ -249,10 +249,10 @@ function PhotoServiceCard({ service_detail }: PhotoServiceCardProps) {
                   className="rounded-2xl"
                 />
               </AspectRatio>
-              <h3 className="p-4 text-white text-2xl font-bold font-mono">
+              <h3 className="p-2 text-white text-lg">
                 {data.title}
               </h3>
-              <p className="p-4 text-white text-lg font-mono">
+              <p className="p-2 text-white text-xs md:text-lg">
                 {data.description}
               </p>
             </div>

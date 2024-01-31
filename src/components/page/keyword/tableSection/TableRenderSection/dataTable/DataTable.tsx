@@ -78,14 +78,14 @@ export function DataTable<TData, TValue>({
   return (
     <div className="rounded-md border-b bg-white">
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between p-2">
-        {/* <Input
+        <Input
           placeholder="尋找tags..."
           value={(table.getColumn("tags")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("tags")?.setFilterValue(event.target.value)
           }
           className="max-w-sm border border-teal-500 outline-none focus:ring-0"
-        /> */}
+        />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto border border-teal-500 text-gray-500">

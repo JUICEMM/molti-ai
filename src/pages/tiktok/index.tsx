@@ -6,6 +6,7 @@ import { TwitchTopGamesColumns } from "@/components/page/keyword/tableSection/Ta
 import { TwitchTopStreamsColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopStreamsColumns";
 import { Button } from "@/components/ui/button";
 import DataRowSelectionContextProvider from "@/context/page/hotspot/DataRowSelectionContext";
+import useTiktok from "@/hooks/useTiktok";
 import useTwitch from "@/hooks/useTwitch";
 import {
   filterGamesDataFunction,
@@ -14,41 +15,38 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 
-type TwitchStreamConfig = {
-  category: string;
-  api: string; // Assuming api is a string type
-  getFilteredData: (data: any) => any; // Assuming filterStreamsDataFunction returns any type
-  filteredColumns: [];
-};
+// type TwitchStreamConfig = {
+//   category: string;
+//   api: string; // Assuming api is a string type
+//   getFilteredData: (data: any) => any; // Assuming filterStreamsDataFunction returns any type
+//   filteredColumns: [];
+// };
 
 const TestPage = () => {
-  const [TwitchFilterCategory, setTwitchFilterCategory] = useState<
-    TwitchStreamConfig | {}
-  >({});
+  // const [TwitchFilterCategory, setTwitchFilterCategory] = useState<
+  //   TwitchStreamConfig | {}
+  // >({});
 
-  const { data, isLoading } = useTwitch(
-    (TwitchFilterCategory as TwitchStreamConfig).api
-  );
+  const { data, isLoading } = useTiktok("");
 
   console.log("data", data);
 
-  const a = [
-    {
-      category: "streamers",
-      api: "https://api.twitch.tv/helix/streams",
-      getFilteredData: (data: any) => filterStreamsDataFunction(data),
+  // const a = [
+  //   {
+  //     category: "streamers",
+  //     api: "https://api.twitch.tv/helix/streams",
+  //     getFilteredData: (data: any) => filterStreamsDataFunction(data),
 
-      filteredColumns: TwitchTopStreamsColumns,
-    },
-    {
-      category: "games",
-      api: "https://api.twitch.tv/helix/games/top?first=10",
-      getFilteredData: (data: any) => filterGamesDataFunction(data),
-      filteredColumns: TwitchTopGamesColumns,
-    },
-  ];
+  //     filteredColumns: TwitchTopStreamsColumns,
+  //   },
+  //   {
+  //     category: "games",
+  //     api: "https://api.twitch.tv/helix/games/top?first=10",
+  //     getFilteredData: (data: any) => filterGamesDataFunction(data),
+  //     filteredColumns: TwitchTopGamesColumns,
+  //   },
+  // ];
 
-  console.log("TwitchFilterCategory", TwitchFilterCategory);
   return (
     <DataRowSelectionContextProvider>
       <div className="flex flex-col gap-5 p-4 bg-gray-200">
@@ -61,21 +59,21 @@ const TestPage = () => {
           <div className="flex items-center gap-2">
             <Button
               variant="outline"
-              onClick={() =>
-                setTwitchFilterCategory(
-                  [...a].find((item) => item.category === "games") || {}
-                )
-              }
+              // onClick={() =>
+              //   setTwitchFilterCategory(
+              //     [...a].find((item) => item.category === "games") || {}
+              //   )
+              // }
             >
               Twitch熱門遊戲
             </Button>
             <Button
               variant="outline"
-              onClick={() =>
-                setTwitchFilterCategory(
-                  [...a].find((item) => item.category === "streamers") || {}
-                )
-              }
+              // onClick={() =>
+              //   setTwitchFilterCategory(
+              //     [...a].find((item) => item.category === "streamers") || {}
+              //   )
+              // }
             >
               Twitch熱門直播
             </Button>
@@ -87,20 +85,21 @@ const TestPage = () => {
               Loading...
             </div>
           ) : (
-            <DataTable
-              columns={
-                (TwitchFilterCategory as TwitchStreamConfig).filteredColumns ||
-                []
-              }
-              data={
-                typeof (TwitchFilterCategory as TwitchStreamConfig)
-                  .getFilteredData === "function"
-                  ? (
-                      TwitchFilterCategory as TwitchStreamConfig
-                    ).getFilteredData(data) || []
-                  : []
-              }
-            />
+            // <DataTable
+            //   columns={
+            //     (TwitchFilterCategory as TwitchStreamConfig).filteredColumns ||
+            //     []
+            //   }
+            //   data={
+            //     typeof (TwitchFilterCategory as TwitchStreamConfig)
+            //       .getFilteredData === "function"
+            //       ? (
+            //           TwitchFilterCategory as TwitchStreamConfig
+            //         ).getFilteredData(data) || []
+            //       : []
+            //   }
+            // />
+            <></>
           )}
         </div>
       </div>

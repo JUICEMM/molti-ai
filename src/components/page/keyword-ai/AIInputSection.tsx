@@ -72,24 +72,39 @@ const CATEGORY_DATA: SocialMediaArray = [
   },
   {
     socialMedia: "抖音",
-    socialMedia_category: ["搞笑", "才藝表演", "美妝", "時尚", "生活小技巧"],
+    socialMedia_category: [
+      "推薦", "熱門", "同城", "音樂",
+      "舞蹈", "創意", "遊戲", "動物",
+      "美食", "旅行"
+  ],
   },
   {
     socialMedia: "Tiktok",
-    socialMedia_category: ["搞笑", "才藝表演", "美妝", "時尚", "生活小技巧"],
+    socialMedia_category: [
+      "熱門", "搞笑", "美食", "寵物",
+      "音樂", "舞蹈", "創意", "教學",
+      "運動", "旅行"
+  ]
+  ,
   },
   {
     socialMedia: "Facebook",
     socialMedia_category: [
-      "美妝",
-      "時尚",
-      "生活",
-      "旅行",
-      "美食",
-      "手作",
-      "文化",
+      "新聞與媒體",
+      "遊戲",
+      "應用程式",
+      "活動與票務",
+      "購物",
+      "旅遊與服務",
+      "本地商家",
+      "社交",
       "教育",
-      "科技",
+      "健康與美容",
+      "金融服務",
+      "政府與社會服務",
+      "宗教與精神",
+      "科技與科學",
+      "藝術與表演",
     ],
   },
   {
@@ -118,15 +133,12 @@ const CATEGORY_DATA: SocialMediaArray = [
   {
     socialMedia: "Twitch",
     socialMedia_category: [
-      "美妝",
-      "時尚",
-      "生活",
-      "旅行",
-      "美食",
-      "手作",
-      "文化",
-      "教育",
-      "科技",
+      "遊戲",
+      "實況直播",
+      "創意",
+      "電競運動",
+      "音樂與表演藝術",
+      "休閒娛樂",
     ],
   },
 ];
@@ -219,10 +231,12 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                           </Tooltip>
                         </TooltipProvider>
                       </FormLabel>
-                      <Select onValueChange={(value)=>{
-                        setSocialMedia(value)
-                        field.onChange(value)
-                      }}>
+                      <Select
+                        onValueChange={(value) => {
+                          setSocialMedia(value);
+                          field.onChange(value);
+                        }}
+                      >
                         <FormControl>
                           <SelectTrigger
                             id="framework"
@@ -239,9 +253,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                         >
                           {SOCIALMEDIA_DATA.map((item) => (
                             <SelectItem
-                              onClick={() =>
-                                setSocialMedia(item)
-                              }
+                              onClick={() => setSocialMedia(item)}
                               key={item}
                               value={item}
                             >

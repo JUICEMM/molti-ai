@@ -29,7 +29,7 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: "/keyword-ai",
   },
   {
-    title: "顧問服務",
+    title: "代運營",
     href: "/consultant",
   },
   {

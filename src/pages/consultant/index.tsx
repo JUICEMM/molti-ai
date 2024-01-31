@@ -13,27 +13,32 @@ export default function ConsultantPage() {
         {/* 主Header */}
         <div>
           <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white font-Serif">
-            我們還提供顧問服務
+            短影音代運營
           </h1>
         </div>
 
         {/* 兩個小Section */}
       </div>
-      <div className="container mx-auto flex flex-col lg:flex-row lg:gap-5 p-8 rounded-md text-gray-800">
-        <div className="lg:w-1/2 mb-8 lg:mb-0 p-6 rounded-md bg-white shadow-2xl">
-          <h2 className="text-2xl font-bold mb-4">大陸營業執照與證件辦理</h2>
-          <p className="text-gray-700">
-            我們可以協助您辦理大陸營業執照，讓你在抖音平台上合法經營
-          </p>
+      {/* <div className="container mx-auto p-8 rounded-md text-gray-800">
+        <div className=" mb-8 lg:mb-0 p-6 rounded-md bg-white">
+          <h2 className="text-2xl font-bold mb-4">有遇到以下問題？</h2>
+          <div className="flex justify-center items-center">
+            <div className="p-2 shadow-lg text-xl rounded-md">123</div>
+            <div className="p-2 shadow-lg text-xl rounded-md">123</div>
+            <div className="p-2 shadow-lg text-xl rounded-md">123</div>
+          </div>
         </div>
 
-        <div className="lg:w-1/2 p-6 rounded-md bg-white shadow-2xl">
-          <h2 className="text-2xl font-bold mb-4">營業證照辦理與申請流程</h2>
-          <p className="text-gray-700">
-            我們將協助您完成營業執照的申請流程，節省您的寶貴時間與精力
-          </p>
+        <div className="p-6 rounded-md bg-white mt-5">
+          <h2 className="text-2xl font-bold mb-4">我們的優勢</h2>
+          <div className="grid grid-cols-2">
+            <div className="p-2 shadow-lg text-xl rounded-md">123</div>
+            <div className="p-2 shadow-lg text-xl rounded-md">123</div>
+            <div className="p-2 shadow-lg text-xl rounded-md">123</div>
+            <div className="p-2 shadow-lg text-xl rounded-md">123</div>
+          </div>
         </div>
-      </div>
+      </div> */}
       <div className="py-2 text-center">
         <Button className="px-6 py-8">
           <a href="https://lin.ee/LciUsSk" className="px-6 py-8">立即聯絡</a>

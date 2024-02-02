@@ -7,12 +7,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Dispatch, SetStateAction } from "react";
+import { TwitchConfig } from "../TableSection";
 
 type TableInputSectionProps = {
   setIframeUrl: Dispatch<SetStateAction<string>>;
+  setTwitchFilterCategory: Dispatch<SetStateAction<TwitchConfig | {}>>;
 };
 
-const TableInputSection = ({ setIframeUrl }: TableInputSectionProps) => {
+const TableInputSection = ({ setIframeUrl, setTwitchFilterCategory }: TableInputSectionProps) => {
   return (
     <div className="p-1 md:p-8 bg-slate-100">
       <div className="flex items-center justify-center">
@@ -22,7 +24,7 @@ const TableInputSection = ({ setIframeUrl }: TableInputSectionProps) => {
             <CardDescription>各個熱點排行給您做參考</CardDescription>
           </CardHeader>
           <CardContent>
-            <TableInputForm setIframeUrl={setIframeUrl}/>
+            <TableInputForm setIframeUrl={setIframeUrl} setTwitchFilterCategory={setTwitchFilterCategory} />
           </CardContent>
         </Card>
       </div>

@@ -1,6 +1,3 @@
-import instagram_icon from "../../../public/instagram.png";
-import tiktok_icon from "../../../public/tiktok.png";
-import twitch_icon from "../../../public/twitch.png";
 import { DataTable } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/DataTable";
 import { TwitchTopGamesColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopGamesColumns";
 import { TwitchTopStreamsColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopStreamsColumns";
@@ -11,7 +8,6 @@ import {
   filterGamesDataFunction,
   filterStreamsDataFunction,
 } from "@/lib/page/keyword-ai/twitch/filterFn";
-import Image from "next/image";
 import { useState } from "react";
 
 type TwitchStreamConfig = {
@@ -30,7 +26,6 @@ const TestPage = () => {
     (TwitchFilterCategory as TwitchStreamConfig).api
   );
 
-  console.log("data", data);
 
   const a = [
     {
@@ -53,11 +48,6 @@ const TestPage = () => {
     <DataRowSelectionContextProvider>
       <div className="flex flex-col gap-5 p-4 bg-gray-200">
         <div className="flex flex-col gap-2 bg-white p-4 rounded-md">
-          <div className="flex items-center gap-2">
-            <Image src={twitch_icon} alt="twitch" width={60} />
-            <Image src={tiktok_icon} alt="twitch" width={60} />
-            <Image src={instagram_icon} alt="twitch" width={60} />
-          </div>
           <div className="flex items-center gap-2">
             <Button
               variant="outline"

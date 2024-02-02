@@ -1,5 +1,13 @@
+import { TwitchConfig, twitchCategories } from "../TableSection";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Image from "next/image";
+import ig_icon from "public/instagram.png";
+import redbook_icon from "public/redbook.jpeg";
+import doui_icon from "public/tik-tok.png";
+import tiktok_icon from "public/tiktok.png";
+import twitch_icon from "public/twitch.png";
+import yt_icon from "public/youtube.png";
 import type { Dispatch, SetStateAction } from "react";
 
 //各個Select component的選項
@@ -64,8 +72,23 @@ const HOTSPOT_DATA = [
   },
   {
     title: "巨量 抖音",
-    iframeUrl: "https://trendinsight.oceanengine.com/arithmetic-list?source=yqzs&type=0&appName=aweme&showType=list",
+    iframeUrl:
+      "https://trendinsight.oceanengine.com/arithmetic-list?source=yqzs&type=0&appName=aweme&showType=list",
     filter_by: ["抖音"],
+  },
+  {
+    title: "Twitch熱門遊戲",
+    twitch_category: "games",
+    iframeUrl:
+      "https://trendinsight.oceanengine.com/arithmetic-list?source=yqzs&type=0&appName=aweme&showType=list",
+    filter_by: ["Twitch"],
+  },
+  {
+    title: "Twitch熱門直播",
+    twitch_category: "streams",
+    iframeUrl:
+      "https://trendinsight.oceanengine.com/arithmetic-list?source=yqzs&type=0&appName=aweme&showType=list",
+    filter_by: ["Twitch"],
   },
 ];
 
@@ -94,18 +117,27 @@ const SOCIALMEDIA_FILTER_DATA = [
   {
     keys: [
       {
+        icon: twitch_icon,
+        key: "Twitch",
+      },
+      {
+        icon: tiktok_icon,
         key: "Tiktok",
       },
       {
+        icon: doui_icon,
         key: "抖音",
       },
       {
+        icon: ig_icon,
         key: "Instagram",
       },
       {
+        icon: yt_icon,
         key: "Youtube",
       },
       {
+        icon: redbook_icon,
         key: "小紅書",
       },
     ],
@@ -120,19 +152,74 @@ const TOOL_FILTER_DATA = [
     ],
   },
 ];
+
 type TableInputSectionProps = {
   setIframeUrl: Dispatch<SetStateAction<string>>;
+  setTwitchFilterCategory: Dispatch<SetStateAction<TwitchConfig | {}>>;
 };
 
-const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
+const TableInputForm = ({
+  setIframeUrl,
+  setTwitchFilterCategory,
+}: TableInputSectionProps) => {
   return (
     <div className="w-full flex flex-col gap-9">
-      <Tabs defaultValue="即時熱點排行">
+      <Tabs defaultValue="Twitch" className="w-auto">
+        <div className="my-3">
+          <p className="text-2xl font-bold">從社群媒體尋找熱點排行</p>
+        </div>
         <div className="overflow-x-scroll">
-          <TabsList>
-            {HOT_FILTER_DATA.map((keysObect) =>
+          <TabsList className="py-10 bg-transparent">
+            {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
               keysObect.keys.map((key) => (
                 <TabsTrigger value={key.key} key={key.key}>
+                  <Image
+                    src={key.icon}
+                    alt={key.key}
+                    width={60}
+                    className="rounded-full"
+                  />
+                </TabsTrigger>
+              ))
+            )}
+          </TabsList>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          {HOTSPOT_DATA.map((data) => (
+            <TabsContent
+              value={data.filter_by.find((key) => !key.includes("熱")) || ""}
+              key={data.title}
+            >
+              <Button
+                variant={"outline"}
+                onClick={() => {
+                  if (data.filter_by.includes("Twitch")) {
+                    console.log("set twitch category = ", data.twitch_category);
+                    setTwitchFilterCategory(
+                      [...twitchCategories].find(
+                        (item) => item.category === data.twitch_category
+                      ) || {}
+                    );
+                  } else {
+                    setIframeUrl(data.iframeUrl);
+                  }
+                }}
+              >
+                {data.title}
+              </Button>
+            </TabsContent>
+          ))}
+        </div>
+      </Tabs>
+      <Tabs defaultValue="即時熱點排行">
+        <div className="my-3">
+          <p className="text-2xl font-bold">從熱點種類尋找熱點排行</p>
+        </div>
+        <div className="overflow-x-scroll">
+          <TabsList className="py-5">
+            {HOT_FILTER_DATA.map((keysObect) =>
+              keysObect.keys.map((key) => (
+                <TabsTrigger value={key.key} key={key.key} className="">
                   {key.key}
                 </TabsTrigger>
               ))
@@ -155,35 +242,10 @@ const TableInputForm = ({ setIframeUrl }: TableInputSectionProps) => {
           ))}
         </div>
       </Tabs>
-      <Tabs defaultValue="Tiktok" className="w-auto">
-        <div className="overflow-x-scroll">
-          <TabsList>
-            {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
-              keysObect.keys.map((key) => (
-                <TabsTrigger value={key.key} key={key.key}>
-                  {key.key}
-                </TabsTrigger>
-              ))
-            )}
-          </TabsList>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {HOTSPOT_DATA.map((data) => (
-            <TabsContent
-              value={data.filter_by.find((key) => !key.includes("熱")) || ""}
-              key={data.title}
-            >
-              <Button
-                variant={"outline"}
-                onClick={() => setIframeUrl(data.iframeUrl)}
-              >
-                {data.title}
-              </Button>
-            </TabsContent>
-          ))}
-        </div>
-      </Tabs>
       <Tabs defaultValue="大數據詞雲" className="w-auto">
+        <div className="my-3">
+          <p className="text-2xl font-bold">其他熱點排行</p>
+        </div>
         <div className="overflow-x-scroll">
           <TabsList>
             {TOOL_FILTER_DATA.map((keysObect) =>

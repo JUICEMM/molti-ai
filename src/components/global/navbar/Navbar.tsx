@@ -36,10 +36,6 @@ export const navItems: Array<{ title: string; href: string; }> = [
     title: "銷售夥伴後台入口",
     href: "https://cashier.ecpay.com.tw/manage/login?manual_login=True&_gl=1*8ymt49*_gcl_au*MTMwOTkyNjc0NC4xNzA0ODU1MzU0"
   },
-  {
-    title: "Trending",
-    href: "/test"
-  },
 ];
 const Navbar = () => {
   return (

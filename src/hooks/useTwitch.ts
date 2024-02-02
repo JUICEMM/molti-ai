@@ -6,16 +6,16 @@ const useTwitch = (ApiUrl: string) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<any>();
 
-  console.log("data", data);
-
   const body = {
     client_id: "qdvvnxyjhng5grdcmtuer9cfyxw5bv",
     client_secret: "zlwrdnph9cccitljdpgi1lszk3wh13",
     grant_type: "client_credentials",
   };
 
-  console.log("isLoading", isLoading);
+  console.log("current ApiUrl = ", ApiUrl)
+
   const fetchData = async () => {
+    if(ApiUrl === undefined) return
     try {
       setIsLoading(true);
       const OAuthResponse = await axios.post(
@@ -25,15 +25,14 @@ const useTwitch = (ApiUrl: string) => {
       if (!OAuthResponse) {
         throw new Error("Network response was not ok");
       }
-      console.log(OAuthResponse.data);
       const DataResponse = await axios.get(ApiUrl, {
         headers: {
           "Client-ID": "qdvvnxyjhng5grdcmtuer9cfyxw5bv",
           Authorization: `Bearer ${OAuthResponse.data.access_token}`,
         },
       });
-      console.log("ApiData", DataResponse.data);
       setData(DataResponse.data.data);
+      console.log("ApiData = ",DataResponse.data.data);
       setIsLoading(false);
     } catch (error) {
       setError(error);
@@ -43,7 +42,7 @@ const useTwitch = (ApiUrl: string) => {
   };
 
   useEffect(() => {
-    console.log("start fetching...", ApiUrl);
+    console.log("start fetching...", "ApiUrl = ", ApiUrl);
     fetchData();
   }, [ApiUrl]);
 

@@ -72,7 +72,7 @@ const ConsultantCard = ({ icon, title, subtitle, index}: ConsultantCardProps) =>
     <div className="p-4 flex flex-col items-center gap-3 w-[300px]">
       <div>{icon}</div>
       <h2 className={`text-2xl font-bold text-blue-500`}>{title}</h2>
-      <ul className="list-disc list-inside">
+      <ul className="list-disc list-outside">
         {subtitle.map((item, index) => (
           <li key={index} className="mb-2">
             {item}

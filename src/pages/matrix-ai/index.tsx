@@ -220,11 +220,15 @@ export default function MatrixAIPage() {
                   <Button variant={"outline"}>
                     <AnchorLink href="#price">查看方案</AnchorLink>
                   </Button>
-                  <Button>立即試用</Button>
+                  <Button>
+                    <a href="https://forms.gle/QQXAaSMT1mAWxFeR8">立即試用</a>
+                  </Button>
                 </div>
                 <div>
                   <Button variant={"secondary"} className="w-full">
-                    <a href="http://sp.rebobang.com/storeadmin/?gid=353">前往矩陣系統</a>
+                    <a href="http://sp.rebobang.com/storeadmin/?gid=353">
+                      前往矩陣系統
+                    </a>
                   </Button>
                 </div>
               </div>

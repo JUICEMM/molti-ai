@@ -1,7 +1,9 @@
-import hotspot from "../../public/hotspot.png";
+import hotspot1 from "../../public/hotspot1.png";
+import hotspot2 from "../../public/hotspot2.png";
+import keywordai1 from "../../public/keyword-ai1.png";
+import keywordai2 from "../../public/keyword-ai2.png";
 import photograph from "../../public/攝影.png";
 import moltiai from "../../public/矩陣系統截圖.png";
-import keywordai from "../../public/關鍵字AI截圖.png";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import FunctionCard from "@/components/page/home/FunctionCard";
 import { Button } from "@/components/ui/button";
@@ -15,6 +17,7 @@ import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function Home() {
+  
   const featureData = [
     {
       icon: (
@@ -33,28 +36,29 @@ export default function Home() {
 
   const functionData = [
     {
-      imageUrl: moltiai,
+      imageUrl: [moltiai],
       title: "矩陣系統",
       description: "矩陣系統能幫助您有效製作短影音，增加影片產出效率",
       href: "/matrix-ai",
       pay: true,
     },
     {
-      imageUrl: photograph,
+      imageUrl: [photograph],
       title: "影音拍攝服務",
       description: "我們提供專業攝影師的服務，確保您影片的產出品質",
       href: "/photoservice",
       pay: true,
     },
     {
-      imageUrl: hotspot,
+      imageUrl: [hotspot1, hotspot2],
       title: "熱點搜索工具",
-      description: "利用熱點工具幫助您在製作短影音",
+      description:
+        "利用熱點工具幫助您在製作短影音時更容易產出容易引人注目的影片",
       href: "/hotspot",
       pay: false,
     },
     {
-      imageUrl: keywordai,
+      imageUrl: [keywordai1, keywordai2],
       title: "AI產生關鍵字排序",
       description: "利用AI取得關聯度最高的前30關鍵字",
       href: "/keyword-ai",
@@ -168,9 +172,9 @@ export default function Home() {
               我們提供多種服務選擇供你們選擇
             </p>
           </div>
-          <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 justify-items-center gap-4">
             {functionData.map((item, index) => (
-              <FunctionCard key={index} {...item} />
+              <FunctionCard key={index} {...item} index={index} />
             ))}
           </div>
         </div>

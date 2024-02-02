@@ -215,11 +215,18 @@ export default function MatrixAIPage() {
                 省時、省力、有效的AI剪輯軟體，致力提供最輕鬆的剪輯服務
                 採用SaaS模式，無需部署，快捷方便。人工智能技術，解放人力。覆蓋輿情工作各個環節。
               </div>
-              <div className="flex items-center gap-3">
-                <Button variant={"outline"}>
-                  <AnchorLink href="#price">查看方案</AnchorLink>
-                </Button>
-                <Button>立即試用</Button>
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <Button variant={"outline"}>
+                    <AnchorLink href="#price">查看方案</AnchorLink>
+                  </Button>
+                  <Button>立即試用</Button>
+                </div>
+                <div>
+                  <Button variant={"secondary"} className="w-full">
+                    <a href="http://sp.rebobang.com/storeadmin/?gid=353">前往矩陣系統</a>
+                  </Button>
+                </div>
               </div>
             </div>
             <div className="basis-1/2 hidden lg:block">

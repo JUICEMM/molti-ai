@@ -99,7 +99,7 @@ const LiveServicePage = () => {
               "https://app.simplymeet.me/moltiai-photo/ying-pian-jian-ji-jiao-xue-fu-wu?day=2024-02-02"
             }
             width={"100%"}
-            height="600"
+            height="900"
             allowFullScreen
             className="rounded-md"
           />

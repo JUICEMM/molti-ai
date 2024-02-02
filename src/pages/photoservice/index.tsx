@@ -92,7 +92,7 @@ export default function PhotoServicePage() {
       {/*服務介紹*/}
       <section
         id="service"
-        className="w-full min-h-screen bg-neutral-800 py-16"
+        className="w-full min-h-screen bg-neutral-800 py-16 flex justify-center items-center"
       >
         <Carousel className="w-full">
           <CarouselContent>

@@ -30,10 +30,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             之外的第三方服務提供的內容。Molti無法控制繼續在其網站上顯示的實體
             第三方服務提供的內容也不批准或認可它。
           </p>
-          <p>
+          <div className="flex items-center gap-4">
             <Link href="/privacy-policy">隱私權政策</Link>
             <Link href="/terms-of-service">服務條款</Link>
-          </p>
+          </div>
         </div>
       </footer>
     </div>

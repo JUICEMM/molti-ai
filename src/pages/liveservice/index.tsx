@@ -1,7 +1,7 @@
-// pages/index.js
-
 import Head from "next/head";
+import Image from "next/image";
 import React from "react";
+import line_qrcode from "../../../public/line好友.png"
 
 const CONTAIN_DATA = [
   { title: "介紹剪映軟體", content: "我們將介紹剪映軟體的基本資訊和功能。" },
@@ -77,9 +77,7 @@ const LiveServicePage = () => {
                 key={item.title}
                 className="p-2 rounded-lg shadow-md bg-white overflow-hidden group"
               >
-                <h2 className="text-xl mb-2 font-serif">
-                  {item.title}
-                </h2>
+                <h2 className="text-xl mb-2 font-serif">{item.title}</h2>
                 <p className="text-sm font-serif leading-relaxed overflow-hidden max-h-0 group-hover:max-h-[100px] transition-all duration-500 ease-in-out">
                   {item.content}
                 </p>
@@ -91,27 +89,23 @@ const LiveServicePage = () => {
 
       {/* Payment Section */}
       <section className="w-full p-8 bg-white rounded-lg shadow-lg">
-        <h2 className="text-3xl mb-4 font-serif text-gray-800">付款專區</h2>
+        <h2 className="text-3xl mb-4 font-serif text-gray-800">立即預約</h2>
         <p className="text-lg font-serif text-gray-700 leading-relaxed">
-          感謝您參與我們的影音教學課程！立即完成付款，開啟創作之旅。
+          感謝您參與我們的影音教學課程！立即完成預約，開啟創作之旅。
         </p>
         <div className="flex items-center gap-2">
-          <a
-            href="https://app.simplymeet.me/moltiai-photo/ying-pian-jian-ji-jiao-xue-fu-wu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 px-6 py-3 bg-teal-500 text-white font-bold rounded-full hover:bg-teal-600 transition duration-300"
-          >
-            立即預約
-          </a>
-          <a
-            href="https://lin.ee/LciUsSk"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 px-6 py-3 bg-teal-500 text-white font-bold rounded-full hover:bg-teal-600 transition duration-300"
-          >
-            立即加入line聯絡
-          </a>
+          <iframe
+            src={
+              "https://app.simplymeet.me/moltiai-photo/ying-pian-jian-ji-jiao-xue-fu-wu?day=2024-02-02"
+            }
+            width={"100%"}
+            height="600"
+            allowFullScreen
+            className="rounded-md"
+          />
+        </div>
+        <div className="flex justify-center items-center h-[200px]">
+          <Image src={line_qrcode} alt="line_qrcode" width={200} height={200}/>
         </div>
       </section>
     </div>

@@ -269,7 +269,7 @@ export default function MatrixAIPage() {
       {/*介紹*/}
       <section className="relative py-20">
         <h2 className="text-center text-2xl md:text-4xl font-bold pb-20 pt-8 leading-10">
-          矩陣系統<br></br>能給你帶來什麼？
+          我們的矩陣系統<br></br>能給你帶來什麼？
         </h2>
         <div className="flex flex-col gap-20">
           {MAIN_FEATURE_DATA.map((feature, index) => (

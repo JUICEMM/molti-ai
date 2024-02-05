@@ -1,9 +1,9 @@
 import instagram_icon from "../../../public/instagram.png";
 import tiktok_icon from "../../../public/tiktok.png";
 import twitch_icon from "../../../public/twitch.png";
-import { DataTable } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/DataTable";
-import { TwitchTopGamesColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopGamesColumns";
-import { TwitchTopStreamsColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopStreamsColumns";
+import { DataTable } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/DataTable";
+import { TwitchTopGamesColumns } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/TwitchTopGamesColumns";
+import { TwitchTopStreamsColumns } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/TwitchTopStreamsColumns";
 import { Button } from "@/components/ui/button";
 import DataRowSelectionContextProvider from "@/context/page/hotspot/DataRowSelectionContext";
 import useTiktok from "@/hooks/useTiktok";

@@ -1,6 +1,6 @@
-import { DataTable } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/DataTable";
-import { TwitchTopGamesColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopGamesColumns";
-import { TwitchTopStreamsColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopStreamsColumns";
+import { DataTable } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/DataTable";
+import { TwitchTopGamesColumns } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/TwitchTopGamesColumns";
+import { TwitchTopStreamsColumns } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/TwitchTopStreamsColumns";
 import { Button } from "@/components/ui/button";
 import DataRowSelectionContextProvider from "@/context/page/hotspot/DataRowSelectionContext";
 import useTwitch from "@/hooks/useTwitch";

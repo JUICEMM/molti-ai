@@ -1,4 +1,4 @@
-import TableSection from "@/components/page/keyword/tableSection/TableSection";
+import TableSection from "@/components/page/hotspot/tableSection/TableSection";
 
 const KeywordPage = () => {
   return (

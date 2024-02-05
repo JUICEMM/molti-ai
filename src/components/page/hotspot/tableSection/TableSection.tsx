@@ -1,7 +1,7 @@
-import TableInputSection from "./TableInputSection/TableInputSection";
-import TableRenderSection from "./TableRenderSection/TableRenderSection";
-import { TwitchTopGamesColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopGamesColumns";
-import { TwitchTopStreamsColumns } from "@/components/page/keyword/tableSection/TableRenderSection/dataTable/TwitchTopStreamsColumns";
+import TableInputSection from "./tableInputSection/TableInputSection";
+import TableRenderSection from "./tableRenderSection/TableRenderSection";
+import { TwitchTopGamesColumns } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/TwitchTopGamesColumns";
+import { TwitchTopStreamsColumns } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/TwitchTopStreamsColumns";
 import useTwitch from "@/hooks/useTwitch";
 import {
   filterGamesDataFunction,

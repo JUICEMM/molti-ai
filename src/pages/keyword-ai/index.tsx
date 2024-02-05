@@ -12,7 +12,7 @@ const KeywordAIPage = () => {
       <main className="min-h-dvh bg-gray-100">
         <AIHeader />
         <div className="flex flex-col md:flex-row md:w-[70%] md:mx-auto">
-          <div className="basis-1/2">
+          <div className="basis-1/2 ">
             <AIInputSection setResult={setResult} setIsLoading={setIsLoading} />
           </div>
           <div className="basis-1/2">

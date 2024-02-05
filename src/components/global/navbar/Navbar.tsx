@@ -17,7 +17,7 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: " /photoservice",
   },
   {
-    title: "影片剪輯教學服務",
+    title: "高效剪輯訓練營",
     href: " /liveservice",
   },
   {
@@ -29,7 +29,7 @@ export const navItems: Array<{ title: string; href: string; }> = [
     href: "/keyword-ai",
   },
   {
-    title: "代運營",
+    title: "短影音代運營",
     href: "/consultant",
   },
   {

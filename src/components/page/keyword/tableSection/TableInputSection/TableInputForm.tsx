@@ -91,7 +91,6 @@ const HOTSPOT_DATA = [
     filter_by: ["Twitch"],
   },
 ];
-
 const HOT_FILTER_DATA = [
   {
     keys: [
@@ -186,14 +185,14 @@ const TableInputForm = ({
             onClick={() => setSearchFrom("hotspot")}
             className={searchFrom === "hotspot" ? "font-bold underline" : ""}
           >
-            從社群媒體
+            從熱門排行種類
           </Button>
           <Button
             variant={"link"}
             onClick={() => setSearchFrom("others")}
             className={searchFrom === "others" ? "font-bold underline" : ""}
           >
-            從社群媒體
+            從其他分類
           </Button>
         </div>
       </div>

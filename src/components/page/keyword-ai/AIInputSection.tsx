@@ -197,7 +197,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
   return (
     //這裡我們使用了Shadcn/ui的Form與Select，詳細資訊請看：https://ui.shadcn.com/docs/components/form
 
-    <Card className="m-1 rounded-md border border-zinc-200 p-4 md:m-2">
+    <Card className="sticky top-20 m-1 rounded-md border border-zinc-200 p-4 md:m-2">
       <CardHeader>
         <CardTitle>AI產生社群標籤</CardTitle>
         <CardDescription>請輸入相關變數取得社群標籤</CardDescription>
@@ -223,9 +223,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                             </TooltipTrigger>
                             <TooltipContent>
                               <p>
-                                請選擇分類及你想查詢的社群、分類及關鍵字，例如：
-                                抖音 男性衣服
-                                襯衫，以便我們幫你產生相關的社群標籤
+                                請選擇您想要的社群媒體，以便我們根據您指定的社群媒體產生社群標籤
                               </p>
                             </TooltipContent>
                           </Tooltip>
@@ -274,7 +272,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="flex items-center text-teal-700">
-                        社群分類:
+                        目錄分類:
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger asChild>
@@ -285,7 +283,7 @@ const AIInputSection = ({ setResult, setIsLoading }: AIInputSectionProps) => {
                             <TooltipContent>
                               <p>
                                 請選擇分類及你想查詢的關鍵字，例如：女性衣著 及
-                                短裙，以便我們幫你產生相關關鍵字
+                                短裙，以便我們幫你產生相關的社群標籤
                               </p>
                             </TooltipContent>
                           </Tooltip>

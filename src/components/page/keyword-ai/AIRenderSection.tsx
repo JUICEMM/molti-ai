@@ -38,7 +38,7 @@ const AIRenderSection = ({ result, isLoading }: AIRenderSectionProps) => {
                 我會盡力提供您所需的信息，但需要稍微的時間來完成這項任務。
               </span>
               <span>
-                請您耐心等待至少60~100秒，我將竭盡所能為您提供最佳的解答。
+                請您耐心等待至少5~20秒，我將竭盡所能為您提供最佳的解答。
               </span>
             </div>
           ) : (

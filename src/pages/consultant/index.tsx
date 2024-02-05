@@ -6,17 +6,17 @@ import EmergencyRecordingOutlinedIcon from '@mui/icons-material/EmergencyRecordi
 const consultantMap = [
   {
     icon: <LanguageOutlinedIcon sx={{ color: "black", fontSize: "3.2rem" }} />,
-    title: "Tiktok代運營",
+    title: "短影音代運營",
     subtitle: ["開設Tiktok帳號", "讓你快速漲粉", "鎖定您的專屬紛絲"],
   },
   {
     icon: <PeopleOutlinedIcon sx={{ color: "black", fontSize: "3.2rem" }} />,
-    title: "Tiktok經營教學",
+    title: "短影音經營教學",
     subtitle: ["養帳號秘訣", "如何尋找您的粉絲", "經營方向建議"],
   },
   {
     icon: <EmergencyRecordingOutlinedIcon sx={{ color: "black", fontSize: "3.2rem" }} />,
-    title: "Tiktok短影音拍攝",
+    title: "短影音拍攝",
     subtitle: ["企業主題企劃", "抓緊爆紅內容", "鼓勵粉絲與品牌戶互動，病毒式傳播效益"],
   },
 ];

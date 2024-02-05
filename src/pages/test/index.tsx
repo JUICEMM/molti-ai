@@ -3,6 +3,7 @@ import { TwitchTopGamesColumns } from "@/components/page/hotspot/tableSection/ta
 import { TwitchTopStreamsColumns } from "@/components/page/hotspot/tableSection/tableRenderSection/dataTable/TwitchTopStreamsColumns";
 import { Button } from "@/components/ui/button";
 import DataRowSelectionContextProvider from "@/context/page/hotspot/DataRowSelectionContext";
+import useTiktok from "@/hooks/useTiktok";
 import useTwitch from "@/hooks/useTwitch";
 import {
   filterGamesDataFunction,
@@ -22,7 +23,7 @@ const TestPage = () => {
     TwitchStreamConfig | {}
   >({});
 
-  const { data, isLoading } = useTwitch(
+  const { data, isLoading } = useTiktok(
     (TwitchFilterCategory as TwitchStreamConfig).api
   );
 

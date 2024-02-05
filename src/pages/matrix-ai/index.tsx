@@ -17,6 +17,7 @@ import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
 import Image from "next/image";
+import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import type { PriceCardDataTypes } from "types/dataType";
 
@@ -215,20 +216,26 @@ export default function MatrixAIPage() {
                 省時、省力、有效的AI剪輯軟體，致力提供最輕鬆的剪輯服務
                 採用SaaS模式，無需部署，快捷方便。人工智能技術，解放人力。覆蓋輿情工作各個環節。
               </div>
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3">
-                  <Button variant={"outline"}>
-                    <AnchorLink href="#price">查看方案</AnchorLink>
-                  </Button>
-                  <Button>
-                    <a href="https://forms.gle/QQXAaSMT1mAWxFeR8">立即試用</a>
+              <div className="flex gap-2">
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center gap-1">
+                    <Button variant={"outline"}>
+                      <AnchorLink href="#price">查看方案</AnchorLink>
+                    </Button>
+                    <Button>
+                      <a href="https://forms.gle/QQXAaSMT1mAWxFeR8">立即試用</a>
+                    </Button>
+                  </div>
+                  <Button variant={"secondary"} className="w-full font-bold">
+                    <Link href="/matrix-ai/information">資訊公告</Link>
                   </Button>
                 </div>
-                <div>
-                  <Button variant={"secondary"} className="w-full font-bold">
-                    <a href="http://sp.rebobang.com/storeadmin/?gid=353">
-                      前往矩陣系統
-                    </a>
+                <div className="w-40">
+                  <Button
+                    variant={"secondary"}
+                    className="text-white text-xl w-full h-full font-bold bg-gradient-to-br from-indigo-900 via-indigo-700 to-indigo-500 hover:from-indigo-700 hover:via-indigo-500 hover:to-indigo-300"
+                  >
+                    <a href="http://sp.rebobang.com/storeadmin/?gid=353" className="w-full h-full flex justify-center items-center">前往矩陣系統</a>
                   </Button>
                 </div>
               </div>

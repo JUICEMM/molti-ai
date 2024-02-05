@@ -36,7 +36,7 @@ const FunctionCard = ({
                   key={index}
                   src={image}
                   alt="image"
-                  className={`w-[200px] h-[100px] sm:w-[300px] sm:h-[200px] md:w-[450px] md:h-[300px] object-cover object-left-top rounded-xl absolute ${index === 0 ? "z-2 top-5 left-5 md:top-0 md:left-0" : "z-1 top-12 left-12 md:top-10 md:left-10"} hover:z-[999] transition-all hover:scale-110 duration-150 ease-in-out`}
+                  className={`w-[200px] h-[100px] sm:w-[300px] sm:h-[200px] md:w-[450px] md:h-[300px] object-cover object-left-top rounded-xl absolute ${index === 0 ? "z-2 top-5 left-5 md:top-0 md:left-0" : "z-1 top-12 left-12 md:top-24 md:left-24"} hover:z-[999] transition-all hover:scale-110 duration-150 ease-in-out`}
                   priority
                 />
               ))}
@@ -63,7 +63,7 @@ const FunctionCard = ({
           className="text-md border-black text-black mt-5"
           onClick={() => router.push(href)}
         >
-          立即前往
+          立即探索
         </Button>
       </div>
     </div>

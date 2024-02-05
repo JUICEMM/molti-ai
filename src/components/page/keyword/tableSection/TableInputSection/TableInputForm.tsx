@@ -250,7 +250,7 @@ const TableInputForm = ({
       {searchFrom === "hotspot" && (
         <Tabs defaultValue="即時熱點排行">
           <div className="overflow-x-scroll">
-            <TabsList className="py-5">
+            <TabsList className="py-8 px-5">
               {HOT_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (
                   <TabsTrigger value={key.key} key={key.key} className="">
@@ -271,7 +271,7 @@ const TableInputForm = ({
                   onClick={() => {
                     setIframeUrl(data.iframeUrl);
                     setIsIframeOpen(true);
-                  }}
+                  }}              
                 >
                   {data.title}
                 </Button>
@@ -283,7 +283,7 @@ const TableInputForm = ({
       {searchFrom === "others" && (
         <Tabs defaultValue="大數據詞雲" className="w-auto">
           <div className="overflow-x-scroll">
-            <TabsList>
+            <TabsList className="py-8 px-5">
               {TOOL_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (
                   <TabsTrigger value={key.key} key={key.key}>

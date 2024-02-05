@@ -108,7 +108,7 @@ export default function Home() {
                     className="bg-[#4169E1] m:w-30 px-8 md:px-16 py-6 md:py-8 text-sm md:text-xl"
                     variant={"default"}
                   >
-                    立即探索
+                    立即探索矩陣系統
                   </Button>
                 </Link>
               </div>

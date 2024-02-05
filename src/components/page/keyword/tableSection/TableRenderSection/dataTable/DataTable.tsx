@@ -69,10 +69,10 @@ export function DataTable<TData, TValue>({
     /* console.log() 如果不需要可以刪除 */
   }
   useEffect(() => {
-    console.log("rowSelection", rowSelection);
-    console.log("sorting", sorting);
-    console.log("columnFilters", columnFilters);
-    console.log("columnVisibility", columnVisibility);
+    // console.log("rowSelection", rowSelection);
+    // console.log("sorting", sorting);
+    // console.log("columnFilters", columnFilters);
+    // console.log("columnVisibility", columnVisibility);
   }, [rowSelection, sorting, columnFilters, columnVisibility]);
 
   return (

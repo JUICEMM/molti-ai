@@ -19,7 +19,7 @@ const Matrix_AI_InformationPage = () => {
         <Button
           variant={"ghost"}
           className={
-            showStatus === "info" ? `text-xl font-bold bg-slate-100` : `text-xl`
+            showStatus === "info" ? `text-xl font-bold bg-slate-100 text-blue-500` : `text-xl`
           }
           onClick={() => setShowStatus("info")}
         >
@@ -28,7 +28,7 @@ const Matrix_AI_InformationPage = () => {
         <Button
           variant={"ghost"}
           className={
-            showStatus === "tutorial" ? `text-xl font-bold bg-slate-100` : `text-xl`
+            showStatus === "tutorial" ? `text-xl font-bold bg-slate-100 text-blue-500` : `text-xl`
           }
           onClick={() => setShowStatus("tutorial")}
         >
@@ -264,14 +264,14 @@ const Matrix_AI_InformationPage = () => {
           </AccordionItem>
         </Accordion>
       ) : (
-        <div>
+        <div className="flex flex-col gap-5 text-xl">
           <div>
             <a href="https://docs.google.com/document/d/1RmoSpztnm8PEPm3pCnk7Ea0Sie0-5J0Wi6f493BmmfQ/edit?usp=sharing">
               圖文教學
             </a>
           </div>
           <div>
-            <a href="https://docs.google.com/document/d/1i1F7QjWLNG1QQ_vYrWShTVGZDJ8lei0rtKybZhiAwlw/edit#heading=h.nj2hkqucuqe9">
+            <a href="https://docs.google.com/document/d/1i1F7QjWLNG1QQ_vYrWShTVGZDJ8lei0rtKybZhiAwlw/edit?usp=sharing">
               影片教學
             </a>
           </div>

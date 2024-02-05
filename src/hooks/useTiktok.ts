@@ -20,20 +20,30 @@ const useTiktok = (ApiUrl: string) => {
       setIsLoading(true);
       const OAuthResponse = await axios.post(
         "https://open.tiktokapis.com/v2/oauth/token/",
-        body
+        {
+          client_key: "awzq53gtympk0it5",
+          client_secret: "KNCtCX1g6cRjfByMnGCJIyDhLPb8GI4u",
+          grant_type: "client_credentials",
+        },
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Cache-Control': 'no-cache'
+          }
+        }
       );
       if (!OAuthResponse) {
         throw new Error("Network response was not ok");
       }
       console.log(OAuthResponse.data);
-      const DataResponse = await axios.get('https://open.tiktokapis.com/v2/research/video/query/?fields=id,like_count', {
-        headers: {
-          Authorization: `Bearer ${OAuthResponse.data.access_token}`,
-        },
-      });
-      console.log("ApiData", DataResponse.data);
-      setData(DataResponse.data.data);
-      setIsLoading(false);
+      // const DataResponse = await axios.get('https://open.tiktokapis.com/v2/research/video/query/?fields=id,like_count', {
+      //   headers: {
+      //     Authorization: `Bearer ${OAuthResponse.data.access_token}`,
+      //   },
+      // });
+      // console.log("ApiData", DataResponse.data);
+      // setData(DataResponse.data.data);
+      // setIsLoading(false);
     } catch (error) {
       setError(error);
       setIsLoading(false);

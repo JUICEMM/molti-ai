@@ -156,11 +156,13 @@ const TOOL_FILTER_DATA = [
 type TableInputSectionProps = {
   setIframeUrl: Dispatch<SetStateAction<string>>;
   setTwitchFilterCategory: Dispatch<SetStateAction<TwitchConfig | {}>>;
+  setIsIframeOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 const TableInputForm = ({
   setIframeUrl,
   setTwitchFilterCategory,
+  setIsIframeOpen,
 }: TableInputSectionProps) => {
   return (
     <div className="w-full flex flex-col gap-9">
@@ -200,8 +202,10 @@ const TableInputForm = ({
                         (item) => item.category === data.twitch_category
                       ) || {}
                     );
+                    setIsIframeOpen(false);
                   } else {
                     setIframeUrl(data.iframeUrl);
+                    setIsIframeOpen(true);
                   }
                 }}
               >

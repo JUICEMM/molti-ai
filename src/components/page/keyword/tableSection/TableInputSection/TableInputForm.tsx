@@ -268,7 +268,10 @@ const TableInputForm = ({
               >
                 <Button
                   variant={"outline"}
-                  onClick={() => setIframeUrl(data.iframeUrl)}
+                  onClick={() => {
+                    setIframeUrl(data.iframeUrl);
+                    setIsIframeOpen(true);
+                  }}
                 >
                   {data.title}
                 </Button>
@@ -298,7 +301,10 @@ const TableInputForm = ({
               >
                 <Button
                   variant={"outline"}
-                  onClick={() => setIframeUrl(data.iframeUrl)}
+                  onClick={() => {
+                    setIframeUrl(data.iframeUrl);
+                    setIsIframeOpen(true);
+                  }}
                 >
                   {data.title}
                 </Button>

@@ -32,7 +32,7 @@ export const twitchCategories = [
 ];
 
 const TableSection = () => {
-  const [isIframeOpen, setIsIframeOpen] = useState(false);
+  const [isIframeOpen, setIsIframeOpen] = useState(true);
 
   const [iframeUrl, setIframeUrl] = useState("");
   const [TwitchFilterCategory, setTwitchFilterCategory] = useState<

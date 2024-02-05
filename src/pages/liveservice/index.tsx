@@ -1,7 +1,7 @@
+import line_qrcode from "../../../public/line好友.png";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import line_qrcode from "../../../public/line好友.png"
 
 const CONTAIN_DATA = [
   { title: "介紹剪映軟體", content: "我們將介紹剪映軟體的基本資訊和功能。" },
@@ -62,7 +62,7 @@ const LiveServicePage = () => {
           }}
         >
           <h1 className="text-center flex justify-center items-center h-full bg-gradient-to-r from-white via-zinc-200 to-white font-serif bg-clip-text text-3xl font-bold text-transparent md:text-7xl">
-            影音教學課程<br></br>快速上手"剪映"
+            高效剪輯訓練營<br></br>快速上手"剪映"
           </h1>
         </div>
         <div className="bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 py-5">
@@ -78,7 +78,7 @@ const LiveServicePage = () => {
                 className="p-2 rounded-lg shadow-md bg-white overflow-hidden group"
               >
                 <h2 className="text-xl mb-2 font-serif">{item.title}</h2>
-                <p className="text-sm font-serif leading-relaxed overflow-hidden max-h-0 group-hover:max-h-[100px] transition-all duration-500 ease-in-out">
+                <p className="text-sm font-serif leading-relaxed overflow-hidden max-h-0 group-hover:max-h-[2000px] transition-all duration-700 ease-in-out">
                   {item.content}
                 </p>
               </section>
@@ -105,7 +105,7 @@ const LiveServicePage = () => {
           />
         </div>
         <div className="flex justify-center items-center h-[200px]">
-          <Image src={line_qrcode} alt="line_qrcode" width={200} height={200}/>
+          <Image src={line_qrcode} alt="line_qrcode" width={200} height={200} />
         </div>
       </section>
     </div>

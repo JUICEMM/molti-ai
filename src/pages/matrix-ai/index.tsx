@@ -225,7 +225,7 @@ export default function MatrixAIPage() {
                   </Button>
                 </div>
                 <div>
-                  <Button variant={"secondary"} className="w-full">
+                  <Button variant={"secondary"} className="w-full font-bold">
                     <a href="http://sp.rebobang.com/storeadmin/?gid=353">
                       前往矩陣系統
                     </a>

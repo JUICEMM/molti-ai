@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import ig_icon from "public/instagram.png";
-import redbook_icon from "public/redbook.jpeg";
+import redbook_icon from "public/redbook.png";
 import doui_icon from "public/tik-tok.png";
 import tiktok_icon from "public/tiktok.png";
 import twitch_icon from "public/twitch.png";

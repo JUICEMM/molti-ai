@@ -8,7 +8,7 @@ import doui_icon from "public/tik-tok.png";
 import tiktok_icon from "public/tiktok.png";
 import twitch_icon from "public/twitch.png";
 import yt_icon from "public/youtube.png";
-import type { Dispatch, SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 
 //各個Select component的選項
 
@@ -164,119 +164,150 @@ const TableInputForm = ({
   setTwitchFilterCategory,
   setIsIframeOpen,
 }: TableInputSectionProps) => {
+  const [searchFrom, setSearchFrom] = useState("socialMedia");
   return (
-    <div className="w-full flex flex-col gap-9">
-      <Tabs defaultValue="Twitch" className="w-auto">
-        <div className="my-3">
-          <p className="text-2xl font-bold">從社群媒體尋找熱點排行</p>
+    <div className="w-full flex flex-col gap-4">
+      <div>
+        <div>
+          <h1 className="text-2xl font-bold">想透過哪種分類來搜尋?</h1>
         </div>
-        <div className="overflow-x-scroll">
-          <TabsList className="py-10 bg-transparent">
-            {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
-              keysObect.keys.map((key) => (
-                <TabsTrigger value={key.key} key={key.key}>
-                  <Image
-                    src={key.icon}
-                    alt={key.key}
-                    width={60}
-                    className="rounded-full"
-                  />
-                </TabsTrigger>
-              ))
-            )}
-          </TabsList>
+        <div className="flex items-center gap-5">
+          <Button
+            variant={"link"}
+            onClick={() => setSearchFrom("socialMedia")}
+            className={
+              searchFrom === "socialMedia" ? "font-bold underline" : ""
+            }
+          >
+            從社群媒體
+          </Button>
+          <Button
+            variant={"link"}
+            onClick={() => setSearchFrom("hotspot")}
+            className={searchFrom === "hotspot" ? "font-bold underline" : ""}
+          >
+            從社群媒體
+          </Button>
+          <Button
+            variant={"link"}
+            onClick={() => setSearchFrom("others")}
+            className={searchFrom === "others" ? "font-bold underline" : ""}
+          >
+            從社群媒體
+          </Button>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {HOTSPOT_DATA.map((data) => (
-            <TabsContent
-              value={data.filter_by.find((key) => !key.includes("熱")) || ""}
-              key={data.title}
-            >
-              <Button
-                variant={"outline"}
-                onClick={() => {
-                  if (data.filter_by.includes("Twitch")) {
-                    console.log("set twitch category = ", data.twitch_category);
-                    setTwitchFilterCategory(
-                      [...twitchCategories].find(
-                        (item) => item.category === data.twitch_category
-                      ) || {}
-                    );
-                    setIsIframeOpen(false);
-                  } else {
-                    setIframeUrl(data.iframeUrl);
-                    setIsIframeOpen(true);
-                  }
-                }}
+      </div>
+      {searchFrom === "socialMedia" && (
+        <Tabs defaultValue="Twitch" className="w-auto">
+          <div className="overflow-x-scroll">
+            <TabsList className="py-10 bg-transparent">
+              {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
+                keysObect.keys.map((key) => (
+                  <TabsTrigger value={key.key} key={key.key}>
+                    <Image
+                      src={key.icon}
+                      alt={key.key}
+                      width={60}
+                      className="rounded-full"
+                    />
+                  </TabsTrigger>
+                ))
+              )}
+            </TabsList>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {HOTSPOT_DATA.map((data) => (
+              <TabsContent
+                value={data.filter_by.find((key) => !key.includes("熱")) || ""}
+                key={data.title}
               >
-                {data.title}
-              </Button>
-            </TabsContent>
-          ))}
-        </div>
-      </Tabs>
-      <Tabs defaultValue="即時熱點排行">
-        <div className="my-3">
-          <p className="text-2xl font-bold">從熱點種類尋找熱點排行</p>
-        </div>
-        <div className="overflow-x-scroll">
-          <TabsList className="py-5">
-            {HOT_FILTER_DATA.map((keysObect) =>
-              keysObect.keys.map((key) => (
-                <TabsTrigger value={key.key} key={key.key} className="">
-                  {key.key}
-                </TabsTrigger>
-              ))
-            )}
-          </TabsList>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {HOTSPOT_DATA.map((data) => (
-            <TabsContent
-              value={data.filter_by.find((key) => key.includes("熱")) || ""}
-              key={data.title}
-            >
-              <Button
-                variant={"outline"}
-                onClick={() => setIframeUrl(data.iframeUrl)}
+                <Button
+                  variant={"outline"}
+                  onClick={() => {
+                    if (data.filter_by.includes("Twitch")) {
+                      console.log(
+                        "set twitch category = ",
+                        data.twitch_category
+                      );
+                      setTwitchFilterCategory(
+                        [...twitchCategories].find(
+                          (item) => item.category === data.twitch_category
+                        ) || {}
+                      );
+                      setIsIframeOpen(false);
+                    } else {
+                      setIframeUrl(data.iframeUrl);
+                      setIsIframeOpen(true);
+                    }
+                  }}
+                >
+                  {data.title}
+                </Button>
+              </TabsContent>
+            ))}
+          </div>
+        </Tabs>
+      )}
+      {searchFrom === "hotspot" && (
+        <Tabs defaultValue="即時熱點排行">
+          <div className="overflow-x-scroll">
+            <TabsList className="py-5">
+              {HOT_FILTER_DATA.map((keysObect) =>
+                keysObect.keys.map((key) => (
+                  <TabsTrigger value={key.key} key={key.key} className="">
+                    {key.key}
+                  </TabsTrigger>
+                ))
+              )}
+            </TabsList>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {HOTSPOT_DATA.map((data) => (
+              <TabsContent
+                value={data.filter_by.find((key) => key.includes("熱")) || ""}
+                key={data.title}
               >
-                {data.title}
-              </Button>
-            </TabsContent>
-          ))}
-        </div>
-      </Tabs>
-      <Tabs defaultValue="大數據詞雲" className="w-auto">
-        <div className="my-3">
-          <p className="text-2xl font-bold">其他熱點排行</p>
-        </div>
-        <div className="overflow-x-scroll">
-          <TabsList>
-            {TOOL_FILTER_DATA.map((keysObect) =>
-              keysObect.keys.map((key) => (
-                <TabsTrigger value={key.key} key={key.key}>
-                  {key.key}
-                </TabsTrigger>
-              ))
-            )}
-          </TabsList>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {HOTSPOT_DATA.map((data) => (
-            <TabsContent
-              value={data.filter_by.find((key) => !key.includes("熱")) || ""}
-              key={data.title}
-            >
-              <Button
-                variant={"outline"}
-                onClick={() => setIframeUrl(data.iframeUrl)}
+                <Button
+                  variant={"outline"}
+                  onClick={() => setIframeUrl(data.iframeUrl)}
+                >
+                  {data.title}
+                </Button>
+              </TabsContent>
+            ))}
+          </div>
+        </Tabs>
+      )}
+      {searchFrom === "others" && (
+        <Tabs defaultValue="大數據詞雲" className="w-auto">
+          <div className="overflow-x-scroll">
+            <TabsList>
+              {TOOL_FILTER_DATA.map((keysObect) =>
+                keysObect.keys.map((key) => (
+                  <TabsTrigger value={key.key} key={key.key}>
+                    {key.key}
+                  </TabsTrigger>
+                ))
+              )}
+            </TabsList>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {HOTSPOT_DATA.map((data) => (
+              <TabsContent
+                value={data.filter_by.find((key) => !key.includes("熱")) || ""}
+                key={data.title}
               >
-                {data.title}
-              </Button>
-            </TabsContent>
-          ))}
-        </div>
-      </Tabs>
+                <Button
+                  variant={"outline"}
+                  onClick={() => setIframeUrl(data.iframeUrl)}
+                >
+                  {data.title}
+                </Button>
+              </TabsContent>
+            ))}
+          </div>
+        </Tabs>
+      )}
 
       <p className="text-xs text-gray-500 mt-5">
         Moltiai為跨境賣家提供的專業TikTok一站式的營運必備工具箱，專為TikTok經營者以及跨境出海賣家，提供TikTok營運、學習教學課程、工具、直播、變現、數據分析、廣告投放、社媒

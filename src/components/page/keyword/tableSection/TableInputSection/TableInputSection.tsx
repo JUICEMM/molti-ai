@@ -21,8 +21,8 @@ const TableInputSection = ({ setIframeUrl, setTwitchFilterCategory, setIsIframeO
       <div className="flex items-center justify-center">
         <Card className="w-full border-0">
           <CardHeader>
-            <CardTitle>內容創作工具</CardTitle>
-            <CardDescription>各個熱點排行給您做參考</CardDescription>
+            <CardTitle className="text-3xl">內容創作工具</CardTitle>
+            <CardDescription>各個熱點排行讓您的短影音更吸引人</CardDescription>
           </CardHeader>
           <CardContent>
             <TableInputForm setIframeUrl={setIframeUrl} setTwitchFilterCategory={setTwitchFilterCategory} setIsIframeOpen={setIsIframeOpen}/>

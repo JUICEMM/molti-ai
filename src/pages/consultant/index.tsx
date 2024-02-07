@@ -6,8 +6,8 @@ import EmergencyRecordingOutlinedIcon from '@mui/icons-material/EmergencyRecordi
 const consultantMap = [
   {
     icon: <LanguageOutlinedIcon sx={{ color: "black", fontSize: "3.2rem" }} />,
-    title: "短影音代運營",
-    subtitle: ["開設Tiktok帳號", "讓你快速漲粉", "鎖定您的專屬紛絲"],
+    title: "短影音代營運",
+    subtitle: ["開設短影音帳號", "讓你快速漲粉", "鎖定您的專屬紛絲"],
   },
   {
     icon: <PeopleOutlinedIcon sx={{ color: "black", fontSize: "3.2rem" }} />,
@@ -33,7 +33,7 @@ export default function ConsultantPage() {
         {/* 主Header */}
         <div>
           <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white font-Serif">
-            短影音代運營
+            短影音代營運
           </h1>
         </div>
 

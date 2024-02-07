@@ -22,8 +22,6 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 
 - [material-ui](https://mui.com/material-ui/material-icons/?theme=Outlined&query=scien) 我部分的icon會使用material-ui
 
-- [tremor](https://www.tremor.so/) 目前的圖表都是用tremor上面的現成套件，如果未來[tremor](https://www.tremor.so/)圖表量不夠我們的需求，可使用[Rechart](https://recharts.org/en-US)
-
 3.Form管理(將form資料傳給後端及資料庫)
 
 我們使用shadcn/ui裡的[Form](https://ui.shadcn.com/docs/components/form)，它使用[react-hook-form](https://www.react-hook-form.com/)配zod(type safe)，可以按找他給的範例去客製管理
@@ -55,7 +53,7 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 
 裡面存放的是各個page的components，換句話說是將code切割成數個小部分，將各個部分做成components方便管理，可以將各頁切割或重複使用的components分別依照他在哪一個route存放到page的相對應資料夾裡
 
-ex:我將home主頁的code分成4個components，那就把它們放在components//page/home/*裡面(＊裡面的資料夾結構就沒有限制了，如果覺得編排的不好可以自己調整方便自己後續找到，目前是指要是分global跟page(會出現在很多地方或是只有在自己的route))
+ex:我將home主頁的code分成4個components，那就把它們放在components/page/home/*裡面(＊裡面的資料夾結構就沒有限制了，如果覺得編排的不好可以自己調整方便自己後續找到，目前是指要是分global跟page(會出現在很多地方或是只有在自己的route))
 
 
 - `ui` (裡面可以不用動，這是拿來存放shadcn/ui的components)<br>
@@ -68,9 +66,9 @@ ex:我將home主頁的code分成4個components，那就把它們放在components
 <img src="./public/README/context.png" alt="Alt Text" width="400"><br>
 這裡存放React context api，裡面的folder structure可以按照Application的route進行排版
 
-ex:在 keyword route 裡有一個 prop drolling 的 state，為了方便維護與處理我們將此state放在名為 DataRowSelectionContext api 裡，並且將需要用到的component當children包在裡面<br>
+ex:在 hotspot route 裡有一個 prop drolling 的 state，為了方便維護與處理我們將此state放在名為 DataRowSelectionContext api 裡，並且將需要用到的component當children包在裡面<br>
 <img src="./public/README/data_context.png" alt="Alt Text" width="400">
-ex:目前只有一個控制勾選資料表格行位的state，由於它是控制在 keyword route 裡面的一個資料表格，故將它放在src/context/page/keyword
+ex:目前只有一個控制勾選資料表格行位的state，由於它是控制在 hotspot route 裡面的一個資料表格，故將它放在src/context/page/hotspot
 
 
 ### libs

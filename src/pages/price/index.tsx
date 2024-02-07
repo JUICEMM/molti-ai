@@ -1,5 +1,5 @@
 import * as React from "react"
-import PriceCard from "@/components/price/PriceCard";
+import PriceCard from "@/components/global/price/PriceCard";
 import {
   Carousel,
   CarouselContent,

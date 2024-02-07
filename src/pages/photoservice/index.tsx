@@ -110,7 +110,7 @@ export default function PhotoServicePage() {
         className="w-full min-h-screen bg-neutral-700 py-20"
       >
         <div className="flex justify-center py-5">
-          <h2 className="w-[50%] text-center text-xl md:text-2xl lg:text-2xl font-bold text-white">
+          <h2 className="w-[50%] text-center text-xl md:text-2xl lg:text-3xl font-bold text-white">
             剪輯全方位教學<br></br>專業攝影師指導
           </h2>
         </div>
@@ -148,12 +148,11 @@ export default function PhotoServicePage() {
       {/*攝影團隊歷年經驗*/}
       <section className="w-full min-h-screen bg-neutral-800 py-20">
         <div className="w-full bg-neutral-800 flex justify-center">
-          <h1 className="text-xl font-bold text-white font-serif">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white font-serif">
             攝影團隊歷年經驗
           </h1>
         </div>
         <div className="p-5 space-y-5">
-          <p className="text-white font-serif font-bold text-2xl"></p>
           <div className="grid grid-cols-1 p-4  md:grid-cols-2 justify-items-center items-center gap-5">
             <Image
               src={ex1}

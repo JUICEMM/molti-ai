@@ -3,7 +3,7 @@ import white_bg from "../../../public/white_bg.jpg";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import MainFeatureCard from "@/components/page/matrix-ai/MainFeatureCard";
 import ProblemCard from "@/components/page/matrix-ai/ProblemCard";
-import PriceCard from "@/components/price/PriceCard";
+import PriceCard from "@/components/global/price/PriceCard";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import {

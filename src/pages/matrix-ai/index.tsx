@@ -270,7 +270,7 @@ export default function MatrixAIPage() {
           <h2 className="text-center text-2xl md:text-4xl font-bold py-16">
             有面臨這些問題？
           </h2>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-5">
             {PROBLEMS_DATA.map((problem, index) => (
               <ProblemCard
                 title={problem.title}

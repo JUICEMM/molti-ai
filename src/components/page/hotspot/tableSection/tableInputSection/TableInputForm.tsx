@@ -170,7 +170,7 @@ const TableInputForm = ({
         <div>
           <h1 className="text-2xl font-bold">想透過哪種分類來搜尋?</h1>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col md:flex-row items-center gap-5">
           <Button
             variant={"link"}
             onClick={() => setSearchFrom("socialMedia")}
@@ -199,7 +199,7 @@ const TableInputForm = ({
       {searchFrom === "socialMedia" && (
         <Tabs defaultValue="Twitch" className="w-auto">
           <div className="overflow-x-scroll">
-            <TabsList className="py-10 bg-transparent">
+            <TabsList className="bg-transparent h-fit flex-wrap">
               {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (
                   <TabsTrigger value={key.key} key={key.key}>
@@ -253,7 +253,7 @@ const TableInputForm = ({
       {searchFrom === "hotspot" && (
         <Tabs defaultValue="即時熱點排行">
           <div className="overflow-x-scroll">
-            <TabsList className="py-8 px-5">
+            <TabsList className="py-3 px-3 h-fit flex-wrap">
               {HOT_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (
                   <TabsTrigger value={key.key} key={key.key} className="">
@@ -286,7 +286,7 @@ const TableInputForm = ({
       {searchFrom === "others" && (
         <Tabs defaultValue="大數據詞雲" className="w-auto">
           <div className="overflow-x-scroll">
-            <TabsList className="py-8 px-5">
+            <TabsList className="py-3 px-3 h-fit flex-wrap">
               {TOOL_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (
                   <TabsTrigger value={key.key} key={key.key}>

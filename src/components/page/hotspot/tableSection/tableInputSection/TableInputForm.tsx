@@ -198,7 +198,7 @@ const TableInputForm = ({
       </div>
       {searchFrom === "socialMedia" && (
         <Tabs defaultValue="Twitch" className="w-auto">
-          <div className="overflow-x-scroll">
+          <div className="">
             <TabsList className="bg-transparent h-fit flex-wrap">
               {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (
@@ -252,7 +252,7 @@ const TableInputForm = ({
       )}
       {searchFrom === "hotspot" && (
         <Tabs defaultValue="即時熱點排行">
-          <div className="overflow-x-scroll">
+          <div className="">
             <TabsList className="py-3 px-3 h-fit flex-wrap">
               {HOT_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (
@@ -285,7 +285,7 @@ const TableInputForm = ({
       )}
       {searchFrom === "others" && (
         <Tabs defaultValue="大數據詞雲" className="w-auto">
-          <div className="overflow-x-scroll">
+          <div className="">
             <TabsList className="py-3 px-3 h-fit flex-wrap">
               {TOOL_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (

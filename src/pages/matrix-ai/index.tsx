@@ -1,9 +1,9 @@
 import moltiai_banner_img from "../../../public/moltiai-banner-img.png";
 import white_bg from "../../../public/white_bg.jpg";
+import PriceCard from "@/components/global/price/PriceCard";
 import FeatureCard from "@/components/page/home/FeatureCard";
 import MainFeatureCard from "@/components/page/matrix-ai/MainFeatureCard";
 import ProblemCard from "@/components/page/matrix-ai/ProblemCard";
-import PriceCard from "@/components/global/price/PriceCard";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import {
@@ -223,7 +223,7 @@ export default function MatrixAIPage() {
                       <AnchorLink href="#price">查看方案</AnchorLink>
                     </Button>
                     <Button>
-                      <a href="https://forms.gle/QQXAaSMT1mAWxFeR8">立即試用</a>
+                      <a href="https://forms.gle/QQXAaSMT1mAWxFeR8">試用申請</a>
                     </Button>
                   </div>
                   <Button variant={"secondary"} className="w-full font-bold">
@@ -235,7 +235,12 @@ export default function MatrixAIPage() {
                     variant={"secondary"}
                     className="text-white text-xl w-full h-full font-bold bg-gradient-to-br from-indigo-900 via-indigo-700 to-indigo-500 hover:from-indigo-700 hover:via-indigo-500 hover:to-indigo-300"
                   >
-                    <a href="http://sp.rebobang.com/storeadmin/?gid=353" className="w-full h-full flex justify-center items-center">前往矩陣系統</a>
+                    <a
+                      href="http://sp.rebobang.com/storeadmin/?gid=353"
+                      className="w-full h-full flex justify-center items-center"
+                    >
+                      前往矩陣系統
+                    </a>
                   </Button>
                 </div>
               </div>

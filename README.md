@@ -70,6 +70,8 @@ ex:在 hotspot route 裡有一個 prop drolling 的 state，為了方便維護�
 <img src="./public/README/data_context.png" alt="Alt Text" width="400">
 ex:目前只有一個控制勾選資料表格行位的state，由於它是控制在 hotspot route 裡面的一個資料表格，故將它放在src/context/page/hotspot
 
+### hooks
+裡面存放custom hook，目前只有一個可以重複呼叫twitch api的hook
 
 ### libs
 libs資料夾主要是放各種function<br>
@@ -79,7 +81,7 @@ libs資料夾主要是放各種function<br>
 
 跟components資料夾裡的page一樣，裡面有各route的檔案夾，各route的檔案夾裡存放該頁的相關function
 
-在我們的例子中，page底下有route為keyword的頁面資料夾，只要是該頁相關的function都可以放在裡面，另外裡面的其他資料夾要怎麼分類都可以自己去調整
+在我們的例子中，page底下有route為hotspot的頁面資料夾，只要是該頁相關的function都可以放在裡面，另外裡面的其他資料夾要怎麼分類都可以自己去調整
 
 - `utils`<br>
 
@@ -101,12 +103,10 @@ trpc router，未來如果需要使用可以參考[theo的示範](https://www.yo
 css檔與icon
 
 ### utils 
-不用動
+裡面放一些重要的檔案 api.ts不會動到、openai.ts是連openai-api的檔案、ssgHelper是trpc裡一個可以融合 Nextjs SSR與SSG的helper function，目前尚未使用到
 
 ## types
 由於我們使用Typescript，故需要用到大量的types，這個資料夾可以存放各種types<br>
-<img src="./public/README/types.png" alt="Alt Text" width="400"><br>
-<img src="./public/README/types_content.png" alt="Alt Text" width="400">
 
 ## prisma
 此為prisma檔案，詳細資訊請看：https://www.prisma.io/

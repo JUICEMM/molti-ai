@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useTwitch = (ApiUrl: string) => {
   const [data, setData] = useState<Record<string, any>[]>([]);

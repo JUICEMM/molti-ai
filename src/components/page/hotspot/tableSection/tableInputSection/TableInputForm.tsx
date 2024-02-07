@@ -203,12 +203,15 @@ const TableInputForm = ({
               {SOCIALMEDIA_FILTER_DATA.map((keysObect) =>
                 keysObect.keys.map((key) => (
                   <TabsTrigger value={key.key} key={key.key}>
-                    <Image
-                      src={key.icon}
-                      alt={key.key}
-                      width={60}
-                      className="rounded-full"
-                    />
+                    <div className="flex flex-col items-center">
+                      <Image
+                        src={key.icon}
+                        alt={key.key}
+                        width={60}
+                        className="rounded-full"
+                      />
+                      <p>{key.key}</p>
+                    </div>
                   </TabsTrigger>
                 ))
               )}

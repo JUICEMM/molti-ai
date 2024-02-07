@@ -12,7 +12,7 @@ const NavbarMenu_mobile = ({ navItems }: NavbarMenu_mobileProps) => {
   const [isMobileNavbarMenuOpen, setIsMobileNavbarMenuOpen] =
     useState<boolean>(false);
   return (
-    <div className="ml-auto flex items-center lg:hidden">
+    <div className="ml-auto flex items-center xl:hidden">
       <button onClick={() => setIsMobileNavbarMenuOpen(true)}>
         <MenuIcon />
       </button>

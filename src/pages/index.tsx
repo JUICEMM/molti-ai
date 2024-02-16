@@ -17,13 +17,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
 import superjson from 'superjson';
 import { appRouter } from '@/server/api/root';
 import { prisma } from '@/server/db';
 
 export default function Home() {
-  
   const featureData = [
     {
       icon: (
@@ -71,7 +69,7 @@ export default function Home() {
       pay: false,
     },
   ];
-
+  
   return (
     <>
       <Head>

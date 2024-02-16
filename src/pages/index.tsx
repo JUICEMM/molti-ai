@@ -10,11 +10,17 @@ import { Button } from "@/components/ui/button";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
+import { createServerSideHelpers } from "@trpc/react-query/server";
 import { motion } from "framer-motion";
+import { GetStaticPropsContext } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+
+import superjson from 'superjson';
+import { appRouter } from '@/server/api/root';
+import { prisma } from '@/server/db';
 
 export default function Home() {
   
@@ -202,4 +208,21 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps(
+  context: GetStaticPropsContext<{ id: string }>,
+) {
+  const helpers = createServerSideHelpers({
+    router: appRouter,
+    ctx: {prisma},
+    transformer: superjson, // optional - adds superjson serialization
+  });
+  
+  return {
+    props: {
+      trpcState: helpers.dehydrate(),
+    },
+    revalidate: 1,
+  };
 }

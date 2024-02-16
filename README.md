@@ -51,7 +51,7 @@ clerk是一個現成使用者登入系統的套件，我們公司使用的帳戶
 - `page` (裡面放的是各個page的components)<br>
 <img src="./public/README/components-page.png" alt="Alt Text" width="400">
 
-裡面存放的是各個page的components，換句話說是將code切割成數個小部分，將各個部分做成components方便管理，可以將各頁切割或重複使用的components分別依照他在哪一個route存放到page的相對應資料夾裡
+裡面存放的是各個page的components，換句話說是將一個頁面的tsx code切割成數個小部分，將各個部分做成components方便管理，可以將各頁切割或重複使用的components分別依照他在哪一個route存放到page的相對應資料夾裡
 
 ex:我將home主頁的code分成4個components，那就把它們放在components/page/home/*裡面(＊裡面的資料夾結構就沒有限制了，如果覺得編排的不好可以自己調整方便自己後續找到，目前是指要是分global跟page(會出現在很多地方或是只有在自己的route))
 

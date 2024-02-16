@@ -33,15 +33,19 @@ export const twitchCategories = [
 ];
 
 const TableSection = () => {
-  const [isIframeOpen, setIsIframeOpen] = useState(true); //用來控制出現iframe還是dataTable
-  const [iframeUrl, setIframeUrl] = useState("");//用來儲存iframe的url
+  //用來控制出現iframe還是dataTable
+  const [isIframeOpen, setIsIframeOpen] = useState(true); 
+  //用來儲存iframe的url
+  const [iframeUrl, setIframeUrl] = useState("");
+  //每次使用者點擊不同的按鈕時，都會改變TwitchFilterCategory的值，讓data表格的column與data的type能符合
+  //初始是空{}
   const [TwitchFilterCategory, setTwitchFilterCategory] = useState<
     TwitchConfig | {}
-  >({});//每次使用者點擊不同的按鈕時，都會改變TwitchFilterCategory的值，讓data表格的column與data的type能符合
+  >({});
 
   //每次使用者點擊不同的Twitch按鈕時，useTwitch都會針對目前的TwitchFilterCategory裡的api url重新fetch資料
   const { data, isLoading } = useTwitch(
-    (TwitchFilterCategory as TwitchConfig).api
+    (TwitchFilterCategory as TwitchConfig).api || ""
   );
 
   return (

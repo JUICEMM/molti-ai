@@ -45,7 +45,7 @@ const price_card_data: Array<PriceCardDataTypes> = [
   //   ],
   // },
   {
-    title: "1個月",
+    title: "00001個月",
     price: "880",
     features: [
       {
